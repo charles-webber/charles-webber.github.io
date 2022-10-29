@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search> 
+  
+  
+    
+    <entry>
+      <title>good</title>
+      <link href="/2022/10/29/good/"/>
+      <url>/2022/10/29/good/</url>
+      
+        <content type="html"><![CDATA[<p><img src="/.io//$%7Bfiilename%7D/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE_20221028_132523-1667010753053-3.png"></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>answer</title>
+      <link href="/2022/10/29/answer/"/>
+      <url>/2022/10/29/answer/</url>
+      
+        <content type="html"><![CDATA[<p><em>错题1</em>*<img src="/.io//$%7Bfiilename%7D/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE_20221028_132523.png"></p><p>假设b已经是a的因子之和，那么只要证明b的因子之和也等于a即可，如此简化了计算</p><p><u><em><strong>无题</strong></em></u>（太逆天了）</p><p><img src="/.io//$%7Bfiilename%7D/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE_20221028_140506.png"></p><p><img src="/.io//$%7Bfiilename%7D/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE_20221028_152146.png"></p><p>&#96;</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//我的理解，虽然一开始没写出来呜呜呜（从E到A）</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> x;</span><br><span class="line">    <span class="type">int</span> i=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span> (x = <span class="number">4</span>;x&lt;=<span class="number">10000</span>; x+=<span class="number">4</span>)</span><br><span class="line">    &#123;   <span class="type">int</span> a=x;</span><br><span class="line">        <span class="keyword">while</span> (x % <span class="number">4</span> == <span class="number">0</span> &amp;&amp; i &lt;= <span class="number">5</span>)</span><br><span class="line">        &#123;</span><br><span class="line">        </span><br><span class="line">            x = <span class="number">1.25</span> * x + <span class="number">1</span>;</span><br><span class="line">            i++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> ((x - <span class="number">1</span>) % <span class="number">20</span> == <span class="number">0</span> &amp;&amp; i == <span class="number">6</span> )</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;Total number of fish catched=%d\n&quot;</span>, x);</span><br><span class="line">           </span><br><span class="line">        &#125;<span class="keyword">else</span></span><br><span class="line">        x=a;</span><br><span class="line">        i =<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>&#96;</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//这是直接从A到E的方法（自己写的！！！！！）</span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> x=<span class="number">626</span>;</span><br><span class="line">    <span class="type">int</span> i=<span class="number">1</span>;</span><br><span class="line">    <span class="type">int</span> n=x<span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">for</span> (n;n&lt;=<span class="number">3200</span>; n+=<span class="number">5</span>)</span><br><span class="line">    &#123;  </span><br><span class="line">        <span class="keyword">while</span> ((x<span class="number">-1</span>) % <span class="number">5</span> == <span class="number">0</span> &amp;&amp; i &lt;= <span class="number">5</span>)</span><br><span class="line">        &#123;</span><br><span class="line">        </span><br><span class="line">            x =  (x - <span class="number">1</span>)*<span class="number">0.8</span>;</span><br><span class="line">            i++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> ( i == <span class="number">6</span>)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">&quot;Total number of fish catched=%d\n&quot;</span>, n<span class="number">-4</span>);</span><br><span class="line">           </span><br><span class="line">        &#125;<span class="keyword">else</span></span><br><span class="line">        x=n+<span class="number">1</span>;</span><br><span class="line">        i =<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> answer </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>Hello World</title>
+      <link href="/2022/10/29/hello-world/"/>
+      <url>/2022/10/29/hello-world/</url>
+      
+        <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+  
+  
+</search>
