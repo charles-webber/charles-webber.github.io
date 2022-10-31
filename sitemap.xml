@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://charles-webebr.github.io/2022/10/29/answer/</loc>
+    
+    <lastmod>2022-10-31</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://charles-webebr.github.io/2022/10/29/good/</loc>
     
     <lastmod>2022-10-30</lastmod>
@@ -12,15 +21,6 @@
   
   <url>
     <loc>http://charles-webebr.github.io/2022/10/29/hello-world/</loc>
-    
-    <lastmod>2022-10-30</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://charles-webebr.github.io/2022/10/29/answer/</loc>
     
     <lastmod>2022-10-30</lastmod>
     
@@ -58,7 +58,7 @@
 
   <url>
     <loc>http://charles-webebr.github.io/</loc>
-    <lastmod>2022-10-30</lastmod>
+    <lastmod>2022-10-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -66,7 +66,7 @@
   
   <url>
     <loc>http://charles-webebr.github.io/tags/answer/</loc>
-    <lastmod>2022-10-30</lastmod>
+    <lastmod>2022-10-31</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
