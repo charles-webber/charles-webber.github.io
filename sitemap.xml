@@ -121,6 +121,13 @@
     <priority>0.2</priority>
   </url>
   
+  <url>
+    <loc>http://charles-webebr.github.io/tags/note/</loc>
+    <lastmod>2023-09-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
 
   
 </urlset>
