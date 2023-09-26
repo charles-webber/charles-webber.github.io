@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://charles-webebr.github.io/2023/09/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AC%94%E8%AE%B0/</loc>
+    <loc>http://charles-webebr.github.io/2022/10/29/answer/</loc>
     
     <lastmod>2023-09-26</lastmod>
     
@@ -11,18 +11,9 @@
   </url>
   
   <url>
-    <loc>http://charles-webebr.github.io/2022/10/29/answer/</loc>
+    <loc>http://charles-webebr.github.io/2023/01/05/python%E5%AD%A6%E4%B9%A0/</loc>
     
-    <lastmod>2023-02-03</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://charles-webebr.github.io/2022/11/25/%E4%BB%8E0%E5%BC%80%E5%A7%8B%E5%AD%A6%E4%B9%A0c%E8%AF%AD%E8%A8%80/</loc>
-    
-    <lastmod>2023-02-02</lastmod>
+    <lastmod>2023-09-26</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -31,25 +22,16 @@
   <url>
     <loc>http://charles-webebr.github.io/2023/01/05/SRE/</loc>
     
-    <lastmod>2023-01-07</lastmod>
+    <lastmod>2023-09-26</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://charles-webebr.github.io/2023/01/05/python%E5%AD%A6%E4%B9%A0/</loc>
+    <loc>http://charles-webebr.github.io/2022/11/15/%E4%BB%8E0%E5%BC%80%E5%A7%8B%E5%AD%A6%E4%B9%A0c%E8%AF%AD%E8%A8%80/</loc>
     
-    <lastmod>2023-01-05</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://charles-webebr.github.io/2022/12/10/%E6%A0%88%E7%9A%84%E5%AE%9A%E4%B9%89/</loc>
-    
-    <lastmod>2022-12-10</lastmod>
+    <lastmod>2023-09-26</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -58,7 +40,25 @@
   <url>
     <loc>http://charles-webebr.github.io/2022/11/27/%E9%A2%84%E4%B9%A0%E4%BD%9C%E4%B8%9A%EF%BC%9A/</loc>
     
-    <lastmod>2022-11-27</lastmod>
+    <lastmod>2023-09-26</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://charles-webebr.github.io/2022/12/10/%E6%A0%88%E7%9A%84%E5%AE%9A%E4%B9%89/</loc>
+    
+    <lastmod>2023-09-26</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://charles-webebr.github.io/2023/09/26/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E7%AC%94%E8%AE%B0/</loc>
+    
+    <lastmod>2023-09-26</lastmod>
     
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -102,13 +102,6 @@
   
   <url>
     <loc>http://charles-webebr.github.io/tags/answer/</loc>
-    <lastmod>2023-09-26</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://charles-webebr.github.io/tags/learning-progress/</loc>
     <lastmod>2023-09-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
