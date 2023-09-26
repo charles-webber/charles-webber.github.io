@@ -1,1 +1,1 @@
-var posts=["2022/11/26/English assignment restaurant interview role play/","2022/11/25/c语言从0开始/","2022/10/29/answer/","2022/11/27/预习作业：/"];function toRandomPost(){pjax.loadUrl('/'+posts[Math.floor(Math.random() * posts.length)]);};
+var posts=["2022/10/29/answer/","2022/11/27/预习作业：/","2023/01/05/SRE/","2023/01/05/python学习/","2022/12/10/栈的定义/","2022/11/25/从0开始学习c语言/","2023/09/26/计算机网络笔记/"];function toRandomPost(){pjax.loadUrl('/'+posts[Math.floor(Math.random() * posts.length)]);};
