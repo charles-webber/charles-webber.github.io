@@ -1,0 +1,566 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>asuka&amp;ayanami | asuka&amp;ayanami</title><meta name="author" content="charles-webber"><meta name="copyright" content="charles-webber"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#78D77D"><meta name="description" content="数据通信4[TOC] 思维导图 这里的DD报文打错了，其实是DBD报文 OSPF路由协议基础dis ospf peer(full算建立完成) dis ospf lsdb ospf router-id xxxx ospf的协议字段为89 是内部网关协议的一种，基于链路状态算法 基本特点 CIDR（无类域间路由）是一种用于对互联网IP地址进行聚合和分配的技术。它通过改变IP地址的分配方式，有效地解决了">
+<meta property="og:type" content="article">
+<meta property="og:title" content="asuka&amp;ayanami">
+<meta property="og:url" content="http://charles-webebr.github.io/2024/07/10/%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A14/index.html">
+<meta property="og:site_name" content="asuka&amp;ayanami">
+<meta property="og:description" content="数据通信4[TOC] 思维导图 这里的DD报文打错了，其实是DBD报文 OSPF路由协议基础dis ospf peer(full算建立完成) dis ospf lsdb ospf router-id xxxx ospf的协议字段为89 是内部网关协议的一种，基于链路状态算法 基本特点 CIDR（无类域间路由）是一种用于对互联网IP地址进行聚合和分配的技术。它通过改变IP地址的分配方式，有效地解决了">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://w.wallhaven.cc/full/q2/wallhaven-q2p6mr.jpg">
+<meta property="article:published_time" content="2024-07-10T07:22:42.502Z">
+<meta property="article:modified_time" content="2024-02-24T03:28:32.717Z">
+<meta property="article:author" content="charles-webber">
+<meta property="article:tag" content="i need something to cure me">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://w.wallhaven.cc/full/q2/wallhaven-q2p6mr.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://charles-webebr.github.io/2024/07/10/%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A14/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'asuka&ayanami',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: true,
+  isToc: true,
+  postUpdate: '2024-02-24 11:28:32'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#FF855DFF')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#78D77D')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu@1.1.6/lib/clock.min.css" /><link rel="stylesheet" href="https://cdn.cbd.int/hexo-butterfly-wowjs/lib/animate.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/hexo-butterfly-swiper-anzhiyu@1.0.4/lib/swiper.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/hexo-butterfly-swiper-anzhiyu@1.0.4/lib/swiperstyle.css" media="print" onload="this.media='all'"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="asuka&ayanami" type="application/atom+xml">
+</head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://w.wallhaven.cc/full/6o/wallhaven-6o36qq.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">39</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">3</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/bangumis/"><i class="fa-fw fa-solid fa-bell"></i><span> ACG</span></a></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-envelope"></i><span> Message</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://w.wallhaven.cc/full/q2/wallhaven-q2p6mr.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">asuka&amp;ayanami</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/bangumis/"><i class="fa-fw fa-solid fa-bell"></i><span> ACG</span></a></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-envelope"></i><span> Message</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">无题</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-07-10T07:22:42.502Z" title="发表于 2024-07-10 15:22:42">2024-07-10</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-02-24T03:28:32.717Z" title="更新于 2024-02-24 11:28:32">2024-02-24</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">3k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>10分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="数据通信4"><a href="#数据通信4" class="headerlink" title="数据通信4"></a>数据通信4</h1><p>[TOC]</p>
+<h2 id="思维导图"><a href="#思维导图" class="headerlink" title="思维导图"></a>思维导图</h2><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitee.com/Charles-Webber/blog-image1/raw/master/img/QQ%E5%9B%BE%E7%89%8720231024210659.png" alt="QQ图片20231024210659"></p>
+<p>这里的DD报文打错了，其实是DBD报文</p>
+<h2 id="OSPF路由协议基础"><a href="#OSPF路由协议基础" class="headerlink" title="OSPF路由协议基础"></a>OSPF路由协议基础</h2><p>dis ospf peer(full算建立完成)</p>
+<p>dis ospf lsdb</p>
+<p>ospf router-id xxxx</p>
+<p>ospf的协议字段为89</p>
+<p>是内部网关协议的一种，基于链路状态算法</p>
+<h3 id="基本特点"><a href="#基本特点" class="headerlink" title="基本特点"></a>基本特点</h3><ol>
+<li>CIDR（无类域间路由）是一种用于对互联网IP地址进行聚合和分配的技术。它通过改变IP地址的分配方式，有效地解决了IPv4地址空间不足的问题。</li>
+<li>无路由自环</li>
+<li>收敛速度快</li>
+<li>使用IP组播收发协议数据224.0.0.5（村民）和 224.0.0.6（村长）（rip v1是224.0.0.9）</li>
+<li>支持多条等值路由</li>
+<li>协议报文认证(rip v2 的那种认证)</li>
+</ol>
+<h3 id="链路状态算法的路由计算过程"><a href="#链路状态算法的路由计算过程" class="headerlink" title="链路状态算法的路由计算过程"></a>链路状态算法的路由计算过程</h3><ol>
+<li>建立邻接关系（物理和逻辑上很亲密），不等同邻居关系</li>
+<li>泛洪LSA（类似于rip的泛洪），将收到的信息放进LSDB数据库里面</li>
+<li>通过SPF算法计算最短路径树</li>
+<li>计算路由并且存入IP路由表中</li>
+</ol>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20231021093340407.png" alt="image-20231021093340407"></p>
+<h3 id="OSPF的基本概念"><a href="#OSPF的基本概念" class="headerlink" title="OSPF的基本概念"></a>OSPF的基本概念</h3><h4 id="自治系统AS"><a href="#自治系统AS" class="headerlink" title="自治系统AS"></a>自治系统AS</h4><p>在互联网中，一个或多个实体管辖下的所有IP网络和路由器的组合，它们对互联网执行共同的路由策略</p>
+<h4 id="Router-ID"><a href="#Router-ID" class="headerlink" title="Router ID"></a>Router ID</h4><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20231021094025564.png" alt="image-20231021094025564"></p>
+<p>很多ospf的服务需要id，来源：</p>
+<ol>
+<li>手动分配 2.通过活动环回口接口的最大IP 3.通过物理环回口接口的最大IP</li>
+</ol>
+<p>（没有邻接关系随便改，否则要重启）</p>
+<h4 id="划分区域"><a href="#划分区域" class="headerlink" title="划分区域"></a>划分区域</h4><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20231021094712402.png" alt="image-20231021094712402"></p>
+<p>area 0：骨干区域，有且只有一个，其他区域必须和骨干区域直连</p>
+<h4 id="路由器分类"><a href="#路由器分类" class="headerlink" title="路由器分类"></a>路由器分类</h4><p>BR（略）: 所有接口都在area0</p>
+<p>ABR（区域边界路由器）：一个在area0 其他的在其他区域</p>
+<p>IR（略）：全部接口在其他区域</p>
+<p>ASBR（自治系统边界路由器）：使用BGP连接另外一个AS</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20231021095718238.png" alt="image-20231021095718238"></p>
+<h4 id="OSPF的五个报文"><a href="#OSPF的五个报文" class="headerlink" title="OSPF的五个报文"></a>OSPF的五个报文</h4><ol>
+<li>Hello报文</li>
+<li>DD报文</li>
+<li>LSR报文</li>
+<li>LSU报文</li>
+<li>LSACK报文</li>
+</ol>
+<h4 id="OSPF的七个邻居状态"><a href="#OSPF的七个邻居状态" class="headerlink" title="OSPF的七个邻居状态"></a>OSPF的七个邻居状态</h4><ol>
+<li>Down</li>
+<li>Init</li>
+<li>Two way</li>
+<li>Exstart</li>
+<li>Exchange</li>
+<li>Loading </li>
+<li>Full</li>
+</ol>
+<h3 id="实验基本配置"><a href="#实验基本配置" class="headerlink" title="实验基本配置"></a>实验基本配置</h3><ol>
+<li>ospf 进程</li>
+<li>area X进入区域配置</li>
+<li>network宣告网段</li>
+<li>（如果需要）设置stub区域或者nssa区域</li>
+</ol>
+<h2 id="进阶知识"><a href="#进阶知识" class="headerlink" title="进阶知识"></a>进阶知识</h2><h3 id="邻居和邻接"><a href="#邻居和邻接" class="headerlink" title="邻居和邻接"></a>邻居和邻接</h3><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20231021104339150.png" alt="image-20231021104339150"></p>
+<p>当线路中出现多余的信息转发，就需要DR（村长）和BDR（副村长）</p>
+<p>224.0.0.5—其他路由器给DR发信息</p>
+<p>224.0.0.6—DR给其他路由器发信息</p>
+<h3 id="DR和BDR的选举过程"><a href="#DR和BDR的选举过程" class="headerlink" title="DR和BDR的选举过程"></a>DR和BDR的选举过程</h3><p>其他路由器只会和DR建立邻接关系</p>
+<ol>
+<li><p>一开始是先选举BDR，如果发现区域没有DR就成为DR</p>
+</li>
+<li><p>DR寄了之后BDR成为新的DR，然后再将id大的改为BDR</p>
+</li>
+</ol>
+<h3 id="OSPF支持的网络类型"><a href="#OSPF支持的网络类型" class="headerlink" title="OSPF支持的网络类型"></a>OSPF支持的网络类型</h3><p>点对点通信，广播通信，多播，NBMA</p>
+<p>（p2p和p2mp不进行DR和BDR的选举–两个人还选什么村长）</p>
+<p>（广播和NBMA进行DR和BDR的选举）</p>
+<p>那么我们怎么更改类型呢？</p>
+<ol>
+<li><p>进入接口</p>
+</li>
+<li><p>ospf network-type xxx</p>
+</li>
+</ol>
+<p>两个接口不一致时只可以建立邻接关系，但是不能交换路由条目</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20231021110624606.png" alt="image-20231021110624606"></p>
+<h3 id="邻居建立"><a href="#邻居建立" class="headerlink" title="邻居建立"></a>邻居建立</h3><h5 id="邻居状态"><a href="#邻居状态" class="headerlink" title="邻居状态"></a>邻居状态</h5><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20231021110938049.png" alt="img"></p>
+<ol>
+<li>down</li>
+<li>attempt（nbma里面会出现）</li>
+<li>int：向外发送hello包（空包，没有地址，有自己的router-id），对方收到hello包再回复它的router-id，进入到2-way</li>
+<li>2-way（选DR，BDR）：能进入2-way的条件是收到的hello中有自己的router-id</li>
+<li>exstart(选master和servant)：2-way进start条件：1. 选完BDR（第一个BDR会立刻成为DR）2. 等待40s 3. 不选DR和BDR的链路跳过2-way进入exstart</li>
+</ol>
+<p>显示确认：ack发1回2，发2回3</p>
+<p>隐式确认：发送序列号为1，回复的数据包也得是1</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20231021113134250.png" alt="image-20231021113134250"></p>
+<p>DBD：类似书本的目录，进行master的选举，servant的序列号改为master的序列号</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20231021113545862.png" alt="image-20231021113545862"></p>
+<ol start="6">
+<li><p>exchange交换DBD包（有内容）</p>
+</li>
+<li><p>loading：我给你发request，你给我回update</p>
+</li>
+</ol>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20231021115239349.png" alt="image-20231021115239349"></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20231021115431457.png" alt="image-20231021115431457"></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20231021115633017.png" alt="image-20231021115633017"></p>
+<h5 id="邻居关系建立"><a href="#邻居关系建立" class="headerlink" title="邻居关系建立"></a>邻居关系建立</h5><ol>
+<li><strong>router-id不能相同</strong></li>
+<li>区域必须相同</li>
+<li>认证类型必须相同，密码也要相同         </li>
+<li>直连接口掩码必须相同</li>
+<li>hello包，死亡时间必须设置一样</li>
+<li><strong>直连路由器接口不能同时设置接口优先级为0</strong></li>
+<li>相同区域的路由器的LSDB必须保持一致（几类LSA相同）</li>
+<li>两端mtu的值应该设置成一样</li>
+</ol>
+<h3 id="LSA（6种常见）"><a href="#LSA（6种常见）" class="headerlink" title="LSA（6种常见）"></a>LSA（6种常见）</h3><p>不是一种报文类型，全部放在LS update报文中</p>
+<h4 id="Router-LSA（1）"><a href="#Router-LSA（1）" class="headerlink" title="Router-LSA（1）"></a>Router-LSA（1）</h4><p>Router-LSA是一种最基本的LSA，即Type1 LSA。</p>
+<p>OSPF网络里的每一台路由设备都会发布Type1 LSA。这种类型的LSA用于描述设备的链路状态和开销，在路由器所属的区域内传播。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitee.com/Charles-Webber/blog-image1/raw/master/img/20210607095914282.png" alt="img"></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitee.com/Charles-Webber/blog-image1/raw/master/img/20210607095914474.png" alt="img"></p>
+<h4 id="Network-LSA（2）"><a href="#Network-LSA（2）" class="headerlink" title="Network-LSA（2）"></a>Network-LSA（2）</h4><p>Network-LSA，也就是Type2 LSA，由DR（Designated Router）产生，描述本网段的链路状态，在所属的区域内传播。如图所示，R3向R2发送一条Network-LSA，列出了所有与DR形成完全邻接关系的路由器的Router ID。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitee.com/Charles-Webber/blog-image1/raw/master/img/20210607095914337.png" alt="img"></p>
+<p> <img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitee.com/Charles-Webber/blog-image1/raw/master/img/20210607095914470.png" alt="img"></p>
+<h4 id="Network-summary-LSA（3）"><a href="#Network-summary-LSA（3）" class="headerlink" title="Network-summary-LSA（3）"></a>Network-summary-LSA（3）</h4><p>Network-summary-LSA，也叫Type3 LSA，由ABR发布，用来描述区域间的路由信息。ABR将Network-summary-LSA发布到一个区域，通告该区域到其他区域的目的地址。实际上，ABR是将区域内部的Type1和Type2的信息收集起来并汇总之后扩散出去，这就是Summary的含义。如图所示，R2作为ABR，将Area 0和Area 1中的路由信息分别发布对方区域。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitee.com/Charles-Webber/blog-image1/raw/master/img/20210607095914376.png" alt="img"></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitee.com/Charles-Webber/blog-image1/raw/master/img/20210607095914471.png" alt="img"></p>
+<h4 id="ASBR-Summary-LSA（4）"><a href="#ASBR-Summary-LSA（4）" class="headerlink" title="ASBR-Summary-LSA（4）"></a>ASBR-Summary-LSA（4）</h4><p>ASBR-summary-LSA，也叫Type4 LSA，由ABR发布，描述到ASBR的路由信息，并通告给除ASBR所在区域的其他相关区域。如图所示，R3作为ABR通告ASBR-summary-LSA到Area 0中。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitee.com/Charles-Webber/blog-image1/raw/master/img/20210607095914344.png" alt="img"></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitee.com/Charles-Webber/blog-image1/raw/master/img/20210607095914463.png" alt="img"></p>
+<h4 id="AS-external-LSA（5）"><a href="#AS-external-LSA（5）" class="headerlink" title="AS-external-LSA（5）"></a>AS-external-LSA（5）</h4><p>AS-external-LSA，也叫Type5 LSA，由ASBR产生，描述到AS外部的路由，通告到除Stub区域和NSSA区域以外所有的区域。如图所示，R4作为ASBR发布了一条OSPF AS到外部目的网络的路由信息。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitee.com/Charles-Webber/blog-image1/raw/master/img/20210607095914338.png" alt="img"></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitee.com/Charles-Webber/blog-image1/raw/master/img/20210607095914473.png" alt="img"></p>
+<h4 id="NSSA-LSA（7）"><a href="#NSSA-LSA（7）" class="headerlink" title="NSSA LSA（7）"></a>NSSA LSA（7）</h4><p>除了上述几种LSA之外，还有一种比较特殊的LSA，NSSA LSA，也叫Type7 LSA。NSSA LSA由ASBR产生，描述到AS外部的路由，仅在NSSA区域内传播。NSSA区域的ABR收到NSSA LSA时，会有选择地将其转化为Type5 LSA，以便将外部路由信息通告到OSPF网络的其它区域。</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitee.com/Charles-Webber/blog-image1/raw/master/img/102d5942944f48edb1452a0f99fec6e3.png" alt="在这里插入图片描述"></p>
+<h2 id="实验配置"><a href="#实验配置" class="headerlink" title="实验配置"></a>实验配置</h2><h3 id="虚连接的配置"><a href="#虚连接的配置" class="headerlink" title="虚连接的配置"></a>虚连接的配置</h3><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20231021154333804.png" alt="image-20231021154333804"></p>
+<p>区域2没有和区域0相连，区域0和1就无法获取到区域2的路由信息，需要配置虚拟连接以获得area2的路由信息</p>
+<p>area2要经过area1和area0连接，所以在area1中设置</p>
+<p>在AR2中指向Ar3（v-link peer #router-id）</p>
+<p>AR3中指向AR2（v-link peer #router-id）</p>
+<p>vlink和回环路由？？？</p>
+<h3 id="OSPF特殊区域"><a href="#OSPF特殊区域" class="headerlink" title="OSPF特殊区域"></a>OSPF特殊区域</h3><p>末梢路由就是只与一个路由器连接</p>
+<p>stub：不接受4类，5类，7类LSA</p>
+<p>totally stub：不接受3，4，5，7类LSA</p>
+<p>NSSA（Not-So-Stubby Area）：不接受4，5 LSA类</p>
+<p><strong>与nssa区域连接的abr在收到七类的lsa会转成5类</strong></p>
+<p>totally NSSA 区域：不接受3，4，5</p>
+<h4 id="实验配置-1"><a href="#实验配置-1" class="headerlink" title="实验配置"></a>实验配置</h4><h5 id="stub"><a href="#stub" class="headerlink" title="stub"></a>stub</h5><p>就在区域的两台路由器里面打个stub就好了</p>
+<p>进入区域，输入stub</p>
+<h5 id="nssa"><a href="#nssa" class="headerlink" title="nssa"></a>nssa</h5><p>就在区域的两台路由器里面打个nssa就好了</p>
+<p>进入区域，输入nssa</p>
+<h3 id="ospf下放默认路由"><a href="#ospf下放默认路由" class="headerlink" title="ospf下放默认路由"></a>ospf下放默认路由</h3><h4 id="手动配置"><a href="#手动配置" class="headerlink" title="手动配置"></a>手动配置</h4><p>在路由器的ospf进程下下放默认路由</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ospf</span><br><span class="line">default-route-advertise</span><br></pre></td></tr></table></figure>
+
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitee.com/Charles-Webber/blog-image1/raw/master/img/20200224093436860.png" alt="在这里插入图片描述"></p>
+<h4 id="特殊区域配置"><a href="#特殊区域配置" class="headerlink" title="特殊区域配置"></a>特殊区域配置</h4><p>基于上面的特殊区域的后stub和nssa会自动下发默认路由（注意协议优先级，若已经有了优先级更高的协议产生的默认路由则不会显示）</p>
+<p>stub路由表</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20231024221242320.png" alt="image-20231024221242320"></p>
+<p>NSSA路由表</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitee.com/Charles-Webber/blog-image1/raw/master/img/20200224133021628.png" alt="在这里插入图片描述"></p>
+<h3 id="ospf认证"><a href="#ospf认证" class="headerlink" title="ospf认证"></a>ospf认证</h3><h4 id="区域认证："><a href="#区域认证：" class="headerlink" title="区域认证："></a>区域认证：</h4><ol>
+<li>simple认证：authentication-mode simple plain huawei1</li>
+<li>md5认证：authentication-mode md5 1 huawei3</li>
+<li>key chain 认证：authentication-mode md5 1 huawei3 key 1</li>
+</ol>
+<p>进入区域进行相关的配置</p>
+<p>区域内设置必须完全一致</p>
+<h4 id="链路认证："><a href="#链路认证：" class="headerlink" title="链路认证："></a>链路认证：</h4><ol>
+<li>simple认证（同上）</li>
+<li>md5认证（同上）</li>
+<li>key chain 认证（同上）</li>
+</ol>
+<p>进入接口进行相关的配置</p>
+<p>接口内的设置必须完全一致</p>
+<h3 id="ospf路由聚合（？）"><a href="#ospf路由聚合（？）" class="headerlink" title="ospf路由聚合（？）"></a>ospf路由聚合（？）</h3><p>看不懂喵，等待教学：</p>
+<h4 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h4><ol>
+<li><p>与Rip不同，OSPF不支持自动路由聚合，仅支持手动路由聚合。</p>
+</li>
+<li><p>OSPF聚合路由分为区域间路由聚合和外部路由聚合<br>1）区域间路由聚合必须配置在ABR路由器上，指的是ABR在把与自己直接相连区域中的Type-1和Type-2LSA转换成Type-3LSA时，对生成的Type-3LSA进行聚合。<br>2）外部路由聚合必须配置在ASBR路由器上，值得时ASBR对Type-5LSA进行聚合</p>
+</li>
+<li><p>区域间路由聚合是ABR对自己直接相连区域内的路由进行聚合，从而减少传播至与自己直接相连的其他区域的Type-3LSA的数量。<br>强调：区域间路由只能聚合由Type-1LSA或Type-2LSA产生的路由；如果路由是由外部或其他区域传到本区域的，则这样的ABR路由不进行聚合。</p>
+</li>
+<li><p>外部路由聚合是指在ASBR路由器上针对引入OSPF网络的外部路由进行聚合，目的是减少在OSPF网络中的Type-5LSA的数量。外部路由聚合必须在外部路由进入OSPF网络的ASBR上进行；外部路由进入OSPF网络后，在ABR上是无法对相应的Type-5LSA进行聚合的。</p>
+</li>
+<li><p>对于NSSA区域，当该区域的ABR将Type-7LSA转换为Type-5LSA时，该ABR也可以充当ASBR的角色，并对Type－５LSA进行聚合。</p>
+</li>
+<li><p>注意：当NSSA区域存在多台ABR时，必须由Router－ID最大的ABR进行Type－７LSA到Type－５LSA转换的操作。NSSA区域的外部路由聚合有两种方式，一种是在NSSA区域的ASBR上直接对外部路由进行聚合，另一种是在NSSA区域中Router－ID最大的，负责将Type－７LSA转成Type－５LSA的ABR进行聚合。</p>
+</li>
+</ol>
+<p>注：<br>外部路由聚合，如本区域有多个ABR，必须在router-id最大的ABR上完成<br>需先添加vlan和配置每个路由器的接口IP，以及路由协议，没给代码，要自己完成<br>交换机端口还要配access模式，不要忘记<br>OSPF路由区域间路由聚合（可在本区域ABR上完成）<br>外部路由聚合（可在ASBR上完成，也可在本区域ABR上完成）</p>
+<h4 id="命令配置"><a href="#命令配置" class="headerlink" title="命令配置"></a>命令配置</h4><h5 id="区域内部聚合"><a href="#区域内部聚合" class="headerlink" title="区域内部聚合"></a>区域内部聚合</h5><p>进入到要配置的设备中的ospf进程&gt;&gt;&gt;area X，输入命令abr-summary 20.0.0.0 255.255.252.0</p>
+<h5 id="外部链路聚合"><a href="#外部链路聚合" class="headerlink" title="外部链路聚合"></a>外部链路聚合</h5><p>进入到要配置的设备中的ospf进程，输入命令：abr-summary 20.0.0.0 255.255.252.0</p>
+<h3 id="ospf多进程"><a href="#ospf多进程" class="headerlink" title="ospf多进程"></a>ospf多进程</h3><p>不同的进程号就是不同的进程，一台设备可以在不同的进程下，但是一个接口只能在一个接口下</p>
+<h2 id="ACL：第一代防火墙"><a href="#ACL：第一代防火墙" class="headerlink" title="ACL：第一代防火墙"></a>ACL：第一代防火墙</h2><h3 id="规则"><a href="#规则" class="headerlink" title="规则"></a>规则</h3><h4 id="基本ACL：（根据）源IP地址（过滤）"><a href="#基本ACL：（根据）源IP地址（过滤）" class="headerlink" title="基本ACL：（根据）源IP地址（过滤）"></a>基本ACL：（根据）源IP地址（过滤）</h4><h4 id="高级ACL：整个网段、某个IP、协议"><a href="#高级ACL：整个网段、某个IP、协议" class="headerlink" title="高级ACL：整个网段、某个IP、协议"></a>高级ACL：整个网段、某个IP、协议</h4><h4 id="二层ACL：mac地址、802-1q、二层协议类型"><a href="#二层ACL：mac地址、802-1q、二层协议类型" class="headerlink" title="二层ACL：mac地址、802.1q、二层协议类型"></a>二层ACL：mac地址、802.1q、二层协议类型</h4><h4 id="用户自定义ACL-？"><a href="#用户自定义ACL-？" class="headerlink" title="用户自定义ACL:？"></a>用户自定义ACL:？</h4><h4 id="用户ACL-？"><a href="#用户ACL-？" class="headerlink" title="用户ACL:？"></a>用户ACL:？</h4><h3 id="组成"><a href="#组成" class="headerlink" title="组成"></a>组成</h3><ol>
+<li>标识</li>
+<li>规则{1. 编号-从小到大 2. 动作：permit&#x2F;deny 3. 匹配项}</li>
+</ol>
+<h3 id="匹配机制"><a href="#匹配机制" class="headerlink" title="匹配机制"></a>匹配机制</h3><ol>
+<li>检查是否开启了ACL服务（是，进行下一步）</li>
+<li>检查是否设置了规则（是，进行下一步）</li>
+<li>检查设置规则的编号，从小到大检索</li>
+<li>检查规则是否执行（permit&#x2F;deny）</li>
+<li>规则如果是permit，执行后停止匹配，继续检索下一个规则</li>
+</ol>
+<h2 id="ospf故障排查"><a href="#ospf故障排查" class="headerlink" title="ospf故障排查"></a>ospf故障排查</h2><ol>
+<li><p>首先查看接口ip是否配置</p>
+</li>
+<li><p>我看每台交换机都有配置一个换回接口，除了telnet登录使用，还有什么作用？（<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_29864185/article/details/106902375?ops_request_misc=%7B%22request_id%22:%22169824703616800226547436%22,%22scm%22:%2220140713.130102334..%22%7D&request_id=169824703616800226547436&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~sobaiduend~default-1-106902375-null-null.142%5Ev96%5Epc_search_result_base7&utm_term=%E8%B7%AF%E7%94%B1%E5%99%A8%E7%8E%AF%E5%9B%9E%E6%8E%A5%E5%8F%A3&spm=1018.2226.3001.4187">路由器环回接口(loopback)详解-CSDN博客</a>）</p>
+</li>
+<li><p>查看路由表里有没有其他的协议已经配置导致ospf邻居建立失败</p>
+</li>
+<li><p>ospf区域宣告直连网段就是将路由器所在的接口的网段进行宣告（环回接口要接到哪个区域呢？还是不用接？）</p>
+</li>
+<li><p>正常stub区域设置，注意stub区域不能使用telnet</p>
+</li>
+<li><p>vlink虚链路建立注意点：1. 除了router-id和优先级设置不同其他配置都要一样（hello包配置一样）2. vlink指向的是router-id而不是ip地址，注意不要配错！！！</p>
+</li>
+<li><p>抓包抓的是ip地址！！！被这个坑惨了</p>
+</li>
+</ol>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://charles-webebr.github.io">charles-webber</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://charles-webebr.github.io/2024/07/10/%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A14/">http://charles-webebr.github.io/2024/07/10/%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A14/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://charles-webebr.github.io" target="_blank">asuka&ayanami</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://w.wallhaven.cc/full/q2/wallhaven-q2p6mr.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2024/07/10/%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A15/"><img class="prev-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://w.wallhaven.cc/full/q2/wallhaven-q2p6mr.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info"></div></div></a></div><div class="next-post pull-right"><a href="/2024/07/10/%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A13/"><img class="next-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://w.wallhaven.cc/full/q2/wallhaven-q2p6mr.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info"></div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="lv-container" data-id="city" data-uid="MTAyMC81NzUzOS8zNDAwMw=="></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://w.wallhaven.cc/full/6o/wallhaven-6o36qq.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">charles-webber</div><div class="author-info__description">never give up,keep moving</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">39</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">3</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/charles-webber"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://bilibili.com/" target="_blank" title="bilibili"><i class="fa-regular fa-heart"></i></a><a class="social-icon" href="mailto:1484145649@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://leetcode.cn/" target="_blank" title="gaming()"><i class="fa-solid fa-gamepad"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Dear Miss.? When i think of you'I'm reminded of the beautiful plains of Iowa.The distance between us is breaking my spirit. My time and experiences without you are meaningless to me. Falling in love with you was the easiest thing i have ever done.Nothing matters but you.</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A14"><span class="toc-number">1.</span> <span class="toc-text">数据通信4</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE"><span class="toc-number">1.1.</span> <span class="toc-text">思维导图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#OSPF%E8%B7%AF%E7%94%B1%E5%8D%8F%E8%AE%AE%E5%9F%BA%E7%A1%80"><span class="toc-number">1.2.</span> <span class="toc-text">OSPF路由协议基础</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E6%9C%AC%E7%89%B9%E7%82%B9"><span class="toc-number">1.2.1.</span> <span class="toc-text">基本特点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%93%BE%E8%B7%AF%E7%8A%B6%E6%80%81%E7%AE%97%E6%B3%95%E7%9A%84%E8%B7%AF%E7%94%B1%E8%AE%A1%E7%AE%97%E8%BF%87%E7%A8%8B"><span class="toc-number">1.2.2.</span> <span class="toc-text">链路状态算法的路由计算过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#OSPF%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="toc-number">1.2.3.</span> <span class="toc-text">OSPF的基本概念</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%87%AA%E6%B2%BB%E7%B3%BB%E7%BB%9FAS"><span class="toc-number">1.2.3.1.</span> <span class="toc-text">自治系统AS</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Router-ID"><span class="toc-number">1.2.3.2.</span> <span class="toc-text">Router ID</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%92%E5%88%86%E5%8C%BA%E5%9F%9F"><span class="toc-number">1.2.3.3.</span> <span class="toc-text">划分区域</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B7%AF%E7%94%B1%E5%99%A8%E5%88%86%E7%B1%BB"><span class="toc-number">1.2.3.4.</span> <span class="toc-text">路由器分类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#OSPF%E7%9A%84%E4%BA%94%E4%B8%AA%E6%8A%A5%E6%96%87"><span class="toc-number">1.2.3.5.</span> <span class="toc-text">OSPF的五个报文</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#OSPF%E7%9A%84%E4%B8%83%E4%B8%AA%E9%82%BB%E5%B1%85%E7%8A%B6%E6%80%81"><span class="toc-number">1.2.3.6.</span> <span class="toc-text">OSPF的七个邻居状态</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE"><span class="toc-number">1.2.4.</span> <span class="toc-text">实验基本配置</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%9B%E9%98%B6%E7%9F%A5%E8%AF%86"><span class="toc-number">1.3.</span> <span class="toc-text">进阶知识</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%82%BB%E5%B1%85%E5%92%8C%E9%82%BB%E6%8E%A5"><span class="toc-number">1.3.1.</span> <span class="toc-text">邻居和邻接</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DR%E5%92%8CBDR%E7%9A%84%E9%80%89%E4%B8%BE%E8%BF%87%E7%A8%8B"><span class="toc-number">1.3.2.</span> <span class="toc-text">DR和BDR的选举过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#OSPF%E6%94%AF%E6%8C%81%E7%9A%84%E7%BD%91%E7%BB%9C%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.3.3.</span> <span class="toc-text">OSPF支持的网络类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%82%BB%E5%B1%85%E5%BB%BA%E7%AB%8B"><span class="toc-number">1.3.4.</span> <span class="toc-text">邻居建立</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%82%BB%E5%B1%85%E7%8A%B6%E6%80%81"><span class="toc-number">1.3.4.0.1.</span> <span class="toc-text">邻居状态</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E9%82%BB%E5%B1%85%E5%85%B3%E7%B3%BB%E5%BB%BA%E7%AB%8B"><span class="toc-number">1.3.4.0.2.</span> <span class="toc-text">邻居关系建立</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LSA%EF%BC%886%E7%A7%8D%E5%B8%B8%E8%A7%81%EF%BC%89"><span class="toc-number">1.3.5.</span> <span class="toc-text">LSA（6种常见）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Router-LSA%EF%BC%881%EF%BC%89"><span class="toc-number">1.3.5.1.</span> <span class="toc-text">Router-LSA（1）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Network-LSA%EF%BC%882%EF%BC%89"><span class="toc-number">1.3.5.2.</span> <span class="toc-text">Network-LSA（2）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Network-summary-LSA%EF%BC%883%EF%BC%89"><span class="toc-number">1.3.5.3.</span> <span class="toc-text">Network-summary-LSA（3）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#ASBR-Summary-LSA%EF%BC%884%EF%BC%89"><span class="toc-number">1.3.5.4.</span> <span class="toc-text">ASBR-Summary-LSA（4）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#AS-external-LSA%EF%BC%885%EF%BC%89"><span class="toc-number">1.3.5.5.</span> <span class="toc-text">AS-external-LSA（5）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#NSSA-LSA%EF%BC%887%EF%BC%89"><span class="toc-number">1.3.5.6.</span> <span class="toc-text">NSSA LSA（7）</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E9%85%8D%E7%BD%AE"><span class="toc-number">1.4.</span> <span class="toc-text">实验配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%99%9A%E8%BF%9E%E6%8E%A5%E7%9A%84%E9%85%8D%E7%BD%AE"><span class="toc-number">1.4.1.</span> <span class="toc-text">虚连接的配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#OSPF%E7%89%B9%E6%AE%8A%E5%8C%BA%E5%9F%9F"><span class="toc-number">1.4.2.</span> <span class="toc-text">OSPF特殊区域</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E9%85%8D%E7%BD%AE-1"><span class="toc-number">1.4.2.1.</span> <span class="toc-text">实验配置</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#stub"><span class="toc-number">1.4.2.1.1.</span> <span class="toc-text">stub</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#nssa"><span class="toc-number">1.4.2.1.2.</span> <span class="toc-text">nssa</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ospf%E4%B8%8B%E6%94%BE%E9%BB%98%E8%AE%A4%E8%B7%AF%E7%94%B1"><span class="toc-number">1.4.3.</span> <span class="toc-text">ospf下放默认路由</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%89%8B%E5%8A%A8%E9%85%8D%E7%BD%AE"><span class="toc-number">1.4.3.1.</span> <span class="toc-text">手动配置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%89%B9%E6%AE%8A%E5%8C%BA%E5%9F%9F%E9%85%8D%E7%BD%AE"><span class="toc-number">1.4.3.2.</span> <span class="toc-text">特殊区域配置</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ospf%E8%AE%A4%E8%AF%81"><span class="toc-number">1.4.4.</span> <span class="toc-text">ospf认证</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8C%BA%E5%9F%9F%E8%AE%A4%E8%AF%81%EF%BC%9A"><span class="toc-number">1.4.4.1.</span> <span class="toc-text">区域认证：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%93%BE%E8%B7%AF%E8%AE%A4%E8%AF%81%EF%BC%9A"><span class="toc-number">1.4.4.2.</span> <span class="toc-text">链路认证：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ospf%E8%B7%AF%E7%94%B1%E8%81%9A%E5%90%88%EF%BC%88%EF%BC%9F%EF%BC%89"><span class="toc-number">1.4.5.</span> <span class="toc-text">ospf路由聚合（？）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8E%9F%E7%90%86"><span class="toc-number">1.4.5.1.</span> <span class="toc-text">原理</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E9%85%8D%E7%BD%AE"><span class="toc-number">1.4.5.2.</span> <span class="toc-text">命令配置</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8C%BA%E5%9F%9F%E5%86%85%E9%83%A8%E8%81%9A%E5%90%88"><span class="toc-number">1.4.5.2.1.</span> <span class="toc-text">区域内部聚合</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%A4%96%E9%83%A8%E9%93%BE%E8%B7%AF%E8%81%9A%E5%90%88"><span class="toc-number">1.4.5.2.2.</span> <span class="toc-text">外部链路聚合</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ospf%E5%A4%9A%E8%BF%9B%E7%A8%8B"><span class="toc-number">1.4.6.</span> <span class="toc-text">ospf多进程</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ACL%EF%BC%9A%E7%AC%AC%E4%B8%80%E4%BB%A3%E9%98%B2%E7%81%AB%E5%A2%99"><span class="toc-number">1.5.</span> <span class="toc-text">ACL：第一代防火墙</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%84%E5%88%99"><span class="toc-number">1.5.1.</span> <span class="toc-text">规则</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E6%9C%ACACL%EF%BC%9A%EF%BC%88%E6%A0%B9%E6%8D%AE%EF%BC%89%E6%BA%90IP%E5%9C%B0%E5%9D%80%EF%BC%88%E8%BF%87%E6%BB%A4%EF%BC%89"><span class="toc-number">1.5.1.1.</span> <span class="toc-text">基本ACL：（根据）源IP地址（过滤）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%AB%98%E7%BA%A7ACL%EF%BC%9A%E6%95%B4%E4%B8%AA%E7%BD%91%E6%AE%B5%E3%80%81%E6%9F%90%E4%B8%AAIP%E3%80%81%E5%8D%8F%E8%AE%AE"><span class="toc-number">1.5.1.2.</span> <span class="toc-text">高级ACL：整个网段、某个IP、协议</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8C%E5%B1%82ACL%EF%BC%9Amac%E5%9C%B0%E5%9D%80%E3%80%81802-1q%E3%80%81%E4%BA%8C%E5%B1%82%E5%8D%8F%E8%AE%AE%E7%B1%BB%E5%9E%8B"><span class="toc-number">1.5.1.3.</span> <span class="toc-text">二层ACL：mac地址、802.1q、二层协议类型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E8%87%AA%E5%AE%9A%E4%B9%89ACL-%EF%BC%9F"><span class="toc-number">1.5.1.4.</span> <span class="toc-text">用户自定义ACL:？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%94%A8%E6%88%B7ACL-%EF%BC%9F"><span class="toc-number">1.5.1.5.</span> <span class="toc-text">用户ACL:？</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%84%E6%88%90"><span class="toc-number">1.5.2.</span> <span class="toc-text">组成</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8C%B9%E9%85%8D%E6%9C%BA%E5%88%B6"><span class="toc-number">1.5.3.</span> <span class="toc-text">匹配机制</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ospf%E6%95%85%E9%9A%9C%E6%8E%92%E6%9F%A5"><span class="toc-number">1.6.</span> <span class="toc-text">ospf故障排查</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2024/07/10/%E7%AC%AC%E4%BA%8C%E6%AC%A1%E8%80%83%E6%A0%B8%E6%80%BB%E7%BB%93/" title="无题"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://w.wallhaven.cc/full/q2/wallhaven-q2p6mr.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/2024/07/10/%E7%AC%AC%E4%BA%8C%E6%AC%A1%E8%80%83%E6%A0%B8%E6%80%BB%E7%BB%93/" title="无题">无题</a><time datetime="2024-07-10T07:22:46.130Z" title="发表于 2024-07-10 15:22:46">2024-07-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/07/10/openwrt/" title="无题"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://w.wallhaven.cc/full/q2/wallhaven-q2p6mr.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/2024/07/10/openwrt/" title="无题">无题</a><time datetime="2024-07-10T07:22:46.128Z" title="发表于 2024-07-10 15:22:46">2024-07-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/07/10/openuler2/" title="无题"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://w.wallhaven.cc/full/q2/wallhaven-q2p6mr.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/2024/07/10/openuler2/" title="无题">无题</a><time datetime="2024-07-10T07:22:46.126Z" title="发表于 2024-07-10 15:22:46">2024-07-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/07/10/openeuler4/" title="无题"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://w.wallhaven.cc/full/q2/wallhaven-q2p6mr.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/2024/07/10/openeuler4/" title="无题">无题</a><time datetime="2024-07-10T07:22:46.123Z" title="发表于 2024-07-10 15:22:46">2024-07-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/07/10/openeuler3/" title="无题"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://w.wallhaven.cc/full/q2/wallhaven-q2p6mr.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/2024/07/10/openeuler3/" title="无题">无题</a><time datetime="2024-07-10T07:22:46.121Z" title="发表于 2024-07-10 15:22:46">2024-07-10</time></div></div></div></div></div></div></main><footer id="footer" style="background: -#77D78D"><div id="footer-wrap"><div class="copyright">&copy;2022 - 2024 By charles-webber</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Nice to meet you!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>function loadLivere () {
+  if (typeof LivereTower === 'object') {
+    window.LivereTower.init()
+  }
+  else {
+    (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+  }
+}
+
+if ('Livere' === 'Livere' || !false) {
+  if (false) btf.loadComment(document.getElementById('lv-container'), loadLivere)
+  else loadLivere()
+}
+else {
+  function loadOtherComment () {
+    loadLivere()
+  }
+}</script></div><div class="aplayer no-destroy" data-id="770116495" data-server="netease" data-type="playlist"   data-order="list" data-fixed="true" data-preload="auto" data-autoplay="false" data-mutex="true" ></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/metingjs/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["meta[property=\"og:image\"]","meta[property=\"og:title\"]","meta[property=\"og:url\"]","head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><!-- hexo injector body_end start --><script data-pjax>
+  function butterfly_clock_anzhiyu_injector_config(){
+    var parent_div_git = document.getElementsByClassName('sticky_layout')[0];
+    var item_html = '<div class="card-widget card-clock"><div class="card-glass"><div class="card-background"><div class="card-content"><div id="hexo_electric_clock"><img class="entered loading" id="card-clock-loading" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu@1.1.6/lib/loading.gif" style="height: 120px; width: 100%;" data-ll-status="loading"/></div></div></div></div></div>';
+    console.log('已挂载butterfly_clock_anzhiyu')
+    if(parent_div_git) {
+      parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  }
+  var elist = 'null'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var qweather_key = 'be1b66712a57497892f4e70a9fc0e4f9';
+  var gaud_map_key = 'ec1c17e08135f345b1f956f3fa268b0c# 锟�??得�?�拷图web锟斤拷锟斤拷key';
+  var baidu_ak_key = 'undefined';
+  var flag = 0;
+  var clock_rectangle = '112.6534116,27.96920845';
+  var clock_default_rectangle_enable = 'true';
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_clock_anzhiyu_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_clock_anzhiyu_injector_config();
+  }
+  </script><script src="https://widget.qweather.net/simple/static/js/he-simple-common.js?v=2.0"></script><script data-pjax src="https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu@1.1.6/lib/clock.min.js"></script><div class="js-pjax"><script async="async">var arr = document.getElementsByClassName('recent-post-item');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__zoomIn');
+    arr[i].setAttribute('data-wow-duration', '1.5s');
+    arr[i].setAttribute('data-wow-delay', '200ms');
+    arr[i].setAttribute('data-wow-offset', '30');
+    arr[i].setAttribute('data-wow-iteration', '1');
+  }</script><script async="async">var arr = document.getElementsByClassName('card-widget');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__zoomIn');
+    arr[i].setAttribute('data-wow-duration', '');
+    arr[i].setAttribute('data-wow-delay', '200ms');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script><script async="async">var arr = document.getElementsByClassName('flink-list-card');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__flipInY');
+    arr[i].setAttribute('data-wow-duration', '3s');
+    arr[i].setAttribute('data-wow-delay', '');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script><script async="async">var arr = document.getElementsByClassName('flink-list-card');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__animated');
+    arr[i].setAttribute('data-wow-duration', '3s');
+    arr[i].setAttribute('data-wow-delay', '');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script><script async="async">var arr = document.getElementsByClassName('article-sort-item');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__slideInRight');
+    arr[i].setAttribute('data-wow-duration', '1.5s');
+    arr[i].setAttribute('data-wow-delay', '');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script><script async="async">var arr = document.getElementsByClassName('site-card');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__flipInY');
+    arr[i].setAttribute('data-wow-duration', '3s');
+    arr[i].setAttribute('data-wow-delay', '');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script><script async="async">var arr = document.getElementsByClassName('site-card');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__animated');
+    arr[i].setAttribute('data-wow-duration', '3s');
+    arr[i].setAttribute('data-wow-delay', '');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script></div><script defer src="https://cdn.cbd.int/hexo-butterfly-wowjs/lib/wow.min.js"></script><script defer src="https://cdn.cbd.int/hexo-butterfly-wowjs/lib/wow_init.js"></script><script data-pjax>
+  function butterfly_swiper_injector_config(){
+    var parent_div_git = document.getElementById('recent-posts');
+    var item_html = '<div class="recent-post-item swiper_container_card" style="height: auto;width: 100%"><div id="random"><div id="random-banner"><canvas id="peoplecanvas"></canvas></div><a id="random-hover" style="width:100%;height:auto;" href="javascript:toRandomPost()" rel="external nofollow noreferrer" one-link-mark="yes"><i class="fa fa-paper-plane" style="margin-left:10px"></i><div style="margin-left:10px">随便逛逛<i class="fa-solid fa-arrow-right" style="margin-left:10px"></i></div></a></div><div class="blog-slider swiper-container-fade swiper-container-horizontal" id="swiper_container"><div class="blog-slider__wrp swiper-wrapper" style="transition-duration: 0ms;"><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;2023/10/09/python学习之路/&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://wallhaven.cc/w/85j9qo" alt="" onerror="this.src=https://cdn.cbd.int/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2023-10-09</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;2023/10/09/python学习之路/&quot;);" href="javascript:void(0);" alt="">python learning</a><div class="blog-slider__text">python learning for AI</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;2023/10/09/python学习之路/&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;2022/11/27/预习作业：/&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="2022/11/27/预习作业：/S:\Blog\source\_posts\从0开始学习c语言\wallhaven-28p95m.png" alt="" onerror="this.src=https://cdn.cbd.int/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2022-11-27</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;2022/11/27/预习作业：/&quot;);" href="javascript:void(0);" alt="">c for class</a><div class="blog-slider__text">a freshman's practice</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;2022/11/27/预习作业：/&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;2022/10/29/answer/&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://w.wallhaven.cc/full/zy/wallhaven-zygeko.jpg" alt="" onerror="this.src=https://cdn.cbd.int/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2022-10-29</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;2022/10/29/answer/&quot;);" href="javascript:void(0);" alt="">answer</a><div class="blog-slider__text">a freshman's practice</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;2022/10/29/answer/&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div></div><div class="blog-slider__pagination swiper-pagination-clickable swiper-pagination-bullets"></div></div></div>';
+    console.log('已挂载butterfly_swiper')
+    parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  var elist = 'undefined'.split(',');
+  var cpage = location.pathname;
+  var epage = '/';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_swiper_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_swiper_injector_config();
+  }
+  </script><script defer src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/js/swiper.min.js"></script><script defer data-pjax src="https://cdn.cbd.int/hexo-butterfly-swiper-anzhiyu@1.0.4/lib/swiper_init.js"></script><script data-pjax src="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/gsap/3.9.1/gsap.min.js"></script><script defer src="https://npm.elemecdn.com/hexo-butterfly-swiper-anzhiyu@1.0.4/lib/people.min.js"></script><script async src="/anzhiyu/random.js"></script><!-- hexo injector body_end end --><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/"});</script></body></html>

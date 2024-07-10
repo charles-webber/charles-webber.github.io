@@ -1,0 +1,466 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>asuka&amp;ayanami | asuka&amp;ayanami</title><meta name="author" content="charles-webber"><meta name="copyright" content="charles-webber"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#78D77D"><meta name="description" content="数据通信13[TOC] 多模模块光纤会有可见光 双机热备实验拓扑图 目的为了规避一台设备故障导致网络业务中断的风险，可以在网络节点处同时部署两台设备，形成双机热备组网。当其中一台设备出现故障时，业务流量能平滑地切换到备用设备上，保证业务不中断，使内外网用户交互的时候感知不到曾经出现过网络故障。  主备备份 负载分担  实现方法一般两个路由器就是使用vrrp，但是用在防火墙上就会产生一些bug，上节">
+<meta property="og:type" content="article">
+<meta property="og:title" content="asuka&amp;ayanami">
+<meta property="og:url" content="http://charles-webebr.github.io/2024/07/10/%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A113/index.html">
+<meta property="og:site_name" content="asuka&amp;ayanami">
+<meta property="og:description" content="数据通信13[TOC] 多模模块光纤会有可见光 双机热备实验拓扑图 目的为了规避一台设备故障导致网络业务中断的风险，可以在网络节点处同时部署两台设备，形成双机热备组网。当其中一台设备出现故障时，业务流量能平滑地切换到备用设备上，保证业务不中断，使内外网用户交互的时候感知不到曾经出现过网络故障。  主备备份 负载分担  实现方法一般两个路由器就是使用vrrp，但是用在防火墙上就会产生一些bug，上节">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://w.wallhaven.cc/full/q2/wallhaven-q2p6mr.jpg">
+<meta property="article:published_time" content="2024-07-10T07:22:42.520Z">
+<meta property="article:modified_time" content="2024-03-16T01:06:51.443Z">
+<meta property="article:author" content="charles-webber">
+<meta property="article:tag" content="i need something to cure me">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://w.wallhaven.cc/full/q2/wallhaven-q2p6mr.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://charles-webebr.github.io/2024/07/10/%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A113/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"/search.xml","preload":false,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'asuka&ayanami',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: true,
+  isToc: true,
+  postUpdate: '2024-03-16 09:06:51'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#FF855DFF')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#78D77D')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu@1.1.6/lib/clock.min.css" /><link rel="stylesheet" href="https://cdn.cbd.int/hexo-butterfly-wowjs/lib/animate.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/hexo-butterfly-swiper-anzhiyu@1.0.4/lib/swiper.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/hexo-butterfly-swiper-anzhiyu@1.0.4/lib/swiperstyle.css" media="print" onload="this.media='all'"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="asuka&ayanami" type="application/atom+xml">
+</head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://w.wallhaven.cc/full/6o/wallhaven-6o36qq.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">39</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">3</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/bangumis/"><i class="fa-fw fa-solid fa-bell"></i><span> ACG</span></a></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-envelope"></i><span> Message</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://w.wallhaven.cc/full/q2/wallhaven-q2p6mr.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">asuka&amp;ayanami</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/bangumis/"><i class="fa-fw fa-solid fa-bell"></i><span> ACG</span></a></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-envelope"></i><span> Message</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">无题</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-07-10T07:22:42.520Z" title="发表于 2024-07-10 15:22:42">2024-07-10</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-03-16T01:06:51.443Z" title="更新于 2024-03-16 09:06:51">2024-03-16</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">2.4k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>11分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title=""><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="数据通信13"><a href="#数据通信13" class="headerlink" title="数据通信13"></a>数据通信13</h1><p>[TOC]</p>
+<p>多模模块光纤会有可见光</p>
+<h2 id="双机热备实验"><a href="#双机热备实验" class="headerlink" title="双机热备实验"></a>双机热备实验</h2><h3 id="拓扑图"><a href="#拓扑图" class="headerlink" title="拓扑图"></a>拓扑图</h3><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20240305111446633.png" alt="image-20240305111446633"></p>
+<h3 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h3><p>为了<strong>规避一台设备故障导致网络业务中断的风险</strong>，可以在网络节点处同时部署两台设备，形成双机热备组网。当其中一台设备出现故障时，业务流量能<strong>平滑地切换到备用设备上</strong>，保证业务不中断，使内外网用户交互的时候感知不到曾经出现过网络故障。</p>
+<ul>
+<li>主备备份</li>
+<li>负载分担</li>
+</ul>
+<h3 id="实现方法"><a href="#实现方法" class="headerlink" title="实现方法"></a>实现方法</h3><p>一般两个路由器就是使用vrrp，但是用在防火墙上就会产生一些bug，上节课有说，故我们<strong>使用vgmp</strong></p>
+<h3 id="VGMP状态机"><a href="#VGMP状态机" class="headerlink" title="VGMP状态机"></a>VGMP状态机</h3><ul>
+<li>initialize：VGMP管理组处于未启用状态。</li>
+<li>Active：本端VGMP管理组的优先级比对端的VGMP管理组优先级高。</li>
+<li>Standby：本端VGMP管理组的优先级比对端的VGMP管理组优先级低</li>
+</ul>
+<p>（vrrp是initialize和backup，master）</p>
+<h3 id="VGMP主从切换"><a href="#VGMP主从切换" class="headerlink" title="VGMP主从切换"></a>VGMP主从切换</h3><ul>
+<li>每个接口down，VGMP管理组优先级降低2。计算公式为：<strong>VGMP优先级&#x3D;VGMP初始优先级-2*接口宕的个数</strong></li>
+<li>每台设备的VGMP管理组<strong>初始状态由用户指定</strong>（Active或Standby），且用户只能指定状态，<strong>不能指定VGMP组的具体的优先级</strong></li>
+<li>③VGMP管理组的状态决定了该设备的主备状态，也决定了VGMP管理组成员（VRRP备份组成员或接口）的状态。（？）</li>
+</ul>
+<h3 id="实验配置"><a href="#实验配置" class="headerlink" title="实验配置"></a>实验配置</h3><p><strong>步骤一：配置ip地址</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">#FW1</span><br><span class="line">[FW1]<span class="type">int</span> g1/<span class="number">0</span>/<span class="number">0</span></span><br><span class="line">[FW1-GigabitEthernet1/<span class="number">0</span>/<span class="number">0</span>]ip address <span class="number">10.1</span><span class="number">.2</span><span class="number">.1</span> <span class="number">24</span></span><br><span class="line"></span><br><span class="line">[FW1]<span class="type">int</span> g1/<span class="number">0</span>/<span class="number">1</span></span><br><span class="line">[FW1-GigabitEthernet1/<span class="number">0</span>/<span class="number">1</span>]ip address <span class="number">10.1</span><span class="number">.1</span><span class="number">.1</span> <span class="number">24</span></span><br><span class="line"></span><br><span class="line">[FW1]firewall zone trust </span><br><span class="line">[FW1-zone-trust]add interface g1/<span class="number">0</span>/<span class="number">0</span></span><br><span class="line"></span><br><span class="line">[FW1]firewall zone untrust </span><br><span class="line">[FW1-zone-untrust]add interface g1/<span class="number">0</span>/<span class="number">1</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#FW2</span><br><span class="line">[FW2]<span class="type">int</span> g1/<span class="number">0</span>/<span class="number">0</span></span><br><span class="line">[FW2-GigabitEthernet1/<span class="number">0</span>/<span class="number">0</span>]ip address <span class="number">10.1</span><span class="number">.2</span><span class="number">.2</span> <span class="number">24</span></span><br><span class="line"></span><br><span class="line">[FW2]<span class="type">int</span> g1/<span class="number">0</span>/<span class="number">1</span></span><br><span class="line">[FW2-GigabitEthernet1/<span class="number">0</span>/<span class="number">1</span>]ip address <span class="number">10.1</span><span class="number">.1</span><span class="number">.2</span> <span class="number">24</span></span><br><span class="line"></span><br><span class="line">[FW2]firewall zone  trust </span><br><span class="line">[FW2-zone-trust]add interface g1/<span class="number">0</span>/<span class="number">0</span></span><br><span class="line"></span><br><span class="line">[FW2]firewall zone untrust </span><br><span class="line">[FW2-zone-untrust]add interface g1/<span class="number">0</span>/<span class="number">1</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>步骤二：配置区域策略</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">#FW1</span><br><span class="line">[FW1]security-policy </span><br><span class="line"></span><br><span class="line">[FW1-policy-security]rule name T2U</span><br><span class="line"></span><br><span class="line">[FW1-policy-security-rule-T2U]source-zone trust </span><br><span class="line"></span><br><span class="line">[FW1-policy-security-rule-T2U]destination-zone untrust </span><br><span class="line"></span><br><span class="line">[FW1-policy-security-rule-T2U]action permit </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#FW2</span><br><span class="line">[FW2]security-policy </span><br><span class="line"></span><br><span class="line">[FW2-policy-security]rule name T2U</span><br><span class="line"></span><br><span class="line">[FW2-policy-security-rule-T2U]source-zone trust </span><br><span class="line"></span><br><span class="line">[FW2-policy-security-rule-T2U]destination-zone untrust </span><br><span class="line"></span><br><span class="line">[FW2-policy-security-rule-T2U]action permit</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>步骤三：配置vrrp</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">#FW1</span><br><span class="line">[FW1]int g1/0/1</span><br><span class="line"></span><br><span class="line">[FW1-GigabitEthernet1/0/1]vrrp vrid 1 virtual-ip 10.1.1.254 active </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">[FW1]int g1/0/0</span><br><span class="line"></span><br><span class="line">[FW1-GigabitEthernet1/0/0]vrrp vrid 1 virtual-ip 10.1.2.254 active </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">#FW2</span><br><span class="line">[FW2]int g1/0/1</span><br><span class="line"></span><br><span class="line">[FW2-GigabitEthernet1/0/1]vrrp vrid 1 virtual-ip 10.1.1.254 standby </span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">[FW2]int g1/0/0</span><br><span class="line"></span><br><span class="line">[FW2-GigabitEthernet1/0/0]vrrp vrid 1 virtual-ip 10.1.2.254 standby</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p><strong>步骤四：配置hrp热备份</strong>!!!!</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[ FW1]hrp enable</span><br><span class="line"></span><br><span class="line">HRP_ S [FW1]hrp interface g1/<span class="number">0</span>/<span class="number">2</span> remote <span class="number">10.1</span><span class="number">.3</span><span class="number">.2</span></span><br><span class="line"></span><br><span class="line">[ FW2]hrp enable</span><br><span class="line"></span><br><span class="line">HRP_ S [FW2]hrp interface g1/<span class="number">0</span>/<span class="number">2</span> remote <span class="number">10.1</span><span class="number">.3</span><span class="number">.1</span>HRP_ M[ FW2]hrp standby-device</span><br><span class="line"></span><br><span class="line"><span class="comment">//感觉上就和那个ospf虚连接差不多</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="VPN"><a href="#VPN" class="headerlink" title="VPN"></a>VPN</h2><p>&#x2F;&#x2F;科学上网，请勿乱用</p>
+<h3 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h3><p><strong>二层</strong></p>
+<ul>
+<li>l2tp</li>
+<li>pptp(淘汰但简单)</li>
+<li>mpls l2 vpn</li>
+</ul>
+<p><strong>三层</strong></p>
+<ul>
+<li>gre（重点简单）</li>
+<li>ipsec（重点巅峰）</li>
+<li>bgp&#x2F;mpls vpn</li>
+</ul>
+<h3 id="其他vpn"><a href="#其他vpn" class="headerlink" title="其他vpn"></a>其他vpn</h3><ul>
+<li>ssl</li>
+<li>l2f</li>
+<li>dvpn</li>
+<li>基于vlan的vpn</li>
+<li>802.1qinq</li>
+<li>xot</li>
+</ul>
+<h3 id="GRE（ip协议号47）"><a href="#GRE（ip协议号47）" class="headerlink" title="GRE（ip协议号47）"></a>GRE（ip协议号47）</h3><p><strong>虚拟的隧道（Tunnel接口）</strong></p>
+<h4 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h4><p>通用路由封装协议（Generic Rrouting Encapsulation），他的作用是<strong>把一种协议的报文封装在另外一种协议的报文中</strong>的技术，是一种隧道技术（只要这样子做，都称为隧道技术）</p>
+<h4 id="报文结构（加封装）"><a href="#报文结构（加封装）" class="headerlink" title="报文结构（加封装）"></a>报文结构（加封装）</h4><p>在原始封装的数据报文字段中<strong>加入新的IP头部</strong>，在<strong>新的IP报头和老的IP报头中间加一个协议</strong>，这就是GRE报头。 </p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20240309141300500.png" alt="image-20240309141300500"></p>
+<p><strong>头部</strong></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image7(421).png" alt="img"></p>
+<p>把原本的IP报头当成货物，这个被称为<strong>乘客协议</strong>，GRE负责承载乘客协议的IP报文，<strong>GRE可以理解为车辆</strong>，然后由新的IP报头在公网进行传输，<strong>公网设备只会查看新的IP报头</strong>，然后进行转发。</p>
+<h4 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h4><ul>
+<li>支持多种协议</li>
+<li>靠IP做为承载网络</li>
+<li><strong>支持路由协议和IP组播</strong></li>
+<li>配置简单</li>
+</ul>
+<h4 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h4><ul>
+<li>点对点隧道</li>
+<li>静态配置隧道参数</li>
+<li>部署复杂连接时代价大</li>
+<li><strong>不安全</strong></li>
+</ul>
+<h3 id="传输过程"><a href="#传输过程" class="headerlink" title="传输过程"></a>传输过程</h3><ul>
+<li>私网数据报文保留，加上GRE报头和新的IP报头（隧道源和隧道目标）。</li>
+<li><strong>数据报文发送出去后，中途运营商的设备会根据外层的IP报头进行转发。</strong></li>
+<li>目标设备收到数据报文后，进行<strong>解封装</strong>，<strong>看到GRE报文后</strong>，会继续解封装，然后在看到原先发送的数据报文，<strong>发现是私网包头，进行查找路由</strong>，发现有就进行转发，回包也是如此，这就完成通讯。</li>
+</ul>
+<p><strong><u>做GRE时严禁将公网进行ospf宣告</u></strong></p>
+<h3 id="GRE隧道keeplive"><a href="#GRE隧道keeplive" class="headerlink" title="GRE隧道keeplive"></a>GRE隧道keeplive</h3><p>和ospf保持邻居关系、心跳线设置差不多，都是检测对方或者线路有无故障</p>
+<h3 id="GRE实验配置"><a href="#GRE实验配置" class="headerlink" title="GRE实验配置"></a>GRE实验配置</h3><h4 id="拓扑图-1"><a href="#拓扑图-1" class="headerlink" title="拓扑图"></a>拓扑图</h4><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitee.com/Charles-Webber/blog-image1/raw/master/img/45599" alt="img"></p>
+<h4 id="配置设备IP地址"><a href="#配置设备IP地址" class="headerlink" title="配置设备IP地址"></a>配置设备IP地址</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">FW1]inter g1/<span class="number">0</span>/<span class="number">2</span> </span><br><span class="line">[FW1-GigabitEthernet1/<span class="number">0</span>/<span class="number">2</span>]ip add <span class="number">13.1</span><span class="number">.1</span><span class="number">.1</span> </span><br><span class="line"><span class="number">24</span> </span><br><span class="line">[FW1-GigabitEthernet1/<span class="number">0</span>/<span class="number">2</span>]inter g1/<span class="number">0</span>/<span class="number">1</span></span><br><span class="line"> [FW1-GigabitEthernet1/<span class="number">0</span>/<span class="number">1</span>]ip add <span class="number">10.1</span><span class="number">.1</span><span class="number">.1</span> </span><br><span class="line"><span class="number">24</span> </span><br><span class="line">[Huawei]inter g0/<span class="number">0</span>/<span class="number">0</span> </span><br><span class="line">[Huawei-GigabitEthernet0/<span class="number">0</span>/<span class="number">0</span>]ip add </span><br><span class="line"><span class="number">13.1</span><span class="number">.1</span><span class="number">.3</span> <span class="number">24</span> </span><br><span class="line">[Huawei]inter g0/<span class="number">0</span>/<span class="number">1</span> </span><br><span class="line">[Huawei-GigabitEthernet0/<span class="number">0</span>/<span class="number">1</span>]ip add </span><br><span class="line"><span class="number">23.1</span><span class="number">.1</span><span class="number">.3</span> <span class="number">24</span></span><br><span class="line"><span class="comment">// [Huawei]int lo 0</span></span><br><span class="line"><span class="comment">//[Huawei-Loopback0]ip add 1.1.1.1 24</span></span><br><span class="line">[FW2]inter g1/<span class="number">0</span>/<span class="number">2</span> </span><br><span class="line">[FW2-GigabitEthernet1/<span class="number">0</span>/<span class="number">2</span>]ip add <span class="number">23.1</span><span class="number">.1</span><span class="number">.2</span> </span><br><span class="line"><span class="number">24</span> </span><br><span class="line">[FW2]inter g1/<span class="number">0</span>/<span class="number">1</span> </span><br><span class="line">[FW2-GigabitEthernet1/<span class="number">0</span>/<span class="number">1</span>]ip add <span class="number">10.1</span><span class="number">.2</span><span class="number">.1</span> </span><br><span class="line"><span class="number">24</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="配置防火墙"><a href="#配置防火墙" class="headerlink" title="配置防火墙"></a>配置防火墙</h4><figure class="highlight c#"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#FW1</span></span><br><span class="line"> [<span class="meta">FW1</span>]firewall zone untrust </span><br><span class="line">[<span class="meta">FW1-zone-untrust</span>]<span class="keyword">add</span> <span class="keyword">interface</span> <span class="title">g1</span>/0/2 </span><br><span class="line">    </span><br><span class="line">[<span class="title">FW1</span>]<span class="title">firewall</span> <span class="title">zone</span> <span class="title">trust</span> </span><br><span class="line">[<span class="title">FW1</span>-<span class="title">zone</span>-<span class="title">trust</span>]<span class="title">add</span> <span class="title">interface</span> <span class="title">g1</span>/0/1 </span><br><span class="line">    </span><br><span class="line">#<span class="title">FW2</span></span><br><span class="line"> [<span class="title">FW2</span>]<span class="title">firewall</span> <span class="title">zone</span> <span class="title">untrust</span> </span><br><span class="line">[<span class="title">FW2</span>-<span class="title">zone</span>-<span class="title">untrust</span>]<span class="title">add</span> <span class="title">interface</span> <span class="title">g1</span>/0/2 </span><br><span class="line">    </span><br><span class="line">[<span class="title">FW2</span>]<span class="title">firewall</span> <span class="title">zone</span> <span class="title">trust</span> </span><br><span class="line">[<span class="title">FW2</span>-<span class="title">zone</span>-<span class="title">trust</span>]<span class="title">add</span> <span class="title">interface</span> <span class="title">g1</span>/0/1</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="配置OSPF"><a href="#配置OSPF" class="headerlink" title="配置OSPF"></a>配置OSPF</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//严禁将公网ip通过ospf进行宣告 </span></span><br><span class="line">[FW1]ospf <span class="number">1</span> </span><br><span class="line">[FW1-ospf<span class="number">-1</span>]area <span class="number">0</span></span><br><span class="line"> [FW1-ospf<span class="number">-1</span>-area<span class="number">-0.0</span><span class="number">.0</span><span class="number">.0</span>]network <span class="number">10.1</span><span class="number">.1</span><span class="number">.0</span> </span><br><span class="line"><span class="number">0.0</span><span class="number">.0</span><span class="number">.255</span></span><br><span class="line">    </span><br><span class="line"> [AR3]ospf <span class="number">1</span> </span><br><span class="line">[AR3-ospf<span class="number">-1</span>]area <span class="number">0</span> </span><br><span class="line">[AR3-ospf<span class="number">-1</span>-area<span class="number">-0.0</span><span class="number">.0</span><span class="number">.0</span>]network <span class="number">13.1</span><span class="number">.1</span><span class="number">.0</span> </span><br><span class="line"><span class="number">0.0</span><span class="number">.0</span><span class="number">.255</span></span><br><span class="line"> [AR3-ospf<span class="number">-1</span>-area<span class="number">-0.0</span><span class="number">.0</span><span class="number">.0</span>]network <span class="number">23.1</span><span class="number">.1</span><span class="number">.0</span> </span><br><span class="line"><span class="number">0.0</span><span class="number">.0</span><span class="number">.255</span></span><br><span class="line"> [AR3-ospf<span class="number">-1</span>-area<span class="number">-0.0</span><span class="number">.0</span><span class="number">.0</span>]network <span class="number">1.1</span><span class="number">.1</span><span class="number">.1</span> </span><br><span class="line"><span class="number">0.0</span><span class="number">.0</span><span class="number">.0</span></span><br><span class="line">    </span><br><span class="line"> [FW2]ospf <span class="number">1</span> </span><br><span class="line">[FW2-ospf<span class="number">-1</span>]area <span class="number">0</span> </span><br><span class="line">[FW2-ospf<span class="number">-1</span>-area<span class="number">-0.0</span><span class="number">.0</span><span class="number">.0</span>]network <span class="number">10.1</span><span class="number">.2</span><span class="number">.0</span> </span><br><span class="line"><span class="number">0.0</span><span class="number">.0</span><span class="number">.255</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="配置NAT"><a href="#配置NAT" class="headerlink" title="配置NAT"></a>配置NAT</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"> <span class="comment">//FW1 安全策略</span></span><br><span class="line">[FW1]security-policy </span><br><span class="line">[FW1-policy-security]rule name T2U</span><br><span class="line"> [FW1-policy-security-rule-T2U]source-zone </span><br><span class="line">trust </span><br><span class="line">[FW1-policy-security-rule-T2U]destination</span><br><span class="line">zone untrust </span><br><span class="line">[FW1-policy-security-rule-T2U]action permit</span><br><span class="line">    </span><br><span class="line"> <span class="comment">//FW1 配置NAT</span></span><br><span class="line"> [FW1]nat-policy </span><br><span class="line">[FW1-policy-nat]rule name all </span><br><span class="line">[FW1-policy-nat-rule-all] source-zone trust</span><br><span class="line"> [FW1-policy-nat-rule-all]egress-interface </span><br><span class="line">GigabitEthernet1/<span class="number">0</span>/<span class="number">2</span><span class="comment">//选择出接口</span></span><br><span class="line"> [FW1-policy-nat-rule-all]action source-nat </span><br><span class="line">easy-ip<span class="comment">//转换ip靠接口</span></span><br><span class="line">    </span><br><span class="line"><span class="comment">//FW2 流量策略</span></span><br><span class="line">[FW2]security-policy </span><br><span class="line">[FW2-policy-security]rule name T2U </span><br><span class="line">[FW2-policy-security-rule-T2U]source-zone </span><br><span class="line">trust </span><br><span class="line">[FW2-policy-security-rule-T2U]destination</span><br><span class="line">zone untrust </span><br><span class="line">[FW2-policy-security-rule-T2U]action permit</span><br><span class="line">    </span><br><span class="line"> <span class="comment">//FW2 配置NAT</span></span><br><span class="line"> [FW2]nat-policy </span><br><span class="line">[FW2-policy-nat]rule name all </span><br><span class="line">[FW2-policy-nat-rule-all]source-zone trust </span><br><span class="line">[FW2-policy-nat-rule-all]egress-interface </span><br><span class="line">GigabitEthernet1/<span class="number">0</span>/<span class="number">2</span> </span><br><span class="line">[FW2-policy-nat-rule-all]action source-nat </span><br><span class="line">easy-ip</span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="配置GRE-VPN"><a href="#配置GRE-VPN" class="headerlink" title="配置GRE VPN"></a>配置GRE VPN</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">//FW1</span></span><br><span class="line"> [FW1]interface Tunnel <span class="number">0</span> </span><br><span class="line"><span class="comment">//[FW1-Tunnel0]tunnel-protocol gre </span></span><br><span class="line">[FW1-Tunnel0]source <span class="number">13.1</span><span class="number">.1</span><span class="number">.1</span> </span><br><span class="line">[FW1-Tunnel0]destination <span class="number">23.1</span><span class="number">.1</span><span class="number">.2</span> </span><br><span class="line">[FW1-Tunnel0]ip add <span class="number">12.1</span><span class="number">.1</span><span class="number">.1</span> <span class="number">24</span></span><br><span class="line"> </span><br><span class="line"> <span class="comment">//FW2</span></span><br><span class="line"> [FW2]interface Tunnel <span class="number">0</span></span><br><span class="line"> [FW2-Tunnel0]tunnel-protocol gre </span><br><span class="line">[FW2-Tunnel0]source <span class="number">23.1</span><span class="number">.1</span><span class="number">.2</span> </span><br><span class="line">[FW2-Tunnel0]destination <span class="number">13.1</span><span class="number">.1</span><span class="number">.1</span> </span><br><span class="line">[FW2-Tunnel0]ip add <span class="number">12.1</span><span class="number">.1</span><span class="number">.2</span> <span class="number">24</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//配置虚拟接口所属区域</span></span><br><span class="line"><span class="comment">//FW1</span></span><br><span class="line"> [FW1]firewall zone untrust </span><br><span class="line">[FW1-zone-untrust]add interface Tunnel <span class="number">0</span></span><br><span class="line"> <span class="comment">//FW2</span></span><br><span class="line"> [FW2]firewall zone untrust </span><br><span class="line">[FW2-zone-untrust]add interface Tunnel <span class="number">0</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="配置VPN路由"><a href="#配置VPN路由" class="headerlink" title="配置VPN路由"></a>配置VPN路由</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//FW1</span></span><br><span class="line"> [FW1]ip route-<span class="type">static</span> <span class="number">10.1</span><span class="number">.2</span><span class="number">.0</span> <span class="number">24</span> <span class="number">12.1</span><span class="number">.1</span><span class="number">.2</span></span><br><span class="line"> <span class="comment">//FW2</span></span><br><span class="line"> [FW2]ip route-<span class="type">static</span> <span class="number">10.1</span><span class="number">.1</span><span class="number">.0</span> <span class="number">24</span> <span class="number">12.1</span><span class="number">.1</span><span class="number">.1</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="配置VPN接口的策略"><a href="#配置VPN接口的策略" class="headerlink" title="配置VPN接口的策略"></a>配置VPN接口的策略</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//fw1（配置这个的目的是等下做策略要使用的地址）</span></span><br><span class="line"> [FW1]ip address-<span class="built_in">set</span> <span class="number">23.1</span><span class="number">.1</span><span class="number">.2</span> type object </span><br><span class="line">[FW1-object-address-<span class="built_in">set</span><span class="number">-23.1</span><span class="number">.1</span><span class="number">.2</span>]address <span class="number">0</span> </span><br><span class="line"><span class="number">23.1</span><span class="number">.1</span><span class="number">.2</span> mask <span class="number">32</span></span><br><span class="line"> </span><br><span class="line"> [FW1]ip address-<span class="built_in">set</span> <span class="number">13.1</span><span class="number">.1</span><span class="number">.1</span> type object </span><br><span class="line">[FW1-object-address-<span class="built_in">set</span><span class="number">-13.1</span><span class="number">.1</span><span class="number">.1</span>]address <span class="number">0</span> </span><br><span class="line"><span class="number">13.1</span><span class="number">.1</span><span class="number">.1</span> mask <span class="number">32</span></span><br><span class="line"> </span><br><span class="line"> [FW1]ip address-<span class="built_in">set</span> <span class="number">10.1</span><span class="number">.1</span><span class="number">.0</span> type object </span><br><span class="line">[FW1-object-address-<span class="built_in">set</span><span class="number">-10.1</span><span class="number">.1</span><span class="number">.0</span>]address <span class="number">0</span> </span><br><span class="line"><span class="number">10.1</span><span class="number">.1</span><span class="number">.0</span> mask <span class="number">24</span></span><br><span class="line"></span><br><span class="line"> [FW1]ip address-<span class="built_in">set</span> <span class="number">10.1</span><span class="number">.2</span><span class="number">.0</span> type object </span><br><span class="line">[FW1-object-address-<span class="built_in">set</span><span class="number">-10.1</span><span class="number">.2</span><span class="number">.0</span>]address <span class="number">0</span> </span><br><span class="line"><span class="number">10.1</span><span class="number">.2</span><span class="number">.0</span> mask <span class="number">24</span></span><br><span class="line">     </span><br><span class="line">     </span><br><span class="line"> <span class="comment">// 配置策略</span></span><br><span class="line">[FW1]security-policy</span><br><span class="line"> [FW1-policy-security]rule name U2T</span><br><span class="line"> [FW1-policy-security-rule-U2T]  source-zone </span><br><span class="line">untrust</span><br><span class="line"> [FW1-policy-security-rule-U2T]  </span><br><span class="line">destination-zone trust</span><br><span class="line">     </span><br><span class="line"> [FW1-policy-security-rule-U2T]  source</span><br><span class="line">address address-<span class="built_in">set</span> <span class="number">10.1</span><span class="number">.2</span><span class="number">.0</span></span><br><span class="line"> [FW1-policy-security-rule-U2T]  </span><br><span class="line">destination-address address-<span class="built_in">set</span> <span class="number">10.1</span><span class="number">.1</span><span class="number">.0</span></span><br><span class="line"> [FW1-policy-security-rule-U2T]  action </span><br><span class="line">permit</span><br><span class="line">     </span><br><span class="line"> [FW1-policy-security-rule-U2T] rule name </span><br><span class="line">U2L</span><br><span class="line"> [FW1-policy-security-rule-U2L]  source-zone </span><br><span class="line">untrust</span><br><span class="line"> [FW1-policy-security-rule-U2L]  </span><br><span class="line">destination-zone local</span><br><span class="line">     </span><br><span class="line"> [FW1-policy-security-rule-U2L]  source</span><br><span class="line">address address-<span class="built_in">set</span> <span class="number">23.1</span><span class="number">.1</span><span class="number">.2</span></span><br><span class="line"> [FW1-policy-security-rule-U2L]  </span><br><span class="line">destination-address address-<span class="built_in">set</span> <span class="number">13.1</span><span class="number">.1</span><span class="number">.1</span></span><br><span class="line"> [FW1-policy-security-rule-U2L]  action </span><br><span class="line">permit</span><br><span class="line"> <span class="comment">//！！再添加Local to Untrust的策略！！</span></span><br><span class="line"> </span><br><span class="line"> <span class="comment">//fw2</span></span><br><span class="line"> [FW2]ip address-<span class="built_in">set</span> <span class="number">13.1</span><span class="number">.1</span><span class="number">.1</span> type object </span><br><span class="line">[FW2-object-address-<span class="built_in">set</span><span class="number">-13.1</span><span class="number">.1</span><span class="number">.1</span>]address <span class="number">0</span> </span><br><span class="line"><span class="number">13.1</span><span class="number">.1</span><span class="number">.1</span> mask <span class="number">32</span></span><br><span class="line"> </span><br><span class="line"> [FW2]ip address-<span class="built_in">set</span>  <span class="number">23.1</span><span class="number">.1</span><span class="number">.2</span> type object </span><br><span class="line">[FW2-object-address-<span class="built_in">set</span><span class="number">-23.1</span><span class="number">.1</span><span class="number">.2</span>]address <span class="number">0</span> </span><br><span class="line"><span class="number">23.1</span><span class="number">.1</span><span class="number">.2</span> mask <span class="number">32</span></span><br><span class="line"></span><br><span class="line"> [FW2]ip address-<span class="built_in">set</span> <span class="number">10.1</span><span class="number">.1</span><span class="number">.0</span> type object </span><br><span class="line">[FW2-object-address-<span class="built_in">set</span><span class="number">-10.1</span><span class="number">.1</span><span class="number">.0</span>]address <span class="number">0</span> </span><br><span class="line"><span class="number">10.1</span><span class="number">.1</span><span class="number">.0</span> mask <span class="number">24</span></span><br><span class="line"> </span><br><span class="line"> [FW2]ip address-<span class="built_in">set</span> <span class="number">10.1</span><span class="number">.2</span><span class="number">.0</span> type object </span><br><span class="line">[FW2-object-address-<span class="built_in">set</span><span class="number">-10.1</span><span class="number">.2</span><span class="number">.0</span>]address <span class="number">0</span> </span><br><span class="line"><span class="number">10.1</span><span class="number">.2</span><span class="number">.0</span> mask <span class="number">24</span></span><br><span class="line"><span class="comment">// 配置策略</span></span><br><span class="line">[FW2]security-policy </span><br><span class="line">[FW2-policy-security]rule name U2T</span><br><span class="line"> [FW2-policy-security-rule-U2T]source-zone </span><br><span class="line">untrust </span><br><span class="line">[FW2-policy-security-rule-U2T]destination</span><br><span class="line">zone trust </span><br><span class="line">     </span><br><span class="line">[FW2-policy-security-rule-U2T]source</span><br><span class="line">address address-<span class="built_in">set</span> <span class="number">10.1</span><span class="number">.1</span><span class="number">.0</span></span><br><span class="line"> [FW2-policy-security-rule-U2T]destination</span><br><span class="line">address address-<span class="built_in">set</span> <span class="number">10.1</span><span class="number">.2</span><span class="number">.0</span></span><br><span class="line"> [FW2-policy-security-rule-U2T]action permit </span><br><span class="line">     </span><br><span class="line">[FW2-policy-security]rule name U2L</span><br><span class="line"> [FW2-policy-security-rule-U2L]source-zone </span><br><span class="line">untrust </span><br><span class="line">[FW2-policy-security-rule-U2L]destination</span><br><span class="line">zone local </span><br><span class="line">     </span><br><span class="line">[FW2-policy-security-rule-U2L]source</span><br><span class="line">address address-<span class="built_in">set</span> <span class="number">13.1</span><span class="number">.1</span><span class="number">.1</span></span><br><span class="line"> [FW2-policy-security-rule-U2L]destination</span><br><span class="line">address address-<span class="built_in">set</span> <span class="number">23.1</span><span class="number">.1</span><span class="number">.2</span></span><br><span class="line"> [FW2-policy-security-rule-U2L]action permit </span><br><span class="line"><span class="comment">//！！再添加Local to Untrust的策略！！</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h4 id="测试"><a href="#测试" class="headerlink" title="测试"></a>测试</h4><h5 id="pc互ping"><a href="#pc互ping" class="headerlink" title="pc互ping"></a>pc互ping</h5><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20240309181925871.png" alt="image-20240309181925871"></p>
+<h5 id="虚接口互ping"><a href="#虚接口互ping" class="headerlink" title="虚接口互ping"></a>虚接口互ping</h5><p><strong>加上两条命令</strong></p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[FW1-Tunnel1]service-manage ping permit</span><br><span class="line"> [FW2-Tunnel1]service-manage ping permit</span><br></pre></td></tr></table></figure>
+
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20240309182133724.png" alt="image-20240309182133724"></p>
+<p>我的结果成功了，但是延迟普遍上了100ms，不知为何</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://charles-webebr.github.io">charles-webber</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://charles-webebr.github.io/2024/07/10/%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A113/">http://charles-webebr.github.io/2024/07/10/%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A113/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://charles-webebr.github.io" target="_blank">asuka&ayanami</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"></div><div class="post_share"><div class="social-share" data-image="https://w.wallhaven.cc/full/q2/wallhaven-q2p6mr.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2024/07/10/%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A114/"><img class="prev-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://w.wallhaven.cc/full/q2/wallhaven-q2p6mr.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info"></div></div></a></div><div class="next-post pull-right"><a href="/2024/07/10/%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A112/"><img class="next-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://w.wallhaven.cc/full/q2/wallhaven-q2p6mr.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info"></div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="lv-container" data-id="city" data-uid="MTAyMC81NzUzOS8zNDAwMw=="></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://w.wallhaven.cc/full/6o/wallhaven-6o36qq.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">charles-webber</div><div class="author-info__description">never give up,keep moving</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">39</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">3</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/charles-webber"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://bilibili.com/" target="_blank" title="bilibili"><i class="fa-regular fa-heart"></i></a><a class="social-icon" href="mailto:1484145649@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://leetcode.cn/" target="_blank" title="gaming()"><i class="fa-solid fa-gamepad"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Dear Miss.? When i think of you'I'm reminded of the beautiful plains of Iowa.The distance between us is breaking my spirit. My time and experiences without you are meaningless to me. Falling in love with you was the easiest thing i have ever done.Nothing matters but you.</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A113"><span class="toc-number">1.</span> <span class="toc-text">数据通信13</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%8C%E6%9C%BA%E7%83%AD%E5%A4%87%E5%AE%9E%E9%AA%8C"><span class="toc-number">1.1.</span> <span class="toc-text">双机热备实验</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8B%93%E6%89%91%E5%9B%BE"><span class="toc-number">1.1.1.</span> <span class="toc-text">拓扑图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%AE%E7%9A%84"><span class="toc-number">1.1.2.</span> <span class="toc-text">目的</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95"><span class="toc-number">1.1.3.</span> <span class="toc-text">实现方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#VGMP%E7%8A%B6%E6%80%81%E6%9C%BA"><span class="toc-number">1.1.4.</span> <span class="toc-text">VGMP状态机</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#VGMP%E4%B8%BB%E4%BB%8E%E5%88%87%E6%8D%A2"><span class="toc-number">1.1.5.</span> <span class="toc-text">VGMP主从切换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E9%85%8D%E7%BD%AE"><span class="toc-number">1.1.6.</span> <span class="toc-text">实验配置</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#VPN"><span class="toc-number">1.2.</span> <span class="toc-text">VPN</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E7%B1%BB"><span class="toc-number">1.2.1.</span> <span class="toc-text">分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B6%E4%BB%96vpn"><span class="toc-number">1.2.2.</span> <span class="toc-text">其他vpn</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#GRE%EF%BC%88ip%E5%8D%8F%E8%AE%AE%E5%8F%B747%EF%BC%89"><span class="toc-number">1.2.3.</span> <span class="toc-text">GRE（ip协议号47）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9A%E4%B9%89"><span class="toc-number">1.2.3.1.</span> <span class="toc-text">定义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8A%A5%E6%96%87%E7%BB%93%E6%9E%84%EF%BC%88%E5%8A%A0%E5%B0%81%E8%A3%85%EF%BC%89"><span class="toc-number">1.2.3.2.</span> <span class="toc-text">报文结构（加封装）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BC%98%E7%82%B9"><span class="toc-number">1.2.3.3.</span> <span class="toc-text">优点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BC%BA%E7%82%B9"><span class="toc-number">1.2.3.4.</span> <span class="toc-text">缺点</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BC%A0%E8%BE%93%E8%BF%87%E7%A8%8B"><span class="toc-number">1.2.4.</span> <span class="toc-text">传输过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#GRE%E9%9A%A7%E9%81%93keeplive"><span class="toc-number">1.2.5.</span> <span class="toc-text">GRE隧道keeplive</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#GRE%E5%AE%9E%E9%AA%8C%E9%85%8D%E7%BD%AE"><span class="toc-number">1.2.6.</span> <span class="toc-text">GRE实验配置</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8B%93%E6%89%91%E5%9B%BE-1"><span class="toc-number">1.2.6.1.</span> <span class="toc-text">拓扑图</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E8%AE%BE%E5%A4%87IP%E5%9C%B0%E5%9D%80"><span class="toc-number">1.2.6.2.</span> <span class="toc-text">配置设备IP地址</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E9%98%B2%E7%81%AB%E5%A2%99"><span class="toc-number">1.2.6.3.</span> <span class="toc-text">配置防火墙</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%85%8D%E7%BD%AEOSPF"><span class="toc-number">1.2.6.4.</span> <span class="toc-text">配置OSPF</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%85%8D%E7%BD%AENAT"><span class="toc-number">1.2.6.5.</span> <span class="toc-text">配置NAT</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%85%8D%E7%BD%AEGRE-VPN"><span class="toc-number">1.2.6.6.</span> <span class="toc-text">配置GRE VPN</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%85%8D%E7%BD%AEVPN%E8%B7%AF%E7%94%B1"><span class="toc-number">1.2.6.7.</span> <span class="toc-text">配置VPN路由</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%85%8D%E7%BD%AEVPN%E6%8E%A5%E5%8F%A3%E7%9A%84%E7%AD%96%E7%95%A5"><span class="toc-number">1.2.6.8.</span> <span class="toc-text">配置VPN接口的策略</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%B5%8B%E8%AF%95"><span class="toc-number">1.2.6.9.</span> <span class="toc-text">测试</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#pc%E4%BA%92ping"><span class="toc-number">1.2.6.9.1.</span> <span class="toc-text">pc互ping</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%99%9A%E6%8E%A5%E5%8F%A3%E4%BA%92ping"><span class="toc-number">1.2.6.9.2.</span> <span class="toc-text">虚接口互ping</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2024/07/10/%E7%AC%AC%E4%BA%8C%E6%AC%A1%E8%80%83%E6%A0%B8%E6%80%BB%E7%BB%93/" title="无题"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://w.wallhaven.cc/full/q2/wallhaven-q2p6mr.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/2024/07/10/%E7%AC%AC%E4%BA%8C%E6%AC%A1%E8%80%83%E6%A0%B8%E6%80%BB%E7%BB%93/" title="无题">无题</a><time datetime="2024-07-10T07:22:46.130Z" title="发表于 2024-07-10 15:22:46">2024-07-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/07/10/openwrt/" title="无题"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://w.wallhaven.cc/full/q2/wallhaven-q2p6mr.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/2024/07/10/openwrt/" title="无题">无题</a><time datetime="2024-07-10T07:22:46.128Z" title="发表于 2024-07-10 15:22:46">2024-07-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/07/10/openuler2/" title="无题"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://w.wallhaven.cc/full/q2/wallhaven-q2p6mr.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/2024/07/10/openuler2/" title="无题">无题</a><time datetime="2024-07-10T07:22:46.126Z" title="发表于 2024-07-10 15:22:46">2024-07-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/07/10/openeuler4/" title="无题"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://w.wallhaven.cc/full/q2/wallhaven-q2p6mr.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/2024/07/10/openeuler4/" title="无题">无题</a><time datetime="2024-07-10T07:22:46.123Z" title="发表于 2024-07-10 15:22:46">2024-07-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/07/10/openeuler3/" title="无题"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://w.wallhaven.cc/full/q2/wallhaven-q2p6mr.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/2024/07/10/openeuler3/" title="无题">无题</a><time datetime="2024-07-10T07:22:46.121Z" title="发表于 2024-07-10 15:22:46">2024-07-10</time></div></div></div></div></div></div></main><footer id="footer" style="background: -#77D78D"><div id="footer-wrap"><div class="copyright">&copy;2022 - 2024 By charles-webber</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Nice to meet you!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="/js/search/local-search.js"></script><div class="js-pjax"><script>function loadLivere () {
+  if (typeof LivereTower === 'object') {
+    window.LivereTower.init()
+  }
+  else {
+    (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+  }
+}
+
+if ('Livere' === 'Livere' || !false) {
+  if (false) btf.loadComment(document.getElementById('lv-container'), loadLivere)
+  else loadLivere()
+}
+else {
+  function loadOtherComment () {
+    loadLivere()
+  }
+}</script></div><div class="aplayer no-destroy" data-id="770116495" data-server="netease" data-type="playlist"   data-order="list" data-fixed="true" data-preload="auto" data-autoplay="false" data-mutex="true" ></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/metingjs/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["meta[property=\"og:image\"]","meta[property=\"og:title\"]","meta[property=\"og:url\"]","head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><!-- hexo injector body_end start --><script data-pjax>
+  function butterfly_clock_anzhiyu_injector_config(){
+    var parent_div_git = document.getElementsByClassName('sticky_layout')[0];
+    var item_html = '<div class="card-widget card-clock"><div class="card-glass"><div class="card-background"><div class="card-content"><div id="hexo_electric_clock"><img class="entered loading" id="card-clock-loading" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu@1.1.6/lib/loading.gif" style="height: 120px; width: 100%;" data-ll-status="loading"/></div></div></div></div></div>';
+    console.log('已挂载butterfly_clock_anzhiyu')
+    if(parent_div_git) {
+      parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  }
+  var elist = 'null'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var qweather_key = 'be1b66712a57497892f4e70a9fc0e4f9';
+  var gaud_map_key = 'ec1c17e08135f345b1f956f3fa268b0c# 锟�??得�?�拷图web锟斤拷锟斤拷key';
+  var baidu_ak_key = 'undefined';
+  var flag = 0;
+  var clock_rectangle = '112.6534116,27.96920845';
+  var clock_default_rectangle_enable = 'true';
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_clock_anzhiyu_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_clock_anzhiyu_injector_config();
+  }
+  </script><script src="https://widget.qweather.net/simple/static/js/he-simple-common.js?v=2.0"></script><script data-pjax src="https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu@1.1.6/lib/clock.min.js"></script><div class="js-pjax"><script async="async">var arr = document.getElementsByClassName('recent-post-item');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__zoomIn');
+    arr[i].setAttribute('data-wow-duration', '1.5s');
+    arr[i].setAttribute('data-wow-delay', '200ms');
+    arr[i].setAttribute('data-wow-offset', '30');
+    arr[i].setAttribute('data-wow-iteration', '1');
+  }</script><script async="async">var arr = document.getElementsByClassName('card-widget');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__zoomIn');
+    arr[i].setAttribute('data-wow-duration', '');
+    arr[i].setAttribute('data-wow-delay', '200ms');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script><script async="async">var arr = document.getElementsByClassName('flink-list-card');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__flipInY');
+    arr[i].setAttribute('data-wow-duration', '3s');
+    arr[i].setAttribute('data-wow-delay', '');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script><script async="async">var arr = document.getElementsByClassName('flink-list-card');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__animated');
+    arr[i].setAttribute('data-wow-duration', '3s');
+    arr[i].setAttribute('data-wow-delay', '');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script><script async="async">var arr = document.getElementsByClassName('article-sort-item');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__slideInRight');
+    arr[i].setAttribute('data-wow-duration', '1.5s');
+    arr[i].setAttribute('data-wow-delay', '');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script><script async="async">var arr = document.getElementsByClassName('site-card');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__flipInY');
+    arr[i].setAttribute('data-wow-duration', '3s');
+    arr[i].setAttribute('data-wow-delay', '');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script><script async="async">var arr = document.getElementsByClassName('site-card');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__animated');
+    arr[i].setAttribute('data-wow-duration', '3s');
+    arr[i].setAttribute('data-wow-delay', '');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script></div><script defer src="https://cdn.cbd.int/hexo-butterfly-wowjs/lib/wow.min.js"></script><script defer src="https://cdn.cbd.int/hexo-butterfly-wowjs/lib/wow_init.js"></script><script data-pjax>
+  function butterfly_swiper_injector_config(){
+    var parent_div_git = document.getElementById('recent-posts');
+    var item_html = '<div class="recent-post-item swiper_container_card" style="height: auto;width: 100%"><div id="random"><div id="random-banner"><canvas id="peoplecanvas"></canvas></div><a id="random-hover" style="width:100%;height:auto;" href="javascript:toRandomPost()" rel="external nofollow noreferrer" one-link-mark="yes"><i class="fa fa-paper-plane" style="margin-left:10px"></i><div style="margin-left:10px">随便逛逛<i class="fa-solid fa-arrow-right" style="margin-left:10px"></i></div></a></div><div class="blog-slider swiper-container-fade swiper-container-horizontal" id="swiper_container"><div class="blog-slider__wrp swiper-wrapper" style="transition-duration: 0ms;"><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;2023/10/09/python学习之路/&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://wallhaven.cc/w/85j9qo" alt="" onerror="this.src=https://cdn.cbd.int/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2023-10-09</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;2023/10/09/python学习之路/&quot;);" href="javascript:void(0);" alt="">python learning</a><div class="blog-slider__text">python learning for AI</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;2023/10/09/python学习之路/&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;2022/11/27/预习作业：/&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="2022/11/27/预习作业：/S:\Blog\source\_posts\从0开始学习c语言\wallhaven-28p95m.png" alt="" onerror="this.src=https://cdn.cbd.int/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2022-11-27</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;2022/11/27/预习作业：/&quot;);" href="javascript:void(0);" alt="">c for class</a><div class="blog-slider__text">a freshman's practice</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;2022/11/27/预习作业：/&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;2022/10/29/answer/&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://w.wallhaven.cc/full/zy/wallhaven-zygeko.jpg" alt="" onerror="this.src=https://cdn.cbd.int/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2022-10-29</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;2022/10/29/answer/&quot;);" href="javascript:void(0);" alt="">answer</a><div class="blog-slider__text">a freshman's practice</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;2022/10/29/answer/&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div></div><div class="blog-slider__pagination swiper-pagination-clickable swiper-pagination-bullets"></div></div></div>';
+    console.log('已挂载butterfly_swiper')
+    parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  var elist = 'undefined'.split(',');
+  var cpage = location.pathname;
+  var epage = '/';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_swiper_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_swiper_injector_config();
+  }
+  </script><script defer src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/js/swiper.min.js"></script><script defer data-pjax src="https://cdn.cbd.int/hexo-butterfly-swiper-anzhiyu@1.0.4/lib/swiper_init.js"></script><script data-pjax src="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/gsap/3.9.1/gsap.min.js"></script><script defer src="https://npm.elemecdn.com/hexo-butterfly-swiper-anzhiyu@1.0.4/lib/people.min.js"></script><script async src="/anzhiyu/random.js"></script><!-- hexo injector body_end end --><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/koharu.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/"});</script></body></html>
