@@ -1,0 +1,595 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>openeuler | 温墨竹</title><meta name="author" content="charles-webber"><meta name="copyright" content="charles-webber"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#78D77D"><meta name="description" content="ict培训linux">
+<meta property="og:type" content="article">
+<meta property="og:title" content="openeuler">
+<meta property="og:url" content="http://charles-webebr.github.io/2024/07/10/openeuler/index.html">
+<meta property="og:site_name" content="温墨竹">
+<meta property="og:description" content="ict培训linux">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://images.wallpaperscraft.com/image/single/snowflake_winter_macro_98434_1280x720.jpg">
+<meta property="article:published_time" content="2024-07-10T07:43:40.118Z">
+<meta property="article:modified_time" content="2024-07-10T08:24:17.155Z">
+<meta property="article:author" content="charles-webber">
+<meta property="article:tag" content="linux">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://images.wallpaperscraft.com/image/single/snowflake_winter_macro_98434_1280x720.jpg"><link rel="shortcut icon" href="../../../../img/favicon.png"><link rel="canonical" href="http://charles-webebr.github.io/2024/07/10/openeuler/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="../../../../css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: {"path":"https://unpkg.com/lunr/lunr.js","preload":false,"languages":{"hits_empty":"找不到您查询的内容：${query}"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"锟斤�??","msgToSimplifiedChinese":"锟斤�??"},
+  noticeOutdate: {"limitDay":365,"position":"top","messagePrev":"It has been","messageNext":"days since the last update, the content of the article may be outdated."},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'openeuler',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: true,
+  isToc: true,
+  postUpdate: '2024-07-10 16:24:17'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#FF855DFF')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#78D77D')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><!-- hexo injector head_end start --><link rel="stylesheet" href="https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu@1.1.6/lib/clock.min.css" /><link rel="stylesheet" href="https://cdn.cbd.int/hexo-butterfly-swiper-anzhiyu@1.0.4/lib/swiper.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/hexo-butterfly-swiper-anzhiyu@1.0.4/lib/swiperstyle.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.cbd.int/hexo-butterfly-wowjs/lib/animate.min.css" media="print" onload="this.media='all'"><!-- hexo injector head_end end --><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="atom.xml" title="温墨竹" type="application/atom+xml">
+</head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://images.wallpaperscraft.com/image/single/girl_hood_butterflies_1062434_1280x720.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="archives/"><div class="headline">文章</div><div class="length-num">14</div></a><a href="tags/"><div class="headline">标签</div><div class="length-num">6</div></a><a href="categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="index.html"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/bangumis/"><i class="fa-fw fa-solid fa-bell"></i><span> ACG</span></a></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-envelope"></i><span> Message</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div><div class="menus_item"><a class="site-page" href="darker"><i class="fa-fw fas fa-code"></i><span> Code Blocks</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://images.wallpaperscraft.com/image/single/snowflake_winter_macro_98434_1280x720.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="index.html">温墨竹</a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="index.html"><i class="fa-fw fas fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page" href="/bangumis/"><i class="fa-fw fa-solid fa-bell"></i><span> ACG</span></a></div><div class="menus_item"><a class="site-page" href="/comments/"><i class="fa-fw fas fa-envelope"></i><span> Message</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> Archives</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> Tags</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> Categories</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> List</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div><div class="menus_item"><a class="site-page" href="darker"><i class="fa-fw fas fa-code"></i><span> Code Blocks</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">openeuler</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-07-10T07:43:40.118Z" title="发表于 2024-07-10 15:43:40">2024-07-10</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-07-10T08:24:17.155Z" title="更新于 2024-07-10 16:24:17">2024-07-10</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">3.8k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>13分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="openeuler"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="openeuler1"><a href="#openeuler1" class="headerlink" title="openeuler1"></a>openeuler1</h1><p>安装配置不做记录，网上博客有</p>
+<h2 id="常见命令"><a href="#常见命令" class="headerlink" title="常见命令"></a>常见命令</h2><h3 id="命令语法格式"><a href="#命令语法格式" class="headerlink" title="命令语法格式"></a>命令语法格式</h3><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20240330172007823.png" alt="image-20240330172007823">&lt;这个内容不可以省&gt;</p>
+<h3 id="命令分类"><a href="#命令分类" class="headerlink" title="命令分类"></a>命令分类</h3><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20240330172141445.png" alt="image-20240330172141445"></p>
+<h3 id="passwd"><a href="#passwd" class="headerlink" title="passwd"></a>passwd</h3><p>修改用户密码命令</p>
+<h3 id="last"><a href="#last" class="headerlink" title="last"></a>last</h3><p>查看登录到系统的用户</p>
+<h3 id="exit"><a href="#exit" class="headerlink" title="exit"></a>exit</h3><p>退出命令</p>
+<h3 id="reboot"><a href="#reboot" class="headerlink" title="reboot"></a>reboot</h3><p>重启命令</p>
+<h3 id="poweroff"><a href="#poweroff" class="headerlink" title="poweroff"></a>poweroff</h3><p>关机命令</p>
+<h3 id="pwd"><a href="#pwd" class="headerlink" title="pwd"></a>pwd</h3><p>print working dir</p>
+<p>打印当前工作目录</p>
+<h3 id="cd"><a href="#cd" class="headerlink" title="cd"></a>cd</h3><p>改变当前的工作目录</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20240330172802462.png" alt="image-20240330172802462"></p>
+<h3 id="ls"><a href="#ls" class="headerlink" title="ls"></a>ls</h3><p>列出当前目录下的文件</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20240330172840797.png" alt="image-20240330172840797">&#x2F;&#x2F;-t是按照文件的修改时间先后列出，图片有误</p>
+<h3 id="mkdir"><a href="#mkdir" class="headerlink" title="mkdir"></a>mkdir</h3><p>创建文件夹</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20240330173025525.png" alt="image-20240330173025525"></p>
+<p>-p选项是迭代创建目录</p>
+<h3 id="touch"><a href="#touch" class="headerlink" title="touch"></a>touch</h3><ul>
+<li>创建空文件</li>
+<li>修改文件时间戳（<strong>access</strong> <strong>change</strong> <strong>modify</strong>）</li>
+</ul>
+<p><strong>modify是文件内容变换，change是文件属性变化，当Atime在Mtime和Ctime之前才会被修改</strong></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20240330173312612.png" alt="image-20240330173312612"></p>
+<h3 id="cp"><a href="#cp" class="headerlink" title="cp"></a>cp</h3><p>复制文件</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20240330173345910.png" alt="image-20240330173345910"></p>
+<h3 id="mv"><a href="#mv" class="headerlink" title="mv"></a>mv</h3><p>移动文件命令（当移动的目录不变时就是重命名操作）</p>
+<h3 id="rm"><a href="#rm" class="headerlink" title="rm"></a>rm</h3><p>最刑的命令（rm -rf&#x2F;*）</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20240330173733120.png" alt="image-20240330173733120"></p>
+<h3 id="cat"><a href="#cat" class="headerlink" title="cat"></a>cat</h3><p>读取文件内容，将文件合并</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20240330173840578.png" alt="image-20240330173840578"></p>
+<h3 id="head和tail"><a href="#head和tail" class="headerlink" title="head和tail"></a>head和tail</h3><p>head显示文件前多少行内容，tail显示尾部多少行内容</p>
+<p>选项-n</p>
+<h2 id="常见快捷键"><a href="#常见快捷键" class="headerlink" title="常见快捷键"></a>常见快捷键</h2><h3 id="tab"><a href="#tab" class="headerlink" title="tab"></a>tab</h3><p>可以双击tab键进行命令补齐，快速输入命令或者参数</p>
+<h3 id="history"><a href="#history" class="headerlink" title="history"></a>history</h3><p>查看历史命令，可以用history n执行代码</p>
+<h3 id="上下键"><a href="#上下键" class="headerlink" title="上下键"></a>上下键</h3><p>快速翻阅历史命令</p>
+<h3 id="home和end"><a href="#home和end" class="headerlink" title="home和end"></a>home和end</h3><p>将光标快速移动到行首和行尾</p>
+<h3 id="clear与ctrl-l"><a href="#clear与ctrl-l" class="headerlink" title="clear与ctrl +l"></a>clear与ctrl +l</h3><p>清屏</p>
+<h2 id="文件结构"><a href="#文件结构" class="headerlink" title="文件结构"></a>文件结构</h2><ul>
+<li><strong>linux下所有都是文件</strong></li>
+<li>树型结构，“&#x2F;”为根目录</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20240330172613773.png" alt="image-20240330172613773"></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20240330172629494.png" alt="image-20240330172629494"></p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20240330172639188.png" alt="image-20240330172639188"></p>
+<h2 id="较为复杂命令"><a href="#较为复杂命令" class="headerlink" title="较为复杂命令"></a>较为复杂命令</h2><h3 id="more"><a href="#more" class="headerlink" title="more"></a>more</h3><p>按一页一页的显示文件内容，方便我们阅读，space控制下一篇，b上一篇，q退出</p>
+<h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><ul>
+<li>+n 从第n行开始显示</li>
+<li>-n 定义屏幕大小为n行</li>
+<li>+&#x2F;pattern 搜索字符串</li>
+<li>-c 清屏</li>
+</ul>
+<h3 id="less"><a href="#less" class="headerlink" title="less"></a>less</h3><p>与more类似，但more会加载整个文件，less不会</p>
+<h3 id="常见操作"><a href="#常见操作" class="headerlink" title="常见操作"></a>常见操作</h3><ul>
+<li><p>&#x2F;字符串：向下搜索“字符串”的功能</p>
+</li>
+<li><p>？字符串：向上搜索‘’‘字符串’</p>
+</li>
+<li><p>q退出less</p>
+</li>
+<li><p>空格 滚动一页()</p>
+</li>
+<li><p>回车 滚动一行</p>
+</li>
+<li><p>[pagedown]： 向下翻动一页</p>
+</li>
+<li><p>[pageup]： 向上翻动一页</p>
+</li>
+</ul>
+<h3 id="find"><a href="#find" class="headerlink" title="find"></a>find</h3><p>顾名思义就是找我们的文件</p>
+<h4 id="语法-1"><a href="#语法-1" class="headerlink" title="语法"></a>语法</h4><ul>
+<li>-name 按文件名查找文件</li>
+<li>-perm 按照文件权限来查找文件 。</li>
+<li>-user 按照文件属主来查找文件 。</li>
+<li>-mtime -n +n 按照文件的更改时间来查找文件</li>
+</ul>
+<p>• 文件类型：<br>▫ d: 目录<br>▫ c: 字型装置文件<br>▫ b: 区块装置文件<br>▫ p: 具名贮列<br>▫ f: 一般文件<br>▫ l: 符号连</p>
+<p>​	</p>
+<h3 id="locate"><a href="#locate" class="headerlink" title="locate"></a>locate</h3><p>快速查找文件系统中是否有指定的文件</p>
+<p><strong>使用之前要进行安装</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yum install mlocate</span><br></pre></td></tr></table></figure>
+
+<p> -e 将排除在寻找的范围之外。<br> -f 将特定的文件排除在外。<br> -r 使用正规运算式做查找条件。<br> -o 指定文件的名称。<br> -d 指定文件的路径</p>
+<h3 id="which"><a href="#which" class="headerlink" title="which"></a>which</h3><p>which用于搜索命令是工作在哪个文件附录下，例如which ls</p>
+<p>which 命令用于快速地确定外部命令的绝对路径。<br>• 查找范例：<br>▫ which ls 查找ls 命令的绝对路径<br>▫ which -a ls 如果多个目录中都有匹配的文件，则全部显示<br>▫ which cp mv rm 查找多个文件</p>
+<h3 id="gzip"><a href="#gzip" class="headerlink" title="gzip"></a>gzip</h3><p>文件压缩与解压缩的命令</p>
+<p> -d或–decompress或—-uncompress 解开压缩文件。<br> -f或–force 强行压缩文件，不理会文件名是否存在以及该文件是否为符号连接。<br> -l或–list 列出压缩文件的相关信息。<br> -r或–recursive 递归处理，将指定目录下的所有文件及子目录一并处理。<br> -v或–verbose 显示指令执行过程。</p>
+<h3 id="tar"><a href="#tar" class="headerlink" title="tar"></a>tar</h3><p>将多个文件加装在同一个包中</p>
+<h4 id="语法-2"><a href="#语法-2" class="headerlink" title="语法"></a>语法</h4><p>语法：tar [OPTION…] [FILE]<br> -c 建立新的压缩文件。<br> -x 从压缩的文件中提取文件。<br> -t 显示压缩文件的内容。<br> -z 支持gzip解压文件。<br> -j 支持bzip2解压文件。<br> -v 显示操作过程。</p>
+<h4 id="常用用法："><a href="#常用用法：" class="headerlink" title="常用用法："></a>常用用法：</h4><p>▫ tar cf ball.tar dir1 把目录dir1 及其下所有内容打包<br>▫ tar tf ball.tar 列出包中的内容<br>▫ tar xf ball.tar 把包中的内容解到当前目录<br>▫ tar czf ball.tar.gz dir1 打包然后用gzip压缩<br>▫ tar cjf ball.tar.bz2 dir1 打包然后用bzip2压缩<br>▫ tar cJf ball.tar.xz dir1 打包然后用xz压缩<br>▫ tar xf ball.tar -C &#x2F;tmp 解到&#x2F;tmp 目录下（默认在当前目录）<br>▫ tar xvf ball.tar -v 显示过程</p>
+<h3 id="ln"><a href="#ln" class="headerlink" title="ln"></a>ln</h3><ul>
+<li>用于创建链接文件，(软链接)可以理解成win的桌面上的快捷方式</li>
+<li>linux中有软链接和硬链接两种</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20240422213136994.png" alt="image-20240422213136994"></p>
+<p><strong>• ln的功能是为某一个文件在另外一个位置建立一个同步的链接.当我们需要在不同的目<br>录，用到相同的文件时，我们不需要在每一个需要的目录下都放一个必须相同的文件，<br>我们只要在某个固定的目录，放上该文件，然后在 其它的目录下用ln命令链接（link）<br>它就可以，不必重复的占用磁盘空间。</strong></p>
+<h4 id="语法-3"><a href="#语法-3" class="headerlink" title="语法"></a>语法</h4><p><strong>默认创建的是硬链接</strong></p>
+<p>语法：ln [ -f | -n] [ -s ] SourceFile [ TargetFile ]<br> -b 删除，覆盖以前建立的链接。<br> -d 允许超级用户制作目录的硬链接。<br> -f 强制执行。<br> -i 交互模式，文件存在则提示用户是否覆盖。<br> -n 把符号链接视为一般目录。<br> -s 软链接(符号链接)</p>
+<h3 id="man"><a href="#man" class="headerlink" title="man"></a>man</h3><p>what can i say!</p>
+<p>类似于帮助手册</p>
+<h3 id="help"><a href="#help" class="headerlink" title="help"></a>help</h3><p>命令打一半参数不会填怎么办？</p>
+<p>快使用无敌的–help</p>
+<p>ls –help</p>
+<p>完</p>
+<h1 id="openuler2"><a href="#openuler2" class="headerlink" title="openuler2"></a>openuler2</h1><h2 id="常见文本编辑器"><a href="#常见文本编辑器" class="headerlink" title="常见文本编辑器"></a>常见文本编辑器</h2><p>Huawei Confidential5<br>Linux文本编辑器介绍<br>⚫ 文本编辑器是操作系统基础的功能软件之一。根据使用环境的不同，Linux的文本编<br>辑器有很多类型。<br>⚫ 常见的Linux文本编辑器有：<br> emacs<br> nano<br> gedit<br> kedit</p>
+<h2 id="vim"><a href="#vim" class="headerlink" title="vim"></a>vim</h2><h3 id="关于vim你需要了解"><a href="#关于vim你需要了解" class="headerlink" title="关于vim你需要了解"></a>关于vim你需要了解</h3><p> Vim是从vi发展出来的一个文本编辑器。其代码补完、编译及错误跳转等方便编程的功能特<br>别丰富，在程序员中被广泛使用。和Emacs并列成为类Unix系统用户最喜欢的编辑器。<br>⚫ Vim的第一个版本由布莱姆·米勒在1991年发布。最初的简称是Vi IMitation，随着功能的不<br>断增加，正式名称改成了Vi IMproved。现在是在开放源代码方式下发行的自由软件。<br>⚫ 从vi派生出来的Vim具有多种模式：<br> 基本模式：普通模式、插入模式、可视模式、选择模式、命令行模式、Ex模式<br> 派生模式：操作符等待模式、插入普通模式、插入可视模式、插入选择模式、替换模式<br> 其他：Evim<br>⚫ openEuler 20.03 LTS系统安装后默认没有安装vim，需要手动安装vim</p>
+<p>基本模式<br>▫ 普通模式：在普通模式中，用的编辑器命令，比如移动光标，删除文本等等。<br>这也是Vim启动后的默认模式。这正好和许多新用户期待的操作方式相反（大<br>多数编辑器默认模式为插入模式）。Vim强大的编辑能力来自于其普通模式命<br>令。普通模式命令往往需要一个操作符结尾。例如普通模式命令”dd”删除当前<br>行，但是第一个”d”的后面可以跟另外的移动命令来代替第二个”d”，比如用移<br>动到下一行的”j”键就可以删除当前行和下一行。另外还可以指定命令重复次数，<br>“2dd”（重复”dd”两次），和”dj”的效果是一样的。用户学习了各种各样的文本<br>间移动／跳转的命令和其他的普通模式的编辑命令，并且能够灵活组合使用的<br>话，能够比那些没有模式的编辑器更加高效的进行文本编辑。在普通模式中，<br>有很多方法可以进入插入模式。比较普通的方式是按”a”（append／追加）键<br>或者”i”（insert／插入）键。<br>▫ 插入模式：在这个模式中，大多数按键都会向文本缓冲区中插入文本。大多数<br>新用户希望文本编辑器编辑过程中一直保持这个模式。在插入模式中，可以按<br>ESC键回到普通模式。<br>▫ 可视模式：这个模式与普通模式比较相似。但是移动命令会扩大高亮的文本区<br>域。高亮区域可以是字符、行或者是一块文本。当执行一个非移动命令时，命<br>令会被执行到这块高亮的区域上。Vim的”文本对象”也能和移动命令一样用在这<br>个模式中。<br>▫ 选择模式：这个模式和无模式编辑器的行为比较相似（Windows标准文本控件<br>的方式）。这个模式中，可以用鼠标或者光标键高亮选择文本，不过输入任何<br>字符的话，Vim会用这个字符替换选择的高亮文本块，并且自动进入插入模式。</p>
+<h3 id="vim打开文件进行编写"><a href="#vim打开文件进行编写" class="headerlink" title="vim打开文件进行编写"></a>vim打开文件进行编写</h3><p>常见参数：<br> -c ：打开文件前线执行指定的命令<br> -R ：以只读方式打开，但是可以强制保存<br> -M ：以只读方式打开，不可以强制保存<br> -r ：回复崩溃的会话<br> +<br>num ：从第num行开始</p>
+<p><strong>如果文件不存在则创建</strong></p>
+<h3 id="移动光标"><a href="#移动光标" class="headerlink" title="移动光标"></a>移动光标</h3><p> 上下左右键或k、j、h、l键上下左右移动光标<br> 0 移动到行首<br> g0 移到光标所在屏幕行行首<br> :n 移动到第n行。<br> gg: 到文件头部。<br> G: 到文件尾部</p>
+<h3 id="数据操作"><a href="#数据操作" class="headerlink" title="数据操作"></a>数据操作</h3><p><strong>数据操作</strong><br> yy or Y: 复制整行文本。<br> y[n]w: 复制一(n)个词。<br> d[n]w: 删除（剪切）1(n)个单词<br> [n] dd: 删除（剪切）1(n)行</p>
+<p><strong>复制</strong><br> yy or Y: 复制整行文本。<br> y[n]w: 复制一(n)个词。<br>⚫ <strong>粘贴</strong><br> 面向行的数据：<br>◼ p 放置数据在当前行的下面<br>◼ P 放置数据在当前行的上面<br> <strong>面向字符的数据</strong><br>◼ p 放置数据在光标的后面<br>◼ P 放置数据在光标前<br>⚫ <strong>删除</strong><br> d[n]w: 删除（剪切）1(n)个单词<br> [n] dd: 删除（剪切）1(n)行</p>
+<h3 id="行号显示与取消"><a href="#行号显示与取消" class="headerlink" title="行号显示与取消"></a>行号显示与取消</h3><p><strong>显示行号</strong></p>
+<p>set nu </p>
+<p><strong>取消显示</strong></p>
+<p>set nonu</p>
+<h3 id="查找和替换"><a href="#查找和替换" class="headerlink" title="查找和替换"></a>查找和替换</h3><ul>
+<li><p>查找</p>
+<p>   &#x2F;word 向后搜索</p>
+<p>  ？word 向前搜索</p>
+</li>
+<li><p>替换</p>
+<p>:1,5s&#x2F;word1&#x2F;word2&#x2F;g </p>
+<p>将文档中1-5行的word1替换为word2，不加g则只替换每行的第<br>一个word1。<br>：%s&#x2F;word1&#x2F;word2&#x2F;gi </p>
+<p>将文档所有的word1替换为word2，不区分大小写。</p>
+</li>
+</ul>
+<h3 id="设置搜索高亮"><a href="#设置搜索高亮" class="headerlink" title="设置搜索高亮"></a>设置搜索高亮</h3><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20240422215342529.png" alt="image-20240422215342529"></p>
+<h3 id="修改文件"><a href="#修改文件" class="headerlink" title="修改文件"></a>修改文件</h3><p>输入i进入插入模式进行修改文件</p>
+<p>修改完成后点击esc退出修改模式</p>
+<p>输入：wq保存并且退出</p>
+<h3 id="撤销与重做"><a href="#撤销与重做" class="headerlink" title="撤销与重做"></a>撤销与重做</h3><p>u撤销</p>
+<p>ctrl+r重做</p>
+<h3 id="保存与退出"><a href="#保存与退出" class="headerlink" title="保存与退出"></a>保存与退出</h3><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20240422215621336.png" alt="image-20240422215621336"></p>
+<h2 id="文件文本操作"><a href="#文件文本操作" class="headerlink" title="文件文本操作"></a>文件文本操作</h2><h3 id="cat-1"><a href="#cat-1" class="headerlink" title="cat"></a>cat</h3><p>小猫老弟</p>
+<p>cat 是一个文本文件查看和连接工具。cat有如下功能：<br> <strong>显示文件内容</strong>，cat filename<br> <strong>编辑一个文件</strong>，cat &gt; filename。<br> 将几个文件<strong>合并为一个文件</strong>，cat file1 file2 &gt; file3<br>⚫ cat常用选项有：<br> -n：从1开始对<u>所有行</u><strong>编号</strong>并显示在每行开头<br> -b：从1开始对<u>非空行</u><strong>编号</strong>并显示在每行开头<br> -s：当有多个空行在一起时只输出一个空行<br> -E：在每行结尾增加$（？）<br> –help：显示帮助信息</p>
+<h1 id="openeuler3"><a href="#openeuler3" class="headerlink" title="openeuler3"></a>openeuler3</h1><h2 id="文件系统类型"><a href="#文件系统类型" class="headerlink" title="文件系统类型"></a>文件系统类型</h2><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20240421093549325.png" alt="image-20240421093549325"></p>
+<p>openeuler默认使用ext4</p>
+<h2 id="磁盘及接口"><a href="#磁盘及接口" class="headerlink" title="磁盘及接口"></a>磁盘及接口</h2><p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20240421094202478.png" alt="image-20240421094202478"></p>
+<p>lsblk显示磁盘信息</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20240421094652907.png" alt="image-20240421094652907"></p>
+<h3 id="分盘操作"><a href="#分盘操作" class="headerlink" title="分盘操作"></a>分盘操作</h3><ol>
+<li><p>lsblk查看磁盘信息</p>
+</li>
+<li><p>磁盘分区方案MBR（最小存储单元是扇区，大小512字节）</p>
+</li>
+</ol>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20240421095651715.png" alt="image-20240421095651715"></p>
+<p>一个MBR只能存储4个分区盘，但是可以再指向一个新的MBR，逻辑分区加主分区为16个</p>
+<h3 id="GPT"><a href="#GPT" class="headerlink" title="GPT"></a>GPT</h3><p>为了弥补MBR的磁盘空间不足（2tb），我们发明了GPT磁盘存储模式</p>
+<h3 id="创建磁盘命令"><a href="#创建磁盘命令" class="headerlink" title="创建磁盘命令"></a>创建磁盘命令</h3><p>fdisk &#x2F;dev&#x2F;nvme0n1</p>
+<p>输入n进行创建</p>
+<p>输入p显示创建信息</p>
+<p>partprobe&#x2F;&#x2F;刷新磁盘信息</p>
+<p>挂载前要进行<strong>格式化</strong></p>
+<p>格式化命令：mkfs -t ext4 &#x2F;dev&#x2F;nvm0n1p1</p>
+<p>会生成一个UUID信息，每次格式化都会变化，用于挂载（挂载就是给磁盘这个房间加上一个门，属于映射关系）</p>
+<p>临时挂载：mount &#x2F;dev&#x2F;nvm0np1p &#x2F;mnt</p>
+<p>df -h查看挂载信息 </p>
+<p>永久挂载：修改我们的&#x2F;etc&#x2F;fstab（乱改会把系统搞奔溃）</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20240421104710545.png" alt="image-20240421104710545"></p>
+<p>推荐使用我们的uuid进行挂载，就是为了不把系统搞崩</p>
+<p>挂载选项，也是在etc里面改</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20240421105824702.png" alt="image-20240421105824702"></p>
+<p>逻辑分区只能在拓展分区的范围中创建</p>
+<h2 id="怎么在线拓展我们的磁盘"><a href="#怎么在线拓展我们的磁盘" class="headerlink" title="怎么在线拓展我们的磁盘"></a>怎么<strong>在线拓展</strong>我们的磁盘</h2><p>使用lvm创建逻辑卷</p>
+<p>将不同的空间映射成一个物理卷，然后再将物理卷加到一个组里面，然后再分为逻辑卷</p>
+<ol>
+<li><p>lsblk</p>
+</li>
+<li><p>分区</p>
+</li>
+<li><p>转换成物理卷（pvcreate pvdisplay pvmove pvck pvchange ）</p>
+</li>
+<li><p>创建成卷组（vgcreate data &#x2F;dev&#x2F;sdb1&#x2F;nvmen0n1p1     vgs      vgdisplay &#x2F;dev&#x2F;data     vgreduce data &#x2F;dev&#x2F;sdb1  vgextend ）</p>
+</li>
+<li><p>管理逻辑卷（lvcvrate -n lv1 -L 5G &#x2F;dev&#x2F;data  如果使用小-l 100就是100个最小逻辑单元pe-size）</p>
+</li>
+<li><p>格式化</p>
+</li>
+<li><p>挂载</p>
+</li>
+</ol>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20240421115303178.png" alt="image-20240421115303178"></p>
+<h2 id="系统管理"><a href="#系统管理" class="headerlink" title="系统管理"></a>系统管理</h2><p>systemctl status atd</p>
+<p>at-t 202405141314单次进行程序的执行时间 </p>
+<h3 id="周期性进行"><a href="#周期性进行" class="headerlink" title="周期性进行"></a>周期性进行</h3><p>cronb命令</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20240421142254869.png" alt="image-20240421142254869"></p>
+<p>例子：为了将某个程序在每天的0点执行一遍</p>
+<p>*单个*号表示每1</p>
+<p>*&#x2F;5表示每5</p>
+<p>10-15表示10到15</p>
+<p>10，15表示10号和15号</p>
+<p>单个数字就表示时间</p>
+<p>（5元组是吧）</p>
+<p>可以使用网络上的计算器进行我们的计算</p>
+<h2 id="网络管理"><a href="#网络管理" class="headerlink" title="网络管理"></a>网络管理</h2><p>ip address </p>
+<ul>
+<li><p>en-以太网口</p>
+</li>
+<li><p>en 表示Ethernet</p>
+</li>
+<li><p>wl 表示WLAN</p>
+</li>
+<li><p>ww 表示无线广域网WWAN</p>
+</li>
+</ul>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20240421151314195.png" alt="image-20240421151314195"></p>
+<p>网卡配置文件etc&#x2F;sysconfig&#x2F;network-scripts&#x2F;</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20240421151800981.png" alt="image-20240421151800981"></p>
+<p>网卡最小配置文件配置</p>
+<p><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20240421151856590.png" alt="image-20240421151856590"></p>
+<p>不是哥们谁记这个啊</p>
+<p>能补全的命令就是好命令</p>
+<p>nmcilli connection reload</p>
+<p>awdawd&amp;&amp;awdawda，前面命令执行成功后，后面的命令才能执行</p>
+<p>单核cpu同一时间片只能进行一个流程，cpu按时间片来进行，切换时保存进程的状态，放进上下文中</p>
+<p>进程优先级越小越好</p>
+<h2 id="看看cpu使用率"><a href="#看看cpu使用率" class="headerlink" title="看看cpu使用率"></a>看看cpu使用率</h2><p>df -h</p>
+<p>lsblk</p>
+<h2 id="swap空间"><a href="#swap空间" class="headerlink" title="swap空间"></a>swap空间</h2><p>为防止空间占满后进程卡死使用虚拟缓存防止卡死</p>
+<p>划分swap空间</p>
+<h1 id="openeuler4"><a href="#openeuler4" class="headerlink" title="openeuler4"></a>openeuler4</h1><p>运维工具ansible学习</p>
+<h2 id="ansible常见模块与操作"><a href="#ansible常见模块与操作" class="headerlink" title="ansible常见模块与操作"></a>ansible常见模块与操作</h2><p>一次性命令</p>
+<h2 id="剧本playbook-yaml"><a href="#剧本playbook-yaml" class="headerlink" title="剧本playbook-yaml"></a>剧本playbook-yaml</h2><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">-</span> <span class="attr">name:</span> <span class="string">my</span> <span class="string">first</span> <span class="string">playbook</span></span><br><span class="line">  <span class="attr">host:</span> <span class="string">all</span></span><br><span class="line">  <span class="attr">task:</span> </span><br><span class="line">  <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">ensure</span> <span class="string">user</span> <span class="string">exists</span></span><br><span class="line">    <span class="attr">user:</span></span><br><span class="line">     <span class="attr">name:</span> <span class="string">demo</span></span><br><span class="line">     <span class="attr">uid:</span> <span class="number">2000</span></span><br><span class="line">     <span class="attr">group:</span> <span class="string">wheel</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">install</span> <span class="string">httpd</span></span><br><span class="line">    <span class="attr">yum:</span></span><br><span class="line">     <span class="attr">name:</span> <span class="string">httpd</span></span><br><span class="line">     <span class="attr">state:</span> <span class="string">lastest</span></span><br><span class="line">     </span><br><span class="line">     </span><br><span class="line">     </span><br><span class="line">  <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">config</span> <span class="string">repo</span> <span class="string">files</span></span><br><span class="line">    <span class="attr">host:</span> <span class="string">all</span></span><br><span class="line">    <span class="attr">task:</span>  </span><br><span class="line">    <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">remove</span> <span class="string">repo</span> <span class="string">files</span></span><br><span class="line">      <span class="attr">file:</span> </span><br><span class="line">        <span class="attr">path:</span> <span class="string">adawdasdaw</span></span><br><span class="line">        <span class="attr">state:</span> <span class="string">absent</span> <span class="comment">#删除</span></span><br></pre></td></tr></table></figure>
+
+<p>不会写找模板</p>
+<h2 id="ansible定义变量"><a href="#ansible定义变量" class="headerlink" title="ansible定义变量"></a>ansible定义变量</h2><h3 id="在playbook中定义变量"><a href="#在playbook中定义变量" class="headerlink" title="在playbook中定义变量"></a>在playbook中定义变量</h3><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">-</span> <span class="attr">name:</span> <span class="string">use</span> <span class="string">vars</span></span><br><span class="line">  <span class="attr">hosts:</span> <span class="string">web</span></span><br><span class="line">  <span class="attr">vars:</span> </span><br><span class="line">    <span class="attr">name:</span> <span class="string">bob</span></span><br><span class="line">  <span class="attr">tasks:</span> </span><br><span class="line">  <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">ensure</span> <span class="string">user</span> <span class="string">creat</span></span><br><span class="line">    <span class="attr">user:</span> </span><br><span class="line">      <span class="attr">name:</span> <span class="string">&quot;<span class="template-variable">&#123;&#123; name &#125;&#125;</span>&quot;</span></span><br><span class="line">      <span class="attr">state:</span> <span class="string">present</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="命令行中进行变量定义"><a href="#命令行中进行变量定义" class="headerlink" title="命令行中进行变量定义"></a>命令行中进行变量定义</h3><p>ansible-playbook -e name&#x3D;hary vars.yml</p>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">-</span> <span class="attr">name:</span> <span class="string">manage</span> <span class="string">service</span></span><br><span class="line">  <span class="attr">hosts:</span> <span class="string">all</span></span><br><span class="line">  <span class="attr">vars_files:</span> </span><br><span class="line">    <span class="bullet">-</span> <span class="string">openeuler.yml</span></span><br><span class="line">    </span><br><span class="line">  <span class="attr">tasks:</span> </span><br><span class="line">  <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">install</span> &#123;&#123; <span class="string">pkg_name</span> &#125;&#125;</span><br><span class="line">    <span class="attr">yum:</span> </span><br><span class="line">      <span class="attr">name:</span> <span class="string">&quot;<span class="template-variable">&#123;&#123; pkg_name &#125;&#125;</span>&quot;</span></span><br><span class="line">      <span class="attr">state:</span> <span class="string">latest</span></span><br><span class="line">      </span><br><span class="line">  <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">start</span> &#123;&#123;<span class="string">service_name</span> &#125;&#125;</span><br><span class="line">    <span class="attr">service:</span> </span><br><span class="line">      <span class="attr">name:</span> <span class="string">&quot;<span class="template-variable">&#123;&#123; service_name &#125;&#125;</span>&quot;</span></span><br><span class="line">        <span class="attr">state:</span> <span class="string">started</span></span><br><span class="line">        <span class="attr">enabled:</span> <span class="literal">yes</span></span><br><span class="line">            </span><br><span class="line">           </span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+<h2 id="ansible-fact-变量"><a href="#ansible-fact-变量" class="headerlink" title="ansible fact 变量"></a>ansible fact 变量</h2><h2 id="ansible魔法变量"><a href="#ansible魔法变量" class="headerlink" title="ansible魔法变量"></a>ansible魔法变量</h2><h2 id="还有循环？"><a href="#还有循环？" class="headerlink" title="还有循环？"></a>还有循环？</h2><h2 id="条件任务语法"><a href="#条件任务语法" class="headerlink" title="条件任务语法"></a>条件任务语法</h2><p>使用when语法</p>
+<h2 id="jinja2模板-openeuler4"><a href="#jinja2模板-openeuler4" class="headerlink" title="jinja2模板# openeuler4"></a>jinja2模板# openeuler4</h2><p>运维工具ansible学习</p>
+<h2 id="ansible常见模块与操作-1"><a href="#ansible常见模块与操作-1" class="headerlink" title="ansible常见模块与操作"></a>ansible常见模块与操作</h2><p>一次性命令</p>
+<h2 id="剧本playbook-yaml-1"><a href="#剧本playbook-yaml-1" class="headerlink" title="剧本playbook-yaml"></a>剧本playbook-yaml</h2><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">-</span> <span class="attr">name:</span> <span class="string">my</span> <span class="string">first</span> <span class="string">playbook</span></span><br><span class="line">  <span class="attr">host:</span> <span class="string">all</span></span><br><span class="line">  <span class="attr">task:</span> </span><br><span class="line">  <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">ensure</span> <span class="string">user</span> <span class="string">exists</span></span><br><span class="line">    <span class="attr">user:</span></span><br><span class="line">     <span class="attr">name:</span> <span class="string">demo</span></span><br><span class="line">     <span class="attr">uid:</span> <span class="number">2000</span></span><br><span class="line">     <span class="attr">group:</span> <span class="string">wheel</span></span><br><span class="line">  <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">install</span> <span class="string">httpd</span></span><br><span class="line">    <span class="attr">yum:</span></span><br><span class="line">     <span class="attr">name:</span> <span class="string">httpd</span></span><br><span class="line">     <span class="attr">state:</span> <span class="string">lastest</span></span><br><span class="line">     </span><br><span class="line">     </span><br><span class="line">     </span><br><span class="line">  <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">config</span> <span class="string">repo</span> <span class="string">files</span></span><br><span class="line">    <span class="attr">host:</span> <span class="string">all</span></span><br><span class="line">    <span class="attr">task:</span>  </span><br><span class="line">    <span class="bullet">-</span> <span class="attr">name:</span> <span class="string">remove</span> <span class="string">repo</span> <span class="string">files</span></span><br><span class="line">      <span class="attr">file:</span> </span><br><span class="line">        <span class="attr">path:</span> <span class="string">adawdasdaw</span></span><br><span class="line">        <span class="attr">state:</span> <span class="string">absent</span> <span class="comment">#删除</span></span><br></pre></td></tr></table></figure>
+
+<p>不会写找模板</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://charles-webebr.github.io">charles-webber</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://charles-webebr.github.io/2024/07/10/openeuler/">http://charles-webebr.github.io/2024/07/10/openeuler/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://charles-webebr.github.io" target="_blank">温墨竹</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="../../../../tags/linux/">linux</a></div><div class="post_share"><div class="social-share" data-image="https://images.wallpaperscraft.com/image/single/snowflake_winter_macro_98434_1280x720.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="../%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1/"><img class="prev-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://images.wallpaperscraft.com/image/single/sakura_flowers_bloom_125940_1280x720.jpg" onerror="onerror=null;src='../../../../img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">数据通信</div></div></a></div><div class="next-post pull-right"><a href="../%E7%AC%AC%E4%BA%8C%E6%AC%A1%E8%80%83%E6%A0%B8%E6%80%BB%E7%BB%93/"><img class="next-cover" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://w.wallhaven.cc/full/q2/wallhaven-q2p6mr.jpg" onerror="onerror=null;src='../../../../img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info"></div></div></a></div></nav><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="lv-container" data-id="city" data-uid="MTAyMC81NzUzOS8zNDAwMw=="></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://images.wallpaperscraft.com/image/single/girl_hood_butterflies_1062434_1280x720.jpg" onerror="this.onerror=null;this.src='../img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">charles-webber</div><div class="author-info__description">hajimi</div></div><div class="card-info-data site-data is-center"><a href="../archives/"><div class="headline">文章</div><div class="length-num">14</div></a><a href="../tags/"><div class="headline">标签</div><div class="length-num">6</div></a><a href="../categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/charles-webber"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://space.bilibili.com/322301421?spm_id_from=333.1007.0.0" target="_blank" title="bilibili"><i class="fa-regular fa-heart"></i></a><a class="social-icon" href="../mailto:1484145649@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://leetcode.cn/" target="_blank" title="Coding"><i class="fa-solid fa-gamepad"></i></a><a class="social-icon" href="https://github.com/charles-webber" target="_blank" title="GitHub"><i class="fa-brands fa-github"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Dear Miss.? When i think of you'I'm reminded of the beautiful plains of Iowa.The distance between us is breaking my spirit. My time and experiences without you are meaningless to me. Falling in love with you was the easiest thing i have ever done.Nothing matters but you.</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#openeuler1"><span class="toc-number">1.</span> <span class="toc-text">openeuler1</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E5%91%BD%E4%BB%A4"><span class="toc-number">1.1.</span> <span class="toc-text">常见命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E8%AF%AD%E6%B3%95%E6%A0%BC%E5%BC%8F"><span class="toc-number">1.1.1.</span> <span class="toc-text">命令语法格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E5%88%86%E7%B1%BB"><span class="toc-number">1.1.2.</span> <span class="toc-text">命令分类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#passwd"><span class="toc-number">1.1.3.</span> <span class="toc-text">passwd</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#last"><span class="toc-number">1.1.4.</span> <span class="toc-text">last</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#exit"><span class="toc-number">1.1.5.</span> <span class="toc-text">exit</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#reboot"><span class="toc-number">1.1.6.</span> <span class="toc-text">reboot</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#poweroff"><span class="toc-number">1.1.7.</span> <span class="toc-text">poweroff</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#pwd"><span class="toc-number">1.1.8.</span> <span class="toc-text">pwd</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cd"><span class="toc-number">1.1.9.</span> <span class="toc-text">cd</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ls"><span class="toc-number">1.1.10.</span> <span class="toc-text">ls</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#mkdir"><span class="toc-number">1.1.11.</span> <span class="toc-text">mkdir</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#touch"><span class="toc-number">1.1.12.</span> <span class="toc-text">touch</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cp"><span class="toc-number">1.1.13.</span> <span class="toc-text">cp</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#mv"><span class="toc-number">1.1.14.</span> <span class="toc-text">mv</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#rm"><span class="toc-number">1.1.15.</span> <span class="toc-text">rm</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#cat"><span class="toc-number">1.1.16.</span> <span class="toc-text">cat</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#head%E5%92%8Ctail"><span class="toc-number">1.1.17.</span> <span class="toc-text">head和tail</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="toc-number">1.2.</span> <span class="toc-text">常见快捷键</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#tab"><span class="toc-number">1.2.1.</span> <span class="toc-text">tab</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#history"><span class="toc-number">1.2.2.</span> <span class="toc-text">history</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8A%E4%B8%8B%E9%94%AE"><span class="toc-number">1.2.3.</span> <span class="toc-text">上下键</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#home%E5%92%8Cend"><span class="toc-number">1.2.4.</span> <span class="toc-text">home和end</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#clear%E4%B8%8Ectrl-l"><span class="toc-number">1.2.5.</span> <span class="toc-text">clear与ctrl +l</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E7%BB%93%E6%9E%84"><span class="toc-number">1.3.</span> <span class="toc-text">文件结构</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BE%83%E4%B8%BA%E5%A4%8D%E6%9D%82%E5%91%BD%E4%BB%A4"><span class="toc-number">1.4.</span> <span class="toc-text">较为复杂命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#more"><span class="toc-number">1.4.1.</span> <span class="toc-text">more</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%AD%E6%B3%95"><span class="toc-number">1.4.2.</span> <span class="toc-text">语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#less"><span class="toc-number">1.4.3.</span> <span class="toc-text">less</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E6%93%8D%E4%BD%9C"><span class="toc-number">1.4.4.</span> <span class="toc-text">常见操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#find"><span class="toc-number">1.4.5.</span> <span class="toc-text">find</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AF%AD%E6%B3%95-1"><span class="toc-number">1.4.5.1.</span> <span class="toc-text">语法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#locate"><span class="toc-number">1.4.6.</span> <span class="toc-text">locate</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#which"><span class="toc-number">1.4.7.</span> <span class="toc-text">which</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#gzip"><span class="toc-number">1.4.8.</span> <span class="toc-text">gzip</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#tar"><span class="toc-number">1.4.9.</span> <span class="toc-text">tar</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AF%AD%E6%B3%95-2"><span class="toc-number">1.4.9.1.</span> <span class="toc-text">语法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%B8%B8%E7%94%A8%E7%94%A8%E6%B3%95%EF%BC%9A"><span class="toc-number">1.4.9.2.</span> <span class="toc-text">常用用法：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ln"><span class="toc-number">1.4.10.</span> <span class="toc-text">ln</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AF%AD%E6%B3%95-3"><span class="toc-number">1.4.10.1.</span> <span class="toc-text">语法</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#man"><span class="toc-number">1.4.11.</span> <span class="toc-text">man</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#help"><span class="toc-number">1.4.12.</span> <span class="toc-text">help</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#openuler2"><span class="toc-number">2.</span> <span class="toc-text">openuler2</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8"><span class="toc-number">2.1.</span> <span class="toc-text">常见文本编辑器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#vim"><span class="toc-number">2.2.</span> <span class="toc-text">vim</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E4%BA%8Evim%E4%BD%A0%E9%9C%80%E8%A6%81%E4%BA%86%E8%A7%A3"><span class="toc-number">2.2.1.</span> <span class="toc-text">关于vim你需要了解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#vim%E6%89%93%E5%BC%80%E6%96%87%E4%BB%B6%E8%BF%9B%E8%A1%8C%E7%BC%96%E5%86%99"><span class="toc-number">2.2.2.</span> <span class="toc-text">vim打开文件进行编写</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A7%BB%E5%8A%A8%E5%85%89%E6%A0%87"><span class="toc-number">2.2.3.</span> <span class="toc-text">移动光标</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E6%93%8D%E4%BD%9C"><span class="toc-number">2.2.4.</span> <span class="toc-text">数据操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A1%8C%E5%8F%B7%E6%98%BE%E7%A4%BA%E4%B8%8E%E5%8F%96%E6%B6%88"><span class="toc-number">2.2.5.</span> <span class="toc-text">行号显示与取消</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9F%A5%E6%89%BE%E5%92%8C%E6%9B%BF%E6%8D%A2"><span class="toc-number">2.2.6.</span> <span class="toc-text">查找和替换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BE%E7%BD%AE%E6%90%9C%E7%B4%A2%E9%AB%98%E4%BA%AE"><span class="toc-number">2.2.7.</span> <span class="toc-text">设置搜索高亮</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%AE%E6%94%B9%E6%96%87%E4%BB%B6"><span class="toc-number">2.2.8.</span> <span class="toc-text">修改文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%92%A4%E9%94%80%E4%B8%8E%E9%87%8D%E5%81%9A"><span class="toc-number">2.2.9.</span> <span class="toc-text">撤销与重做</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%9D%E5%AD%98%E4%B8%8E%E9%80%80%E5%87%BA"><span class="toc-number">2.2.10.</span> <span class="toc-text">保存与退出</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E6%96%87%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="toc-number">2.3.</span> <span class="toc-text">文件文本操作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#cat-1"><span class="toc-number">2.3.1.</span> <span class="toc-text">cat</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#openeuler3"><span class="toc-number">3.</span> <span class="toc-text">openeuler3</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F%E7%B1%BB%E5%9E%8B"><span class="toc-number">3.1.</span> <span class="toc-text">文件系统类型</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A3%81%E7%9B%98%E5%8F%8A%E6%8E%A5%E5%8F%A3"><span class="toc-number">3.2.</span> <span class="toc-text">磁盘及接口</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E7%9B%98%E6%93%8D%E4%BD%9C"><span class="toc-number">3.2.1.</span> <span class="toc-text">分盘操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#GPT"><span class="toc-number">3.2.2.</span> <span class="toc-text">GPT</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E7%A3%81%E7%9B%98%E5%91%BD%E4%BB%A4"><span class="toc-number">3.2.3.</span> <span class="toc-text">创建磁盘命令</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%8E%E4%B9%88%E5%9C%A8%E7%BA%BF%E6%8B%93%E5%B1%95%E6%88%91%E4%BB%AC%E7%9A%84%E7%A3%81%E7%9B%98"><span class="toc-number">3.3.</span> <span class="toc-text">怎么在线拓展我们的磁盘</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86"><span class="toc-number">3.4.</span> <span class="toc-text">系统管理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%A8%E6%9C%9F%E6%80%A7%E8%BF%9B%E8%A1%8C"><span class="toc-number">3.4.1.</span> <span class="toc-text">周期性进行</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E7%AE%A1%E7%90%86"><span class="toc-number">3.5.</span> <span class="toc-text">网络管理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9C%8B%E7%9C%8Bcpu%E4%BD%BF%E7%94%A8%E7%8E%87"><span class="toc-number">3.6.</span> <span class="toc-text">看看cpu使用率</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#swap%E7%A9%BA%E9%97%B4"><span class="toc-number">3.7.</span> <span class="toc-text">swap空间</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#openeuler4"><span class="toc-number">4.</span> <span class="toc-text">openeuler4</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#ansible%E5%B8%B8%E8%A7%81%E6%A8%A1%E5%9D%97%E4%B8%8E%E6%93%8D%E4%BD%9C"><span class="toc-number">4.1.</span> <span class="toc-text">ansible常见模块与操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%A7%E6%9C%ACplaybook-yaml"><span class="toc-number">4.2.</span> <span class="toc-text">剧本playbook-yaml</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ansible%E5%AE%9A%E4%B9%89%E5%8F%98%E9%87%8F"><span class="toc-number">4.3.</span> <span class="toc-text">ansible定义变量</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9C%A8playbook%E4%B8%AD%E5%AE%9A%E4%B9%89%E5%8F%98%E9%87%8F"><span class="toc-number">4.3.1.</span> <span class="toc-text">在playbook中定义变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%91%BD%E4%BB%A4%E8%A1%8C%E4%B8%AD%E8%BF%9B%E8%A1%8C%E5%8F%98%E9%87%8F%E5%AE%9A%E4%B9%89"><span class="toc-number">4.3.2.</span> <span class="toc-text">命令行中进行变量定义</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ansible-fact-%E5%8F%98%E9%87%8F"><span class="toc-number">4.4.</span> <span class="toc-text">ansible fact 变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ansible%E9%AD%94%E6%B3%95%E5%8F%98%E9%87%8F"><span class="toc-number">4.5.</span> <span class="toc-text">ansible魔法变量</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%98%E6%9C%89%E5%BE%AA%E7%8E%AF%EF%BC%9F"><span class="toc-number">4.6.</span> <span class="toc-text">还有循环？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9D%A1%E4%BB%B6%E4%BB%BB%E5%8A%A1%E8%AF%AD%E6%B3%95"><span class="toc-number">4.7.</span> <span class="toc-text">条件任务语法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#jinja2%E6%A8%A1%E6%9D%BF-openeuler4"><span class="toc-number">4.8.</span> <span class="toc-text">jinja2模板# openeuler4</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#ansible%E5%B8%B8%E8%A7%81%E6%A8%A1%E5%9D%97%E4%B8%8E%E6%93%8D%E4%BD%9C-1"><span class="toc-number">4.9.</span> <span class="toc-text">ansible常见模块与操作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%A7%E6%9C%ACplaybook-yaml-1"><span class="toc-number">4.10.</span> <span class="toc-text">剧本playbook-yaml</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="../2024/08/31/AI-HCIP/" title="无题"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://images.wallpaperscraft.com/image/single/girl_anime_food_671_1280x720.jpg" onerror="this.onerror=null;this.src='../img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="../2024/08/31/AI-HCIP/" title="无题">无题</a><time datetime="2024-08-31T01:20:48.468Z" title="发表于 2024-08-31 09:20:48">2024-08-31</time></div></div><div class="aside-list-item"><a class="thumbnail" href="../2024/07/10/%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1/" title="数据通信"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://images.wallpaperscraft.com/image/single/sakura_flowers_bloom_125940_1280x720.jpg" onerror="this.onerror=null;this.src='../img/404.jpg'" alt="数据通信"/></a><div class="content"><a class="title" href="../2024/07/10/%E6%95%B0%E6%8D%AE%E9%80%9A%E4%BF%A1/" title="数据通信">数据通信</a><time datetime="2024-07-10T07:46:10.557Z" title="发表于 2024-07-10 15:46:10">2024-07-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="../2024/07/10/openeuler/" title="openeuler"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://images.wallpaperscraft.com/image/single/snowflake_winter_macro_98434_1280x720.jpg" onerror="this.onerror=null;this.src='../img/404.jpg'" alt="openeuler"/></a><div class="content"><a class="title" href="../2024/07/10/openeuler/" title="openeuler">openeuler</a><time datetime="2024-07-10T07:43:40.118Z" title="发表于 2024-07-10 15:43:40">2024-07-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="../2024/07/10/%E7%AC%AC%E4%BA%8C%E6%AC%A1%E8%80%83%E6%A0%B8%E6%80%BB%E7%BB%93/" title="无题"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://w.wallhaven.cc/full/q2/wallhaven-q2p6mr.jpg" onerror="this.onerror=null;this.src='../img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="../2024/07/10/%E7%AC%AC%E4%BA%8C%E6%AC%A1%E8%80%83%E6%A0%B8%E6%80%BB%E7%BB%93/" title="无题">无题</a><time datetime="2024-07-10T07:22:46.130Z" title="发表于 2024-07-10 15:22:46">2024-07-10</time></div></div><div class="aside-list-item"><a class="thumbnail" href="../2024/07/10/openwrt/" title="无题"><img src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://images.wallpaperscraft.com/image/single/girl_anime_food_671_1280x720.jpg" onerror="this.onerror=null;this.src='../img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="../2024/07/10/openwrt/" title="无题">无题</a><time datetime="2024-07-10T07:22:46.128Z" title="发表于 2024-07-10 15:22:46">2024-07-10</time></div></div></div></div></div></div></main><footer id="footer" style="background: -#77D78D"><div id="footer-wrap"><div class="copyright">&copy;2022 - 2026 By charles-webber</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Nice to meet you!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">锟斤�??</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div></div></div><div id="search-mask"></div></div><div><script src="../../../../js/utils.js"></script><script src="../../../../js/main.js"></script><script src="../../../../js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="../../../../js/search/local-search.js"></script><div class="js-pjax"><script>function loadLivere () {
+  if (typeof LivereTower === 'object') {
+    window.LivereTower.init()
+  }
+  else {
+    (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+    })(document, 'script');
+  }
+}
+
+if ('Livere' === 'Livere' || !false) {
+  if (false) btf.loadComment(document.getElementById('lv-container'), loadLivere)
+  else loadLivere()
+}
+else {
+  function loadOtherComment () {
+    loadLivere()
+  }
+}</script></div><div class="aplayer no-destroy" data-id="770116495" data-server="netease" data-type="playlist"   data-order="list" data-fixed="true" data-preload="auto" data-autoplay="false" data-mutex="true" ></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/metingjs/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = ["meta[property=\"og:image\"]","meta[property=\"og:title\"]","meta[property=\"og:url\"]","head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener scroll 
+  window.tocScrollFn && window.removeEventListener('scroll', window.tocScrollFn)
+  window.scrollCollect && window.removeEventListener('scroll', scrollCollect)
+
+  document.getElementById('rightside').style.cssText = "opacity: ''; transform: ''"
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', (e) => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/404.html')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><!-- hexo injector body_end start --><script data-pjax>
+  function butterfly_clock_anzhiyu_injector_config(){
+    var parent_div_git = document.getElementsByClassName('sticky_layout')[0];
+    var item_html = '<div class="card-widget card-clock"><div class="card-glass"><div class="card-background"><div class="card-content"><div id="hexo_electric_clock"><img class="entered loading" id="card-clock-loading" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu@1.1.6/lib/loading.gif" style="height: 120px; width: 100%;" data-ll-status="loading"/></div></div></div></div></div>';
+    console.log('已挂载butterfly_clock_anzhiyu')
+    if(parent_div_git) {
+      parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  }
+  var elist = 'null'.split(',');
+  var cpage = location.pathname;
+  var epage = 'all';
+  var qweather_key = 'be1b66712a57497892f4e70a9fc0e4f9';
+  var gaud_map_key = 'ec1c17e08135f345b1f956f3fa268b0c# 锟�??得�?�拷图web锟斤拷锟斤拷key';
+  var baidu_ak_key = 'undefined';
+  var flag = 0;
+  var clock_rectangle = '112.6534116,27.96920845';
+  var clock_default_rectangle_enable = 'true';
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_clock_anzhiyu_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_clock_anzhiyu_injector_config();
+  }
+  </script><script src="https://widget.qweather.net/simple/static/js/he-simple-common.js?v=2.0"></script><script data-pjax src="https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu@1.1.6/lib/clock.min.js"></script><script data-pjax>
+  function butterfly_swiper_injector_config(){
+    var parent_div_git = document.getElementById('recent-posts');
+    var item_html = '<div class="recent-post-item swiper_container_card" style="height: auto;width: 100%"><div id="random"><div id="random-banner"><canvas id="peoplecanvas"></canvas></div><a id="random-hover" style="width:100%;height:auto;" href="javascript:toRandomPost()" rel="external nofollow noreferrer" one-link-mark="yes"><i class="fa fa-paper-plane" style="margin-left:10px"></i><div style="margin-left:10px">随便逛逛<i class="fa-solid fa-arrow-right" style="margin-left:10px"></i></div></a></div><div class="blog-slider swiper-container-fade swiper-container-horizontal" id="swiper_container"><div class="blog-slider__wrp swiper-wrapper" style="transition-duration: 0ms;"><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;2024/07/10/数据通信/&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://images.wallpaperscraft.com/image/single/sakura_flowers_bloom_125940_1280x720.jpg" alt="" onerror="this.src=https://cdn.cbd.int/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2024-07-10</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;2024/07/10/数据通信/&quot;);" href="javascript:void(0);" alt="">数据通信</a><div class="blog-slider__text">ict培训数据通信</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;2024/07/10/数据通信/&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;2024/07/10/云计算/&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://images.wallpaperscraft.com/image/single/silhouette_wall_screens_1067807_1280x720.jpg" alt="" onerror="this.src=https://cdn.cbd.int/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2024-07-10</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;2024/07/10/云计算/&quot;);" href="javascript:void(0);" alt="">云计算</a><div class="blog-slider__text">ict培训云计算</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;2024/07/10/云计算/&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;2024/07/10/openeuler/&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://images.wallpaperscraft.com/image/single/snowflake_winter_macro_98434_1280x720.jpg" alt="" onerror="this.src=https://cdn.cbd.int/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2024-07-10</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;2024/07/10/openeuler/&quot;);" href="javascript:void(0);" alt="">openeuler</a><div class="blog-slider__text">ict培训linux</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;2024/07/10/openeuler/&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;2024/07/10/云服务/&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://images.wallpaperscraft.com/image/single/cosmonaut_space_suit_multicolored_123724_1280x720.jpg" alt="" onerror="this.src=https://cdn.cbd.int/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2024-07-10</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;2024/07/10/云服务/&quot;);" href="javascript:void(0);" alt="">云服务</a><div class="blog-slider__text">ict培训云服务</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;2024/07/10/云服务/&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;2023/10/09/python学习之路/&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://wallhaven.cc/w/85j9qo" alt="" onerror="this.src=https://cdn.cbd.int/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2023-10-09</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;2023/10/09/python学习之路/&quot;);" href="javascript:void(0);" alt="">python learning</a><div class="blog-slider__text">python learning for AI</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;2023/10/09/python学习之路/&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div><div class="blog-slider__item swiper-slide" style="width: 750px; opacity: 1; transform: translate3d(0px, 0px, 0px); transition-duration: 0ms;"><a class="blog-slider__img" onclick="pjax.loadUrl(&quot;2022/10/29/answer/&quot;);" href="javascript:void(0);" alt=""><img width="48" height="48" src= "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" data-lazy-src="https://w.wallhaven.cc/full/zy/wallhaven-zygeko.jpg" alt="" onerror="this.src=https://cdn.cbd.int/akilar-candyassets/image/loading.gif; this.onerror = null;"/></a><div class="blog-slider__content"><span class="blog-slider__code">2022-10-29</span><a class="blog-slider__title" onclick="pjax.loadUrl(&quot;2022/10/29/answer/&quot;);" href="javascript:void(0);" alt="">answer</a><div class="blog-slider__text">a freshman's practice</div><a class="blog-slider__button" onclick="pjax.loadUrl(&quot;2022/10/29/answer/&quot;);" href="javascript:void(0);" alt="">详情       </a></div></div></div><div class="blog-slider__pagination swiper-pagination-clickable swiper-pagination-bullets"></div></div></div>';
+    console.log('已挂载butterfly_swiper')
+    parent_div_git.insertAdjacentHTML("afterbegin",item_html)
+    }
+  var elist = 'undefined'.split(',');
+  var cpage = location.pathname;
+  var epage = '/';
+  var flag = 0;
+
+  for (var i=0;i<elist.length;i++){
+    if (cpage.includes(elist[i])){
+      flag++;
+    }
+  }
+
+  if ((epage ==='all')&&(flag == 0)){
+    butterfly_swiper_injector_config();
+  }
+  else if (epage === cpage){
+    butterfly_swiper_injector_config();
+  }
+  </script><script defer src="https://npm.elemecdn.com/anzhiyu-blog@1.1.6/js/swiper.min.js"></script><script defer data-pjax src="https://cdn.cbd.int/hexo-butterfly-swiper-anzhiyu@1.0.4/lib/swiper_init.js"></script><script data-pjax src="https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/gsap/3.9.1/gsap.min.js"></script><script defer src="https://npm.elemecdn.com/hexo-butterfly-swiper-anzhiyu@1.0.4/lib/people.min.js"></script><script async src="/anzhiyu/random.js"></script><div class="js-pjax"><script async="async">var arr = document.getElementsByClassName('recent-post-item');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__zoomIn');
+    arr[i].setAttribute('data-wow-duration', '1.5s');
+    arr[i].setAttribute('data-wow-delay', '200ms');
+    arr[i].setAttribute('data-wow-offset', '30');
+    arr[i].setAttribute('data-wow-iteration', '1');
+  }</script><script async="async">var arr = document.getElementsByClassName('card-widget');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__zoomIn');
+    arr[i].setAttribute('data-wow-duration', '');
+    arr[i].setAttribute('data-wow-delay', '200ms');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script><script async="async">var arr = document.getElementsByClassName('flink-list-card');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__flipInY');
+    arr[i].setAttribute('data-wow-duration', '3s');
+    arr[i].setAttribute('data-wow-delay', '');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script><script async="async">var arr = document.getElementsByClassName('flink-list-card');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__animated');
+    arr[i].setAttribute('data-wow-duration', '3s');
+    arr[i].setAttribute('data-wow-delay', '');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script><script async="async">var arr = document.getElementsByClassName('article-sort-item');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__slideInRight');
+    arr[i].setAttribute('data-wow-duration', '1.5s');
+    arr[i].setAttribute('data-wow-delay', '');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script><script async="async">var arr = document.getElementsByClassName('site-card');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__flipInY');
+    arr[i].setAttribute('data-wow-duration', '3s');
+    arr[i].setAttribute('data-wow-delay', '');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script><script async="async">var arr = document.getElementsByClassName('site-card');
+for(var i = 0;i<arr.length;i++){
+    arr[i].classList.add('wow');
+    arr[i].classList.add('animate__animated');
+    arr[i].setAttribute('data-wow-duration', '3s');
+    arr[i].setAttribute('data-wow-delay', '');
+    arr[i].setAttribute('data-wow-offset', '');
+    arr[i].setAttribute('data-wow-iteration', '');
+  }</script></div><script defer src="https://cdn.cbd.int/hexo-butterfly-wowjs/lib/wow.min.js"></script><script defer src="https://cdn.cbd.int/hexo-butterfly-wowjs/lib/wow_init.js"></script><!-- hexo injector body_end end --><script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/miku.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":true},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/"});</script></body></html>
