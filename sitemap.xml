@@ -2,6 +2,51 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://charles-webebr.github.io/about/index.html</loc>
+    
+    <lastmod>2026-01-09</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://charles-webebr.github.io/category/index.html</loc>
+    
+    <lastmod>2026-01-09</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://charles-webebr.github.io/link/index.html</loc>
+    
+    <lastmod>2026-01-09</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://charles-webebr.github.io/tags/index.html</loc>
+    
+    <lastmod>2026-01-09</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://charles-webebr.github.io/code-blocks/index.html</loc>
+    
+    <lastmod>2026-01-09</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://charles-webebr.github.io/2024/07/10/%E4%BA%91%E6%9C%8D%E5%8A%A1/</loc>
     
     <lastmod>2024-09-03</lastmod>
