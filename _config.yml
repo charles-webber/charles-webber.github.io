@@ -129,7 +129,7 @@ theme: butterfly
 deploy:
   - type: git
     repository: https://github.com/charles-webber/charles-webber.github.io.git
-    branch: main
+    branch: master
   
 search:
   path: search.xml
