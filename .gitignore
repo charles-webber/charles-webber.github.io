@@ -7,3 +7,9 @@ public/
 .deploy*/
 _multiconfig.yml
 *.hdx
+
+# 忽略 Hedex 目录及常见大型文件类型
+source/_posts/Hedex/
+*.cfs
+*.bin
+*.dll
