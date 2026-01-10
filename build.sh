@@ -3,13 +3,10 @@
 
 # 安全模式，遇到错误立即退出
 set -e
-
 # 安装依赖（如已安装可跳过）
 npm install
-
 # 生成静态文件
 npx hexo clean
 npx hexo generate
-
 # 部署到远程仓库
 npx hexo deploy
