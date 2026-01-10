@@ -1,0 +1,15 @@
+---
+title:ture
+date:ture
+updated:ture
+type:ture
+comments:ture
+description:ture
+keywords:ture
+top_img:ture
+mathjax:ture
+katex:ture
+aside:ture
+aplayer:ture
+highlight_shrink:ture
+---

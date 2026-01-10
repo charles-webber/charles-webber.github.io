@@ -1,0 +1,21 @@
+
+- class_name: Website
+  class_desc: Recommanded website
+  link_list:
+    - name: Youtube
+      link: https://www.youtube.com/
+      avatar: https://i.loli.net/2020/05/14/9ZkGg8v3azHJfM1.png
+      descr: for fun
+    - name: Weibo
+      link: https://www.weibo.com/
+      avatar: https://i.loli.net/2020/05/14/TLJBum386vcnI1P.png
+      descr:  kiln and battle
+    - name: Twitter
+      link: https://twitter.com/
+      avatar: https://i.loli.net/2020/05/14/5VyHPQqR6LWF39a.png
+      descr: horny women in
+    -
+      name: Bilibili
+      link: https://bilibili.com/
+      avatar: https://gimg2.baidu.com/image_search/src=http%3A%2F%2F5b0988e595225.cdn.sohucs.com%2Fimages%2F20200213%2F0e875832950e4eeb900e0f8d35783930.jpeg&refer=http%3A%2F%2F5b0988e595225.cdn.sohucs.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1669638972&t=9beae48c29bac5d3b75b4552ea98fc55
+      descr: The atmost homosexual communication website
