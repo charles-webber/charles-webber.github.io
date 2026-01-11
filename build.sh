@@ -6,5 +6,5 @@ set -e
 # 生成静态文件
 npx hexo clean
 npx hexo generate
-# 部署到远程仓库
-npx hexo deploy
+# 部署到远程仓库 (在 Cloudflare 构建时不需要这行，已注释)
+# npx hexo deploy
