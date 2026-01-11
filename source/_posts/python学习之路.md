@@ -1,6 +1,6 @@
 ---
 title: python learning
-date: 2023-10-9 16:35:02
+date: 2023-10-09 16:35:02
 tags: note
 description: python learning for AI
 cover: https://gitee.com/Charles-Webber/blog-image1/raw/master/img/1ad592ce-e2c5-4f5f-975b-9d4f04d97d41.png

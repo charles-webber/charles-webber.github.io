@@ -1,5 +1,6 @@
 ---
 title: openeuler
+date: 2024-07-10 15:43:40
 tags: linux
 description: ict培训linux
 cover: https://gitee.com/Charles-Webber/blog-image1/raw/master/img/a371d6ff-5c9b-420d-bab1-84c1fb59a2b5.jpg

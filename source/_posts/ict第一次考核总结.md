@@ -266,7 +266,9 @@ C类：192.168.0.0到192.168.255.255是私有地址。
 
 **工作模式是UDP，服务器端口号为67，客户端的端口号为68**
 
-![image-20231019124804462](C:/Users/alex/AppData/Roaming/Typora/typora-user-images/image-20231019124804462.png)
+![image-20231019124804462](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/72717ba5-2a92-4516-8203-d930c17e7909.png)
+> [!NOTE]
+> 这里的图片暂未迁移归档，请在本地 Typora 中查看。
 
 （false）
 
