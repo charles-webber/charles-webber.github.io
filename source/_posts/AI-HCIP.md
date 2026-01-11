@@ -1,3 +1,10 @@
+---
+title: AI-HCIP
+date: 2024-09-02 09:09:19
+tags: []
+categories:
+---
+
 # 大三培训
 
 ## 第一天

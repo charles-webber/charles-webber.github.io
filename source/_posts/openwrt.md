@@ -1,3 +1,10 @@
+---
+title: openwrt
+date: 2024-07-10 20:10:47
+tags: []
+categories:
+---
+
 # openwrt-第一周
 
 芯片
