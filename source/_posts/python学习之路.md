@@ -3,7 +3,7 @@ title: python learning
 date: 2023-10-09 16:35:02
 tags: note
 description: python learning for AI
-cover: https://gitee.com/Charles-Webber/blog-image1/raw/master/img/1ad592ce-e2c5-4f5f-975b-9d4f04d97d41.png
+cover: https://gitee.com/Charles-Webber/blog-image1/raw/master/img/ayase_eli_hoshizora_rin_koizumi_hanayo_kousaka_honoka_love_live__minami_kotori_murota_yuuhei_nishikino_maki_sonoda_umi_toujou_nozomi_yazawa_nico_7415x4502.jpg
 ---
 
 

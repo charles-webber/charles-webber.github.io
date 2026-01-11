@@ -983,6 +983,7 @@ swiper:
 inject:
   head:
     - <meta name="referrer" content="no-referrer" />
+    - <style>.aplayer { font-size: 36px !important; } .aplayer .aplayer-info .aplayer-music .aplayer-title { font-size: 36px !important; } .aplayer .aplayer-info .aplayer-music .aplayer-author { font-size: 30px !important; }</style>
     # - <link rel="stylesheet" href="/xxx.css">
   bottom:
     # aplayer锟斤拷锟斤拷
