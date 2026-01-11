@@ -844,7 +844,7 @@ pangu:
 # Lazyload (锟紻片锟�??硷拷锟絛)
 # https://github.com/verlok/vanilla-lazyload
 lazyload:
-  enable: true
+  enable: false
   field: site # site/post
   placeholder:
   blur: false
