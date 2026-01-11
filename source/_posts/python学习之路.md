@@ -3,8 +3,7 @@ title: python learning
 date: 2023-10-9 16:35:02
 tags: note
 description: python learning for AI
-cover:  https://wallhaven.cc/w/85j9qo
-swiper_index: 1
+cover:  https://w.wallhaven.cc/full/13/wallhaven-13yvpw.png
 ---
 
 

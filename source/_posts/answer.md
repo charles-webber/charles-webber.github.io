@@ -4,7 +4,7 @@ date: 2022-10-29 08:42:02
 tags: answer
 typora-root-url: ./..
 description: a freshman's practice
-cover: https://w.wallhaven.cc/full/zy/wallhaven-zygeko.jpg
+cover: https://w.wallhaven.cc/full/0q/wallhaven-0qz5vq.jpg
 swiper_index: 1
 ---
 

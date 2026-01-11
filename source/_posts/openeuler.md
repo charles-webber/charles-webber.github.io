@@ -2,7 +2,7 @@
 title: openeuler
 tags: linux
 description: ict培训linux
-cover: https://images.wallpaperscraft.com/image/single/snowflake_winter_macro_98434_1280x720.jpg
+cover: https://w.wallhaven.cc/full/kw/wallhaven-kw22p1.jpg
 swiper_index: 1
 ---
 

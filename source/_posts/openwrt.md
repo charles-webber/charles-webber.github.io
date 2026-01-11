@@ -3,7 +3,7 @@ title: openwrt
 date: 2024-07-10 20:10:47
 tags: []
 categories:
-cover: https://images.wallpaperscraft.com/image/single/forest_bridge_fog_120892_1280x720.jpg
+cover: https://w.wallhaven.cc/full/39/wallhaven-39rwr3.jpg
 ---
 # openwrt-第一周
 
