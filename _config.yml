@@ -223,5 +223,5 @@ cinema: # ׷������
 # https://github.com/MoePlayer/hexo-tag-aplayer/blob/master/docs/README-zh_cn.md
 aplayer:
   meting: true
-  meting_api: 'http://20.239.25.118/'
+  meting_api: 'https://20.239.25.118:8000/api?server=:server&type=:type&id=:id&r=:r'
   asset_inject: false
