@@ -983,17 +983,18 @@ swiper:
 inject:
   head:
     - <meta name="referrer" content="no-referrer" />
-    - '<style>
-      /* ?????? */
-      .aplayer .aplayer-list ol li { font-size: 16px !important; }
-      /* ?????????? */
-      .aplayer .aplayer-info .aplayer-music .aplayer-title { font-size: 18px !important; }
-      /* ?????????? */
-      .aplayer .aplayer-info .aplayer-music .aplayer-author { font-size: 14px !important; }
-      /* ???? (LRC) */
-      .aplayer .aplayer-lrc { font-size: 18px !important; height: 40px !important; }
-      .aplayer .aplayer-lrc p { font-size: 18px !important; line-height: 20px !important; margin: 0 !important; padding: 0 !important; }
-      </style>'
+    - |
+      <style>
+        /* ?????? */
+        .aplayer .aplayer-list ol li { font-size: 16px !important; }
+        /* ?????????? */
+        .aplayer .aplayer-info .aplayer-music .aplayer-title { font-size: 18px !important; }
+        /* ?????????? */
+        .aplayer .aplayer-info .aplayer-music .aplayer-author { font-size: 14px !important; }
+        /* ???? (LRC) */
+        .aplayer .aplayer-lrc { font-size: 18px !important; height: 40px !important; }
+        .aplayer .aplayer-lrc p { font-size: 18px !important; line-height: 20px !important; margin: 0 !important; padding: 0 !important; }
+      </style>
     # - <link rel="stylesheet" href="/xxx.css">
   bottom:
     # aplayer锟斤拷锟斤拷
