@@ -3,7 +3,7 @@ title: openwrt
 date: 2024-07-10 20:10:47
 tags: []
 categories:
-cover: https://w.wallhaven.cc/full/39/wallhaven-39rwr3.jpg
+cover: https://gitee.com/Charles-Webber/blog-image1/raw/master/img/08654b59-12a2-469f-b0fb-d0d925ce7ab4.jpg
 ---
 # openwrt-第一周
 
@@ -45,7 +45,7 @@ nx30 pro已经刷入了immortalWrt的系统，我们将路由器的wan口用双�
 
 ### 路由器硬件构成
 
-![image-20240520150340298](C:/Users/alex/AppData/Roaming/Typora/typora-user-images/image-20240520150340298.png)
+![image-20240520150340298](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/379b3d6e-9841-4ddd-9957-ebe3292b5f31.png)
 
 usb总线速度有点慢，跑802.ac不够
 
@@ -53,7 +53,7 @@ usb总线速度有点慢，跑802.ac不够
 
 **板子**
 
-![image-20240520150917301](C:/Users/alex/AppData/Roaming/Typora/typora-user-images/image-20240520150917301.png)
+![image-20240520150917301](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/c4b12be2-6fe4-49d0-b845-192192510462.png)
 
 - wifi芯片2.4g，5g一般是外挂的（7621，2.4g，5g）
 
@@ -80,7 +80,7 @@ usb总线速度有点慢，跑802.ac不够
 
 # openwrt暑假期
 
-![image-20240710194723121](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20240710194723121.png)
+![image-20240710194723121](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/3099f746-bcc4-42d4-8ef1-f99165f31a3f.png)
 
 我们的问题就是第三点，因为我们的芯片崭新出厂
 

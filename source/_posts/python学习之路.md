@@ -3,7 +3,7 @@ title: python learning
 date: 2023-10-9 16:35:02
 tags: note
 description: python learning for AI
-cover:  https://w.wallhaven.cc/full/13/wallhaven-13yvpw.png
+cover: https://gitee.com/Charles-Webber/blog-image1/raw/master/img/1ad592ce-e2c5-4f5f-975b-9d4f04d97d41.png
 ---
 
 
@@ -237,7 +237,7 @@ def nop():
 
 ### 内建函数
 
-![在这里插入图片描述](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/370218a1ee13497aa9e14a75430aadc1.png)
+![在这里插入图片描述](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/7cb36988-7829-41b1-8680-3246ae9f7859.png)
 
 除此之外的就是第三方函数，在Python语言中，还可以把函数名赋给一个变量，相当于给这个函数起了一个“别名”，如下代码所示。
 
@@ -359,13 +359,13 @@ people = People("李四", 20, "50kg")  # 实例化一个对象
 
 3. 属性和方法的分类：
 
-![image-20231011002732011](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20231011002732011.png)
+![image-20231011002732011](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/219b743f-10fd-4d18-9c3c-f9903d81088e.png)
 
-![image-20231011002753974](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20231011002753974.png)
+![image-20231011002753974](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/bfe668b7-7a09-4ff8-b3a8-908eaddcd4d0.png)
 
 
 
-栗子：![在这里插入图片描述](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/39f273d5f46e4c0e92d7a0f76fabb9e6.png)
+栗子：![在这里插入图片描述](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/cd5cdf24-ff9f-4ad6-a841-48639b397ea5.png)
 
 
 
@@ -423,7 +423,7 @@ print(zhangsan) #出现错误，因为del后，对象就不存在了
 ### 运算符
 
 算术运算符：+、-、*、/、//、%、**
-关系运算符：![在这里插入图片描述](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/aae4d68d5b2043f6967990c610567bcd.png)
+关系运算符：![在这里插入图片描述](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/7cbdf9dd-88a4-468a-ae45-f79f23aa915d.png)
 
 Python支持通过保留字not、and和or对判断条件进行逻辑组合：
 
@@ -457,7 +457,7 @@ python中的for循环与c语言的有点不一样
 
 ### for循环
 
-![在这里插入图片描述](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/d898c790ad4543a8922375100c76af9e.png)
+![在这里插入图片描述](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/e1f64824-f8e4-4daa-a0ee-962fc196d038.png)
 
 - 目标可以是字符串、文件、range()函数或组合数据类型等；
 - 循环变量用于保存本次循环中访问到的遍历结构中的元素；
@@ -534,15 +534,15 @@ print(a.conjugate())  # .conjugate()方法可以获取复数的共轭复数
 
 ### 数值计算函数库
 
-![在这里插入图片描述](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/734cddbe0f274ccb93a2107c953c7a02.png)
+![在这里插入图片描述](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/2869590f-42dc-4fe3-afcd-80490718c3f6.png)
 
-![在这里插入图片描述](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/bdf2e0ce75b64a40855c57bdc819bab0.png)
+![在这里插入图片描述](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/c834e5d7-f806-4ad9-9514-4745e83f0837.png)
 
-![在这里插入图片描述](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/713f45f3adc34300b1a07f9ef37c6876.png)
+![在这里插入图片描述](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/c8d94c56-b7bc-4322-bcc0-7a3af98a43af.png)
 
-![在这里插入图片描述](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/5c4dbdbf93f742cd9ac96630ccd415ed.png)
+![在这里插入图片描述](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/d5d9d30b-669c-4334-82f5-f8e64ec89bac.png)
 
-![在这里插入图片描述](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/882eaa80b3ee4da5aef10a8d0846dfe5.png)
+![在这里插入图片描述](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/f7144f28-635e-4b38-923f-d0b56fc4384c.png)
 
 ```py
 import random
@@ -559,7 +559,7 @@ print(random.randint(1, 2000))  # random.randint(a,b)作用是生成一个[a-b]�
 
 三重引号是以三个同一种类型的引号开始，并以三个相同引号结束的字符串表示方式。
 
-![在这里插入图片描述](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/b0f542a8c6e7463897bb5acee8a59338.png)
+![在这里插入图片描述](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/35c59eb7-30b1-47e2-ac52-3aca4f172cda.png)
 
 //和C语言的/*  */语句类似（字符串中出现了“\n”换行符，这是因为敲了回车）
 
@@ -569,7 +569,7 @@ raw字符串的格式是r’…’。
 
 在raw字符串中，所有的字符都是直接按照字面意思来解释，没有转义字符或者不能打印的字符。
 
-栗子：![在这里插入图片描述](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/33c3a99bebb247819089f1069fe7e197.png)
+栗子：![在这里插入图片描述](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/df8aafac-9617-484d-bbe9-95cf76bc4ae4.png)
 
 - 第一种方式的语句打开一个文件时，字符“\n”会被当作回车键的转义字符，从而使文件打开失败。
 - 第二种方式对反斜杠“\”进行转义，虽然正确，但是代码看起来会令人感到费解。
@@ -579,7 +579,7 @@ raw字符串的格式是r’…’。
 
 #### 索引
 
-![在这里插入图片描述](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/c8c95c08bb9a4bab98c2e38873efb1bb.png)
+![在这里插入图片描述](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/c781d4ed-cac4-4e3c-8913-3bcc5474f3bf.png)
 
 有反向索引，很方便
 
@@ -587,7 +587,7 @@ raw字符串的格式是r’…’。
 
 使用Python语言的分片(slice)操作，来提取字符串中的子序列。
 
-![img](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/fb9c92d1b0f142588e28d1dccc3f4a51.png)
+![img](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/3d34be90-02fb-499c-94bd-41afaceb5a24.png)
 
 s[start:end :dir]---start是提取的开头，而end是提取的末尾，dir既有控制方向和倍数的功能，例如s[1：6：2]表示从序号1开始到六按1+2n取元素直到6，为1 3 5 
 
@@ -595,15 +595,15 @@ s[start:end :dir]---start是提取的开头，而end是提取的末尾，dir既�
 
 1. 操作符+的方法
 
-![在这里插入图片描述](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/1fe6df7b08d14add97ac5ac3ec9e83f3.png)
+![在这里插入图片描述](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/c3bd279d-121b-46e8-a259-22a81028cef3.png)
 
 1. Python语言使用符串格式化操作符(%)和join()方法这两种方式连接字符串。
 
-![在这里插入图片描述](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/8faa079855af4b458bddf66c8b6a68f6.png)
+![在这里插入图片描述](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/eaea0bfe-4d57-4b56-971e-063dbee5f303.png)
 
 3. **join()方法：**
 
-![在这里插入图片描述](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/92829cdcfbe047e2bf58e9b81959f683.png)
+![在这里插入图片描述](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/6f05b64b-6ee4-4a75-88e7-bad309498ff4.png)
 
 
 
@@ -612,15 +612,15 @@ s[start:end :dir]---start是提取的开头，而end是提取的末尾，dir既�
 1. 加号完再切片
 2. replace函数修改
 
-![在这里插入图片描述](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/e945efb469c74bada39988e4be267501.png)
+![在这里插入图片描述](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/89e9d2ad-41c8-4963-bc34-d225b67875f3.png)
 
 #### 字符串格式化
 
-![在这里插入图片描述](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/6a610c9cdf454bb791df9bbe05fab390.png)
+![在这里插入图片描述](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/5a2a140b-8f6b-47ef-9f3b-fffe9e4deeb5.png)
 
-![在这里插入图片描述](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/530dee4d8baf40cab717bbb27e39cd5d.png)
+![在这里插入图片描述](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/79803c3b-b6ac-4a70-abb6-6c227468ce2c.png)
 
-![在这里插入图片描述](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/1ba28d988e9544ad96e80d2bc428c5bc.png)
+![在这里插入图片描述](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/9b02b845-1df4-4304-b63a-040894ee8fc7.png)
 
 
 
@@ -659,9 +659,9 @@ print('%%'%())
 
 #### 数字格式化
 
-![在这里插入图片描述](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/defd8e16400e4bc99ee33c1bf21265a4.png)
+![在这里插入图片描述](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/260cd146-e668-4724-9205-cd0e0864070e.png)
 
-![在这里插入图片描述](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/1c228521780949e1b45b2ce7d72bf0b6.png)
+![在这里插入图片描述](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/16c9e886-cbf2-44cd-aa06-9d44369d6e89.png)
 
 
 
@@ -669,7 +669,7 @@ print('%%'%())
 
 在Python语言中，字典格式化是在左边的格式化字符串通过引用右边字典中的**键**来提取对应的值，实现格式化输出。
 
-![在这里插入图片描述](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/2cc82bb7d4e5457690995f47ff3c2f09.png)
+![在这里插入图片描述](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/a4dfca4d-77ff-4d98-9e1c-a51bd98b9168.png)
 
 （“ ”中的就叫key，注意括号外的s别忘了：“%(name)s,%(age)s”）
 
@@ -755,9 +755,9 @@ list类型中区分元素的顺序，且允许包含重复的元素。
 
 #### 列表函数和方法
 
-![在这里插入图片描述](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/f349e6e2cfc44ea587fabb13e28078be.png)
+![在这里插入图片描述](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/7c9a62ad-bd77-4f79-9a5f-cf44e743277e.png)
 
-![在这里插入图片描述](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/d5823afa886d49d0af66d9a80e4ce94f.png)
+![在这里插入图片描述](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/f346c1d1-2c95-4eda-8c4b-329ab28b8b26.png)
 
 
 
@@ -794,9 +794,9 @@ list类型中区分元素的顺序，且允许包含重复的元素。
 
 ##### 元组函数和方法
 
-![在这里插入图片描述](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/93992a05fd3d43cba9b7f750a71434cc.png)
+![在这里插入图片描述](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/8d065e27-f1e0-4d4f-83d5-1540515e5631.png)
 
-![在这里插入图片描述](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/e4d17925e636470ba7c6fdc92bf2a94a.png)
+![在这里插入图片描述](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/838061b9-ddff-4849-87db-84b79869ef74.png)
 
 表中的count方法和index方法，实际是元组类型和列表类型所共有的方法，其使用方法和列表完全相同。
 
@@ -869,9 +869,9 @@ print(v)
 
 #### 字典函数和方法
 
-![在这里插入图片描述](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/5ae2cc7d2062475a80dd386754bb3d81.png)
+![在这里插入图片描述](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/a3c8453f-1f2a-4183-821c-fa97b7a6d298.png)
 
-![在这里插入图片描述](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/5eb36fefaf59424eb5e5b9468d9c058d.png)
+![在这里插入图片描述](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/131318f4-4dad-42f9-9b39-c4b6e9db2f89.png)
 
 
 
@@ -895,7 +895,7 @@ print(v)
 
 #### 运算
 
-![在这里插入图片描述](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/48bf515f6b254898b4d8b9cc41f70d6e.png)
+![在这里插入图片描述](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/4419ffa1-9596-4f29-af6b-487674a7fbc1.png)
 
 #### 基本操作
 
@@ -913,13 +913,13 @@ print(v)
 
 #### 不可变集合
 
-![在这里插入图片描述](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/22017e3d66df4266a9f69bbb4cd76ce8.png)
+![在这里插入图片描述](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/9697e400-78f7-444c-ad43-d63ba6888af8.png)
 
 
 
 #### 集合函数和方法
 
-![在这里插入图片描述](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/22632c5163594f5b833634e93fca8053.png)
+![在这里插入图片描述](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/d353a291-0b5c-4020-b18a-214621c25060.png)
 
 
 

@@ -3,19 +3,19 @@ title: ict第一次考核总结
 date: 2024-04-13 14:25:14
 tags: []
 categories:
-cover: https://w.wallhaven.cc/full/72/wallhaven-7232p9.jpg
+cover: https://gitee.com/Charles-Webber/blog-image1/raw/master/img/963f3a61-4ba8-44cd-aa6f-157dbb7ca809.jpg
 ---
 # ict第一次考核总结
 
 ## 实验
 
-![image-20231015232727394](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20231015232727394.png)
+![image-20231015232727394](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/f57e5a3b-e4b4-4d8d-948e-691b93068bba.png)
 
 
 
 ### MSTP配置
 
-![image-20231015234903319](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20231015234903319.png)
+![image-20231015234903319](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/e8a43483-7644-49de-82c6-020c9d8fd594.png)
 
 
 
@@ -53,7 +53,7 @@ cover: https://w.wallhaven.cc/full/72/wallhaven-7232p9.jpg
 
 ##### 比较根路径开销（从根桥到交换机）
 
-根路径开销低的为根端口 ![img](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/20210604234616184.png)
+根路径开销低的为根端口 ![img](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/1d8a79b3-ec08-40e4-b924-48ce21885239.png)
 
 GE端口开销是2万，E端口开销是20万
 
@@ -158,7 +158,7 @@ dhcp relay server-ip XXXX
 
 ### 私有地址
 
-![image-20231019115628358](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20231019115628358.png)
+![image-20231019115628358](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/d1c074d5-64bb-4a5e-93cf-b91c3f00a9f0.png)
 
 A类：10.0.0.0到10.255.255.255是私有地址
 
@@ -174,7 +174,7 @@ C类：192.168.0.0到192.168.255.255是私有地址。
 
 ### 广播地址
 
-![image-20231019120106587](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20231019120106587.png)
+![image-20231019120106587](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/20d03070-50c2-4162-ac27-9e2fca7a4665.png)
 
 
 
@@ -186,11 +186,11 @@ C类：192.168.0.0到192.168.255.255是私有地址。
 
 ### DHCP中继和DHCP服务器之间交互的报文为？
 
-![image-20231019121228700](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20231019121228700.png)
+![image-20231019121228700](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/add31c09-9545-4154-a6ab-63f9c67fff52.png)
 
 抓个包发现使用的是unicast报文
 
-![image-20231019121442316](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20231019121442316.png)
+![image-20231019121442316](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/a11c0ff2-897d-4233-bf90-5e07efe99288.png)
 
 1.单播（unicast）：网络节点之间的通信就好像是人们之间的对话一样。如果一个人对另外一个人说话，那么用网络技术的术语来描述就是“单播”，此时信息的接收和传递只在两个节点之间进行。单播在网络中得到了广泛的应用，网络上绝大部分的数据都是以单播的形式传输的，只是一般网络用户不知道而已。例如，你在收发电子邮件、浏览网页时，必须与邮件服务器、Web服务器建立连接**，此时使用的就是单播数据传输方式。但是通常使用“点对点通信”（Point to Point）代替“单播”**，因为“单播”一般与“多播”和“广播”相对应使用。
 
@@ -250,7 +250,7 @@ C类：192.168.0.0到192.168.255.255是私有地址。
 
 #### 各层用到的协议
 
-![img](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/v2-363018760274c3fc551392010f8f3187_1440w.webp)
+![img](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/67a3751e-c05a-4498-ab9a-47a1a3fb2388.webp)
 
 
 
@@ -258,7 +258,7 @@ C类：192.168.0.0到192.168.255.255是私有地址。
 
 交换机收到一个帧会记录相应的mac地址和接口，vlan id 应该是不会修改或者分配的
 
-![image-20231019124501220](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20231019124501220.png)
+![image-20231019124501220](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/72717ba5-2a92-4516-8203-d930c17e7909.png)
 
 
 
@@ -272,13 +272,13 @@ C类：192.168.0.0到192.168.255.255是私有地址。
 
 ### IPv6
 
-![image-20231019125228430](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20231019125228430.png)
+![image-20231019125228430](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/bafab335-e3f2-4b93-9ce2-715181d4741a.png)
 
 不是点分而是冒号16进制
 
 ### telnet
 
-![image-20231019125316193](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20231019125316193.png)
+![image-20231019125316193](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/7efb2dc6-56da-44fa-8c4b-95cf9718c8d7.png)
 
 **默认端口号是23号**
 
@@ -290,7 +290,7 @@ EDP：BGP
 
 ### 链路聚合
 
-![image-20231019131130197](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20231019131130197.png)
+![image-20231019131130197](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/cfa5f729-03ed-4e0c-b0cf-9d4440cc84f8.png)
 
 #### 模式
 
@@ -304,7 +304,7 @@ DHCP报文（主机---服务器）
 
 
 
-![image-20231019132115252](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20231019132115252.png)
+![image-20231019132115252](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/d2f20402-93ad-43be-b6ae-26debb1c68be.png)
 
 
 
@@ -312,10 +312,10 @@ DHCP报文（主机---服务器）
 
 
 
-![image-20231019132057721](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20231019132057721.png)
+![image-20231019132057721](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/214f6d69-4c53-49ed-8229-735f356e5faa.png)
 
 
 
 ip分配过程
 
-![image-20231019132301021](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20231019132301021.png)
+![image-20231019132301021](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/79fd685d-bf6a-42af-b192-d78e7ffbd003.png)

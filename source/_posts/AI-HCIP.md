@@ -3,7 +3,7 @@ title: AI-HCIP
 date: 2024-09-02 09:09:19
 tags: []
 categories:
-cover: https://w.wallhaven.cc/full/47/wallhaven-47k65o.jpg
+cover: https://gitee.com/Charles-Webber/blog-image1/raw/master/img/bcab5fa3-2a4b-4c00-90a4-20e67dad7c84.jpg
 ---
 # 大三培训
 
@@ -110,7 +110,7 @@ vi etc/hosts
 
 ### sigmoid函数
 
-![image-20240831145555487](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20240831145555487.png)
+![image-20240831145555487](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/8f06752c-8eb8-44d8-a92e-bb056606dd5f.png)
 
 ### 损失函数
 
@@ -127,11 +127,11 @@ vi etc/hosts
 
 k个最近的邻居的意思，即每个样本都可以用它最接近的k个邻居来代表
 
-![image-20240831151818583](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20240831151818583.png)
+![image-20240831151818583](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/77a7faf5-6ad9-4e1b-ab67-0ceb76877468.png)
 
 距离度量和分类规则
 
-![image-20240831151935672](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20240831151935672.png)
+![image-20240831151935672](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/8103b039-d03c-4a42-b35e-a972d0369b01.png)
 
 
 
@@ -141,7 +141,7 @@ k个最近的邻居的意思，即每个样本都可以用它最接近的k个邻
 
 ### 决策树
 
-![image-20240831152639222](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20240831152639222.png)
+![image-20240831152639222](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/4607d294-ba5a-4e21-889d-0c0457446298.png)
 
 - 特征选择：从数据中选择一个特征作为分类的标准
 - 决策树生成
@@ -157,7 +157,7 @@ k个最近的邻居的意思，即每个样本都可以用它最接近的k个邻
 
 ### ID3
 
-![image-20240831153900556](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20240831153900556.png)
+![image-20240831153900556](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/a104b533-865a-4bf4-8d62-40a1ea72f3ea.png)
 
 大多数情况下不会提供多少有价值的信息
 
@@ -189,7 +189,7 @@ k个最近的邻居的意思，即每个样本都可以用它最接近的k个邻
 
 “A时间发生，B也有可能发生”
 
-![image-20240831163442409](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20240831163442409.png)![image-20240831164102981](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20240831164102981.png)
+![image-20240831163442409](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/c7d845ed-1b18-4b2e-9aa2-82e5f9d1a58b.png)![image-20240831164102981](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/275d36f9-879e-4b84-aa85-bf21617759f6.png)
 
 ### FP-growth算法（链表）
 
@@ -201,7 +201,7 @@ k个最近的邻居的意思，即每个样本都可以用它最接近的k个邻
 
 ### prefixSpan算法（递归）
 
-![image-20240831170220192](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20240831170220192.png)
+![image-20240831170220192](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/703213de-f33d-4218-92e0-e9663cc58918.png)
 
 
 
@@ -209,13 +209,13 @@ k个最近的邻居的意思，即每个样本都可以用它最接近的k个邻
 
 ### 协同过滤
 
-![image-20240831172612816](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20240831172612816.png)
+![image-20240831172612816](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/073f445f-2ffa-449d-9b39-eea217d41fb2.png)
 
 
 
 #### 基于用户推荐
 
-![image-20240831172838013](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20240831172838013.png)
+![image-20240831172838013](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/56e75f7f-32a9-4fa1-a67c-c28a835f4743.png)
 
 
 
@@ -225,7 +225,7 @@ k个最近的邻居的意思，即每个样本都可以用它最接近的k个邻
 
 #### 基于项目推荐
 
-![image-20240831173033453](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20240831173033453.png)
+![image-20240831173033453](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/973593ca-90b2-4ba3-95dd-b767d363b564.png)
 
 
 
@@ -304,7 +304,7 @@ k个最近的邻居的意思，即每个样本都可以用它最接近的k个邻
 
 #### DataArts LakeFormation+**DataArts Studio**
 
-![image-20240901100515876](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20240901100515876.png)
+![image-20240901100515876](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/a360dbb1-5306-4c96-8ae5-6cec1fb67d15.png)
 
 
 
@@ -322,7 +322,7 @@ k个最近的邻居的意思，即每个样本都可以用它最接近的k个邻
 
 2. 灰度图表示
 
-   ![image-20240901105336504](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20240901105336504.png)
+   ![image-20240901105336504](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/f89cdf36-b6b6-43fd-a96b-f72c6e989b2b.png)
 
 ​	在数学上用一个矩阵进行图像存储，坐标在左上角
 
@@ -331,13 +331,13 @@ k个最近的邻居的意思，即每个样本都可以用它最接近的k个邻
 3. RGB三色图
 4. HSV比RGB色彩更加丰富 
 
-​	![image-20240901105605021](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20240901105605021.png)
+​	![image-20240901105605021](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/ae1be1fa-66a6-48b8-8c10-0f4c7986645d.png)
 
 5. 其他颜色空间
 
-![image-20240901105836424](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20240901105836424.png)	6. 灰度化计算
+![image-20240901105836424](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/565871ff-75c2-47bc-9989-44523e92db83.png)	6. 灰度化计算
 
-​	![image-20240901110210774](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20240901110210774.png)
+​	![image-20240901110210774](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/f2cd3776-4155-47dd-aeb9-c1244ba93e92.png)
 
 呼叫强大的python库
 
@@ -363,11 +363,11 @@ k个最近的邻居的意思，即每个样本都可以用它最接近的k个邻
 
 约定大于规范，规范大于编程
 
-![image-20240901145301847](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20240901145301847.png)
+![image-20240901145301847](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/3fc19d43-6e2e-4c54-b196-b98cf9d8d634.png)
 
 **在语音识别中最常见的语音特征是MFCC**
 
-![image-20240901145609715](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20240901145609715.png)
+![image-20240901145609715](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/6714cf21-a267-4807-a91b-9ba084a23f2e.png)
 
 
 
@@ -375,7 +375,7 @@ k个最近的邻居的意思，即每个样本都可以用它最接近的k个邻
 
 最伟大的发明
 
-![image-20240901150246235](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20240901150246235.png)
+![image-20240901150246235](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/5d102efe-0d33-4d06-b949-fdc1a3e79c16.png)
 
 
 
@@ -383,9 +383,9 @@ k个最近的邻居的意思，即每个样本都可以用它最接近的k个邻
 
 ### EM算法
 
-![image-20240901151425040](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20240901151425040.png)
+![image-20240901151425040](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/e829e0af-4ff2-4114-b9e5-790ee35cf89e.png)
 
-![image-20240901151621993](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20240901151621993.png)
+![image-20240901151621993](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/8b3b316e-9d6d-4136-af4b-4149242dc267.png)
 
 boosting（自助算法-穿靴子要自己穿）
 
@@ -393,7 +393,7 @@ boosting（自助算法-穿靴子要自己穿）
 
 ### 长短期记忆网络
 
-![image-20240901153333185](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20240901153333185.png)
+![image-20240901153333185](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/c4326b17-4388-4550-bc2c-223ad2d08b15.png)
 
 ### GRU
 

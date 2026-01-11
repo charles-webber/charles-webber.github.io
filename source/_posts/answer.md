@@ -4,13 +4,13 @@ date: 2022-10-29 08:42:02
 tags: answer
 typora-root-url: ./..
 description: a freshman's practice
-cover: https://w.wallhaven.cc/full/0q/wallhaven-0qz5vq.jpg
+cover: https://gitee.com/Charles-Webber/blog-image1/raw/master/img/9039b84a-d598-4e81-acfb-68191b4f302b.jpg
 swiper_index: 1
 ---
 
 <meta name="referrer" content="no-referrer"/>
 
-# *错题1**![](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/屏幕截图_20221028_132523-1667192539473-5.png)
+# *错题1**![](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/87ccee4d-994d-43d0-a598-2895f9aafd56.png)
 
 假设b已经是a的因子之和，那么只要证明b的因子之和也等于a即可，如此简化了计算
 
@@ -18,9 +18,9 @@ swiper_index: 1
 
 # <u>***无题***</u>（太逆天了）
 
-![](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/屏幕截图_20221028_140506-1667192552740-7.png)
+![](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/faede76c-3c25-4162-b5bb-59e099383edb.png)
 
-![](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/屏幕截图_20221028_152146-1667192562705-9.png)
+![](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/aae30729-fd5c-4bcc-87b8-67ec38e5a015.png)
 
 ```c
 //我的理解，虽然一开始没写出来呜呜呜（从E到A）
@@ -79,7 +79,7 @@ int main()
 }
 ```
 
-![](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/屏幕截图_20221030_221648.png)
+![](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/6c077a02-3313-4aed-89bf-21f28dfbb1f8.png)
 
 ​        ***<u>注意有些时候也得用上宏常量</u>***
 
@@ -509,7 +509,7 @@ int main(){
 
 # 指针困惑
 
-![-bdcd8f8e098f9b1[10]](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/-bdcd8f8e098f9b1[10].png)
+![-bdcd8f8e098f9b1[10]](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/ba5abc3d-696e-4ff8-836b-0a5e2c6b440c.png)
 
 困惑一：(int (*)[3])a其实就是将a这个4×3的二维数组转成了3×4的，名字变成了b
 

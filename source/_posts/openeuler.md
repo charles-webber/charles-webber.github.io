@@ -2,7 +2,7 @@
 title: openeuler
 tags: linux
 description: ict培训linux
-cover: https://w.wallhaven.cc/full/kw/wallhaven-kw22p1.jpg
+cover: https://gitee.com/Charles-Webber/blog-image1/raw/master/img/a371d6ff-5c9b-420d-bab1-84c1fb59a2b5.jpg
 swiper_index: 1
 ---
 
@@ -18,11 +18,11 @@ swiper_index: 1
 
 ### 命令语法格式
 
-![image-20240330172007823](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20240330172007823.png)<这个内容不可以省>
+![image-20240330172007823](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/cce35cda-c871-4747-99b7-3acfa2a11e14.png)<这个内容不可以省>
 
 ### 命令分类
 
-![image-20240330172141445](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20240330172141445.png)
+![image-20240330172141445](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/cb239d66-8b8a-43bd-b7aa-fee55ad24bc0.png)
 
 
 
@@ -56,19 +56,19 @@ print working dir
 
 改变当前的工作目录
 
-![image-20240330172802462](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20240330172802462.png)
+![image-20240330172802462](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/e48728b2-b3b3-4a22-b08a-acc26ccb294f.png)
 
 ### ls
 
 列出当前目录下的文件
 
-![image-20240330172840797](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20240330172840797.png)//-t是按照文件的修改时间先后列出，图片有误
+![image-20240330172840797](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/fbf8bc14-05a7-429b-8175-28693673534b.png)//-t是按照文件的修改时间先后列出，图片有误
 
 ### mkdir
 
 创建文件夹
 
-![image-20240330173025525](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20240330173025525.png)
+![image-20240330173025525](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/675f4c4f-213a-4bf8-afce-57a1a1d91e2a.png)
 
 -p选项是迭代创建目录
 
@@ -79,13 +79,13 @@ print working dir
 
 **modify是文件内容变换，change是文件属性变化，当Atime在Mtime和Ctime之前才会被修改**
 
-![image-20240330173312612](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20240330173312612.png)
+![image-20240330173312612](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/026689bd-b582-4223-8960-5b76d24f57d8.png)
 
 ### cp
 
 复制文件
 
-![image-20240330173345910](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20240330173345910.png)
+![image-20240330173345910](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/cb077db9-c6ee-4869-9915-6e19df072ad2.png)
 
 ### mv
 
@@ -95,13 +95,13 @@ print working dir
 
 最刑的命令（rm -rf/*）
 
-![image-20240330173733120](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20240330173733120.png)
+![image-20240330173733120](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/9deefeb2-120f-4540-b91f-943a0b9d7de2.png)
 
 ### cat
 
 读取文件内容，将文件合并
 
-![image-20240330173840578](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20240330173840578.png)
+![image-20240330173840578](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/e0c66aa4-e7d6-48da-8bc6-a71c472b21e4.png)
 
 ### head和tail
 
@@ -138,13 +138,13 @@ head显示文件前多少行内容，tail显示尾部多少行内容
 - **linux下所有都是文件**
 - 树型结构，“/”为根目录
 
-![image-20240330172613773](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20240330172613773.png)
+![image-20240330172613773](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/e78517be-4640-480a-8af4-2e36432e03e4.png)
 
 
 
-![image-20240330172629494](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20240330172629494.png)
+![image-20240330172629494](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/2787be4d-fbe4-4fb6-b1ef-d80fcaa41106.png)
 
-![image-20240330172639188](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20240330172639188.png)
+![image-20240330172639188](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/e990367a-4868-4230-892e-6701c9b92d1c.png)
 
 
 
@@ -279,7 +279,7 @@ which 命令用于快速地确定外部命令的绝对路径。
 - 用于创建链接文件，(软链接)可以理解成win的桌面上的快捷方式
 - linux中有软链接和硬链接两种
 
-![image-20240422213136994](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20240422213136994.png)
+![image-20240422213136994](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/fc634d0a-0e80-4d3a-b254-05eb2555a38f.png)
 
 **• ln的功能是为某一个文件在另外一个位置建立一个同步的链接.当我们需要在不同的目
 录，用到相同的文件时，我们不需要在每一个需要的目录下都放一个必须相同的文件，
@@ -462,7 +462,7 @@ set nonu
 
 ### 设置搜索高亮
 
-![image-20240422215342529](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20240422215342529.png)
+![image-20240422215342529](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/6b7fe844-651e-4401-8f40-0ab5cfdea848.png)
 
 
 
@@ -486,7 +486,7 @@ ctrl+r重做
 
 ### 保存与退出
 
-![image-20240422215621336](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20240422215621336.png)
+![image-20240422215621336](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/84a18ea4-5a48-4be2-b54d-13b8a2d3d21c.png)
 
 ## 文件文本操作
 
@@ -517,7 +517,7 @@ cat 是一个文本文件查看和连接工具。cat有如下功能：
 
 ## 文件系统类型
 
-![image-20240421093549325](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20240421093549325.png)
+![image-20240421093549325](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/7d3d0bb2-a3ba-42df-95f2-286083d36038.png)
 
 openeuler默认使用ext4
 
@@ -525,11 +525,11 @@ openeuler默认使用ext4
 
 ## 磁盘及接口
 
-![image-20240421094202478](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20240421094202478.png)
+![image-20240421094202478](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/c586f171-6601-4fe2-9928-92c473ba872a.png)
 
 lsblk显示磁盘信息
 
-![image-20240421094652907](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20240421094652907.png)
+![image-20240421094652907](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/3e11786c-824e-4980-9999-9fec9208726f.png)
 
 
 
@@ -539,7 +539,7 @@ lsblk显示磁盘信息
 
 2. 磁盘分区方案MBR（最小存储单元是扇区，大小512字节）
 
-![image-20240421095651715](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20240421095651715.png)
+![image-20240421095651715](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/20eeff4c-2df2-4ff5-9eac-cdd2d0ff96fa.png)
 
 一个MBR只能存储4个分区盘，但是可以再指向一个新的MBR，逻辑分区加主分区为16个
 
@@ -571,13 +571,13 @@ df -h查看挂载信息
 
 永久挂载：修改我们的/etc/fstab（乱改会把系统搞奔溃）
 
-![image-20240421104710545](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20240421104710545.png)
+![image-20240421104710545](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/37946a66-dbfb-455b-ac3f-bd3343b21444.png)
 
 推荐使用我们的uuid进行挂载，就是为了不把系统搞崩
 
 挂载选项，也是在etc里面改
 
-![image-20240421105824702](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20240421105824702.png)
+![image-20240421105824702](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/68606bd9-1eec-4507-a05d-51c2d0d25c5a.png)
 
 
 
@@ -602,7 +602,7 @@ df -h查看挂载信息
 
 
 
-![image-20240421115303178](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20240421115303178.png)
+![image-20240421115303178](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/73751ccc-3987-446e-a3e4-f4e226ef71a0.png)
 
 
 
@@ -622,7 +622,7 @@ at-t 202405141314单次进行程序的执行时间
 
 cronb命令
 
-![image-20240421142254869](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20240421142254869.png)
+![image-20240421142254869](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/c057bb15-2863-4ec7-9f3c-1376e624216c.png)
 
 
 
@@ -654,17 +654,17 @@ ip address
 - wl 表示WLAN
 - ww 表示无线广域网WWAN
 
-![image-20240421151314195](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20240421151314195.png)
+![image-20240421151314195](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/dfb2f39d-e0ff-4db7-8623-306a86b66c0f.png)
 
 网卡配置文件etc/sysconfig/network-scripts/
 
-![image-20240421151800981](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20240421151800981.png)
+![image-20240421151800981](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/1b01062e-1caa-40c4-8b16-ce9e54261d0f.png)
 
 
 
 网卡最小配置文件配置
 
-![image-20240421151856590](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20240421151856590.png)
+![image-20240421151856590](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/5b785f62-6efb-49de-865c-662d7ba36ec5.png)
 
 
 
