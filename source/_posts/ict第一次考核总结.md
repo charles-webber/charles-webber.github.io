@@ -3,8 +3,8 @@ title: ict第一次考核总结
 date: 2024-04-13 14:25:14
 tags: []
 categories:
+cover: https://images.wallpaperscraft.com/image/single/aurora_borealis_snow_forest_156554_1280x720.jpg
 ---
-
 # ict第一次考核总结
 
 ## 实验

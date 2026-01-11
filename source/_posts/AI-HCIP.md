@@ -3,8 +3,8 @@ title: AI-HCIP
 date: 2024-09-02 09:09:19
 tags: []
 categories:
+cover: https://images.wallpaperscraft.com/image/single/aurora_borealis_snow_forest_156554_1280x720.jpg
 ---
-
 # 大三培训
 
 ## 第一天
