@@ -991,8 +991,8 @@ inject:
       /* ?????????? */
       .aplayer .aplayer-info .aplayer-music .aplayer-author { font-size: 14px !important; }
       /* ???? (LRC) */
-      .aplayer .aplayer-lrc { font-size: 22px !important; height: 50px !important; }
-      .aplayer .aplayer-lrc p { font-size: 22px !important; line-height: 26px !important; }
+      .aplayer .aplayer-lrc { font-size: 18px !important; height: 40px !important; }
+      .aplayer .aplayer-lrc p { font-size: 18px !important; line-height: 20px !important; margin: 0 !important; padding: 0 !important; }
       </style>'
     # - <link rel="stylesheet" href="/xxx.css">
   bottom:
