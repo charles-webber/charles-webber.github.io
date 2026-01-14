@@ -13,7 +13,8 @@ timezone: 'Asia/Shanghai'
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: https://charles-webber-github-io.pages.dev
+url: http://blog.wenmozhu.de5.net
+root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
@@ -41,7 +42,7 @@ external_link:
 filename_case: 0
 render_drafts: true
 post_asset_folder: true
-relative_link: true
+relative_link: false
 future: true
 highlight:
   enable: true
@@ -66,7 +67,7 @@ About: /about/ || fas fa-heart
 
 avatar:
   img: /img/123.jpg
-  effect: true 
+  effect: false 
 
 
 
@@ -127,9 +128,14 @@ theme: butterfly
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  - type: git
-    repository: https://github.com/charles-webber/charles-webber.github.io.git
-    branch: master
+  type: sftp
+  host: 20.239.25.118       # VPS IP
+  port: 1145
+  user: root                # 供 hexo 提示示例使用
+  username: root            # sftp-sync-deploy 实际读取的字段
+  privateKey: "C:/Users/alex/.ssh/hexo_deploy_rsa" # SSH 私钥（非 .pub）
+  #passphrase: ""            # 无口令
+  remotePath: /home/www/blog  # 站点根目录
   
 search:
   path: search.xml
@@ -150,6 +156,8 @@ live2d:
     # use: https://unpkg.com/live2d-widget-model-koharu@1.0.5/assets/koharu.model.json # ����Զ���? url
   display:
     position: right #���ƿ�����λ��
+    hOffset: 100
+    vOffset: -20
     width: 150 #���ƿ�������?
     height: 300 #���ƿ�������?
   mobile:
@@ -223,5 +231,6 @@ cinema: # ׷������
 # https://github.com/MoePlayer/hexo-tag-aplayer/blob/master/docs/README-zh_cn.md
 aplayer:
   meting: true
-  meting_api: 'https://20.239.25.118:8000/api?server=:server&type=:type&id=:id&r=:r'
+  # 回归私有 API (通过 Cloudflare Tunnel 穿透到本地)
+  meting_api: 'https://api.wenmozhu.de5.net/api?server=:server&type=:type&id=:id&r=:r'
   asset_inject: false

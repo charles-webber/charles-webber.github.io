@@ -1,0 +1,24 @@
+# frpc configuration
+serverAddr = "20.239.25.118"
+serverPort = 7001
+
+# 鉴权配置
+# auth.method = "token" # Default
+auth.token = "357159520frp"
+
+# 日志配置
+log.to = "./frpc.log"
+log.level = "debug"
+
+# 开启 TLS 加密传输 (防阻断)
+# 开启 TLS 加密传输 (防阻断)
+transport.tls.enable = true
+
+# 方式一：暴露本地 public 文件夹 (通过 Python Server)
+[[proxies]]
+name = "blog_static"
+type = "tcp"
+remotePort = 6060
+localIP = "127.0.0.1"
+localPort = 4000
+

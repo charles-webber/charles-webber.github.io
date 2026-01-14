@@ -13,3 +13,8 @@ source/_posts/Hedex/
 *.cfs
 *.bin
 *.dll
+
+# Meting API Security
+local-meting/node_modules/
+local-meting/.env
+local-meting/.env.test

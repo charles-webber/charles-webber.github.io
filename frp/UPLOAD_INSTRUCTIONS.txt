@@ -1,0 +1,34 @@
+# 上传并在 VPS 启动 frps 的完整示例命令
+# 假设：本地 shell 可访问 frp 解压后的目录，VPS 用户为 root，IP 为 20.239.25.118，SSH 端口 1145
+
+# 1) 将 frps 二进制、frps.toml 与 systemd unit 上传到 VPS /home/frp
+scp -P 1145 frp_0.66.0_linux_amd64/frps root@20.239.25.118:/home/frp/
+scp -P 1145 s:/Blog/frp/frps.toml root@20.239.25.118:/home/frp/frps.toml
+scp -P 1145 s:/Blog/frp/frps.service root@20.239.25.118:/home/frp/frps.service
+
+# 2) 登录 VPS 执行（示例）
+# 注意：如果 VPS 没有 /home/frp 目录，请先创建： sudo mkdir -p /home/frp && sudo chown $(whoami):$(whoami) /home/frp
+ssh -p 1145 root@20.239.25.118
+# 在 VPS 上运行以下命令
+cd /home/frp
+chmod +x ./frps
+# 测试启动（临时）
+nohup ./frps -c ./frps.toml > frps.log 2>&1 &
+# 或使用 systemd（推荐长期运行）
+sudo mv /home/frp/frps.service /etc/systemd/system/frps.service
+sudo systemctl daemon-reload
+sudo systemctl enable --now frps
+sudo systemctl status frps
+
+# 3) 防火墙/安全组：放行 7000 端口（frp 通信）和 6000 端口（博客访问）
+# Ubuntu + ufw 示例：
+sudo ufw allow 7000/tcp
+sudo ufw allow 6000/tcp
+sudo ufw reload
+
+# 4) 本地启动 frpc（在 s:\Blog\frp 下）
+# Windows PowerShell:
+cd S:\Blog\frp
+.\frpc.exe -c frpc.toml
+
+# 访问： http://20.239.25.118:6000

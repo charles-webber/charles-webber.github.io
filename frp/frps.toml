@@ -1,0 +1,20 @@
+bindAddr = "0.0.0.0"
+bindPort = 7001
+
+[auth]
+method = "token"
+token = "357159520frp"
+
+[webServer]
+addr = "0.0.0.0"
+port = 7500
+user = "admin"
+password = "admin"
+
+[log]
+to = "./frps.log"
+level = "info"
+
+[[allowPorts]]
+start = 6000
+end = 7000

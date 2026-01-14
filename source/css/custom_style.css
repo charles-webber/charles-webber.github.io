@@ -1,0 +1,168 @@
+/* ====== 博客美化样式 ====== */
+
+/* 0. 确保背景图铺满且固定 */
+#web_bg {
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed !important;
+    background-position: center center !important;
+}
+
+/* 轮播动画辅助类 */
+.bg-fade-transition {
+    transition: opacity 2.0s ease-in-out !important;
+}
+
+/* 1. 让文章卡片和侧边栏半透明 */
+#recent-posts>.recent-post-item,
+#aside-content .card-widget,
+.layout>.recent-posts .recent-post-item,
+.layout>div:first-child:not(.recent-posts),
+#page,
+#archive,
+#tag,
+#category {
+    /* 0.1 代表 10% 不透明度 (更透明) */
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    backdrop-filter: blur(10px);
+    /* 磨砂玻璃效果 */
+    border-radius: 12px;
+    /* 圆角更好看 */
+}
+
+/* === 强制隐藏旧的浮空背景切换按钮 === */
+#bg-toggle-btn {
+    display: none !important;
+}
+
+/* 按钮通用高级样式 (图片质感) - 增加 ID 限制以提升权重，防止样式丢失 */
+#rightside .bg-btn-premium {
+    border: none !important;
+    width: 35px !important;
+    height: 35px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border-radius: 5px !important;
+    margin-bottom: 5px !important;
+    cursor: pointer !important;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) !important;
+
+    /* 核心：图片级质感 (毛玻璃 + 渐变) */
+    background: linear-gradient(135deg, rgba(76, 175, 80, 0.8), rgba(43, 134, 46, 0.9)) !important;
+    backdrop-filter: blur(8px) saturate(150%) !important;
+    -webkit-backdrop-filter: blur(8px) saturate(150%) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2), inset 0 1px 1px rgba(255, 255, 255, 0.3) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+#rightside .bg-btn-premium:hover {
+    transform: scale(1.15) translateY(-2px) !important;
+    background: linear-gradient(135deg, rgba(82, 186, 86, 0.9), rgba(48, 148, 51, 1)) !important;
+    box-shadow: 0 6px 16px rgba(76, 175, 80, 0.4) !important;
+}
+
+/* 强制锁定图标颜色和层级 */
+#rightside .bg-btn-premium i {
+    color: #ffffff !important;
+    font-size: 14px !important;
+    opacity: 1 !important;
+    display: block !important;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* 预览按钮特定的微调 (海洋蓝) */
+#rightside #bg-gallery-btn {
+    background: linear-gradient(135deg, rgba(33, 150, 243, 0.8), rgba(21, 101, 192, 0.9)) !important;
+}
+
+#rightside #bg-gallery-btn:hover {
+    box-shadow: 0 6px 16px rgba(33, 150, 243, 0.4) !important;
+}
+
+/* 2. 修复右下角设置按钮的文字显示问题 */
+#rightside>div>button,
+#rightside>div>a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 3. 修复 Z-Index 层级 */
+#rightside {
+    z-index: 100;
+    /* 降低层级，不要挡住看板娘 */
+}
+
+/* 确保看板娘显示在最上层 */
+#live2d-widget {
+    z-index: 999 !important;
+}
+
+canvas#live2dcanvas {
+    z-index: 999 !important;
+    pointer-events: auto !important;
+}
+
+/* 3.5. 强制页脚透明 */
+#footer {
+    background: transparent !important;
+    backdrop-filter: none !important;
+}
+
+#footer::before {
+    background: transparent !important;
+}
+
+/* 4. 歌词显示 - 已移至配置文件统一管理 */
+
+/* 5. 强制 body 透明，配合 Mask */
+body {
+    background: transparent !important;
+    background-color: transparent !important;
+}
+
+/* 6. 杀死默认 GIF 背景 - 核弹级补丁 */
+/* 这一步配合 JS 的 setProperty('...','important') 彻底覆盖主题默认设置 */
+#web_bg {
+    background-image: none !important;
+    background-color: #333 !important;
+}
+
+/* 7. 禁止头像旋转 (强制覆盖) */
+.avatar-img,
+#aside-content .card-info .author-info__avatar {
+    transform: none !important;
+    transition: none !important;
+    animation: none !important;
+}
+
+/* 8. 物理层强力背景锁定 (最终方案) */
+/* 仅针对背景层进行锁定，不要直接锁定 html 标签，防止干扰 UI 组件 */
+html.bg-white-mode #web_bg,
+html.bg-white-mode #web_bg_mask {
+    background-image: none !important;
+    background-color: #ffffff !important;
+    display: none !important;
+    filter: none !important;
+}
+
+html.bg-white-mode body {
+    background-color: #ffffff !important;
+    background-image: none !important;
+}
+
+/* 按钮样式加固：增加权重确保渐变效果在白底模式点击后依然存在 */
+html body #rightside .bg-btn-premium {
+    background: linear-gradient(135deg, rgba(76, 175, 80, 0.8), rgba(43, 134, 46, 0.9)) !important;
+    background-image: linear-gradient(135deg, rgba(76, 175, 80, 0.8), rgba(43, 134, 46, 0.9)) !important;
+    backdrop-filter: blur(8px) saturate(150%) !important;
+    -webkit-backdrop-filter: blur(8px) saturate(150%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    opacity: 1 !important;
+}
+
+html body #rightside #bg-gallery-btn {
+    background: linear-gradient(135deg, rgba(33, 150, 243, 0.8), rgba(21, 101, 192, 0.9)) !important;
+    background-image: linear-gradient(135deg, rgba(33, 150, 243, 0.8), rgba(21, 101, 192, 0.9)) !important;
+}

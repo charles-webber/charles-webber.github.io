@@ -1,0 +1,7 @@
+serverAddr = "20.239.25.118"
+serverPort = 7000
+
+auth.token = "357159520frp"
+
+log.to = "console"
+log.level = "debug"

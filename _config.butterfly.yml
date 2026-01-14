@@ -1,5 +1,5 @@
-# Main menu navigation (锟斤拷锟斤拷�??锟�?)
-# see https://butterfly.js.org/posts/4aa8abbe/#锟斤拷锟斤拷锟剿�??�??
+# Main menu navigation (锟斤拷锟斤拷�??锟�?)
+# see https://butterfly.js.org/posts/4aa8abbe/#锟斤拷锟斤拷锟剿�??�??
 # --------------------------------------
 
 menu:
@@ -29,7 +29,7 @@ copy:
     enable: false
     limit_count: 50
 
-# social settings (锟界交锟紻锟斤拷锟絆锟斤�??)
+# social settings (锟界交锟紻锟斤拷锟絆锟斤�??)
 # formal:
 #   icon: link || the description
 social:
@@ -38,7 +38,7 @@ social:
   fa-solid fa-gamepad: https://leetcode.cn/ || Coding
   fa-brands fa-github: https://github.com/charles-webber || GitHub
 # search (锟斤拷锟斤拷)
-# see https://butterfly.js.org/posts/ceeb73f/#锟斤拷锟斤拷系锟�??
+# see https://butterfly.js.org/posts/ceeb73f/#锟斤拷锟斤拷系锟�??
 # --------------------------------------
 
 # Algolia search
@@ -53,12 +53,12 @@ local_search:
   preload: false
   CDN: https://unpkg.com/lunr/lunr.js
 
-# Math (锟斤拷锟�??)
+# Math (锟斤拷锟�??)
 # --------------------------------------
 # About the per_page
 # if you set it to true, it will load mathjax/katex script in each page (true 锟斤拷示每一頁�?�拷锟斤拷锟絛js)
 # if you set it to false, it will load mathjax/katex script according to your setting (add the 'mathjax: true' in page's front-matter)
-# (false 锟斤拷�?�锟絩锟斤拷锟絛锟斤拷锟斤拷锟绞癸拷�??锟�? Markdown Front-matter 锟斤拷锟斤拷 mathjax: true)
+# (false 锟斤拷�?�锟絩锟斤拷锟絛锟斤拷锟斤拷锟绞癸拷�??锟�? Markdown Front-matter 锟斤拷锟斤拷 mathjax: true)
 
 # MathJax
 mathjax:
@@ -77,10 +77,10 @@ katex:
 # Favicon锟斤拷锟絎站锟紻锟剿ｏ拷
 favicon: /img/favicon.png
 
-# Avatar (锟絕锟斤�??)
+# Avatar (锟絕锟斤�??)
 avatar:
-  img: https://images.wallpaperscraft.com/image/single/girl_hood_butterflies_1062434_1280x720.jpg
-  effect: true
+  img: https://gitee.com/Charles-Webber/blog-image1/raw/master/img/image-20260112211940742.png
+  effect: false
 
 # Disable all banner image
 disable_top_img: false
@@ -137,14 +137,14 @@ error_404:
 
 post_meta:
   page: # Home Page
-    date_type: created # created or updated or both 锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷莿锟斤拷锟斤拷栈锟斤拷吒锟斤拷锟斤拷栈锟斤拷@�??
-    date_format: date # date/relative 锟紷示锟斤拷锟斤拷還锟斤拷锟斤拷锟斤拷锟斤拷锟斤�??
+    date_type: created # created or updated or both 锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷莿锟斤拷锟斤拷栈锟斤拷吒锟斤拷锟斤拷栈锟斤拷@�??
+    date_format: date # date/relative 锟紷示锟斤拷锟斤拷還锟斤拷锟斤拷锟斤拷锟斤拷锟斤�??
     categories: true # true or false 锟斤拷锟斤拷欠锟斤拷@示锟斤拷锟�?
     tags: true # true or false 锟斤拷锟斤拷欠锟斤拷@示锟剿籤
     label: true # true or false 锟紷示锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷
   post:
-    date_type: both # created or updated or both 锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷莿锟斤拷锟斤拷栈锟斤拷吒锟斤拷锟斤拷栈锟斤拷@�??
-    date_format: date # date/relative 锟紷示锟斤拷锟斤拷還锟斤拷锟斤拷锟斤拷锟斤拷锟斤�??
+    date_type: both # created or updated or both 锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷莿锟斤拷锟斤拷栈锟斤拷吒锟斤拷锟斤拷栈锟斤拷@�??
+    date_format: date # date/relative 锟紷示锟斤拷锟斤拷還锟斤拷锟斤拷锟斤拷锟斤拷锟斤�??
     categories: true # true or false 锟斤拷锟斤拷锟斤拷欠锟斤拷@示锟斤拷锟�?
     tags: true # true or false 锟斤拷锟斤拷锟斤拷欠锟斤拷@示锟剿籤
     label: true # true or false 锟紷示锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷
@@ -177,7 +177,7 @@ anchor:
 # Post
 # --------------------------------------
 
-# toc (�??锟�?)
+# toc (�??锟�?)
 toc:
   post: true
   page: false
@@ -216,19 +216,19 @@ post_edit:
 related_post:
   enable: true
   limit: 6 # Number of posts displayed
-  date_type: created # or created or updated 锟斤拷锟斤拷锟斤拷锟斤拷锟紷示锟斤拷锟斤拷锟秸伙拷锟�??革拷锟斤拷锟斤拷
+  date_type: created # or created or updated 锟斤拷锟斤拷锟斤拷锟斤拷锟紷示锟斤拷锟斤拷锟秸伙拷锟�??革拷锟斤拷锟斤拷
 
-# figcaption (锟紻片锟斤拷锟斤拷锟斤拷锟斤�??)
+# figcaption (锟紻片锟斤拷锟斤拷锟斤拷锟斤�??)
 photofigcaption: false
 
-# post_pagination (锟斤拷锟�???)
+# post_pagination (锟斤拷锟�???)
 # value: 1 || 2 || false
 # 1: The 'next post' will link to old post
 # 2: The 'next post' will link to new post
 # false: disable pagination
 post_pagination: 1
 
-# Displays outdated notice for a post (锟斤拷锟斤拷锟絕锟斤拷锟斤拷锟斤�??)
+# Displays outdated notice for a post (锟斤拷锟斤拷锟絕锟斤拷锟斤拷锟斤�??)
 noticeOutdate:
   enable: true
   style: flat # style: simple/flat
@@ -265,7 +265,7 @@ comments:
   # Up to two comments system, the first will be shown as default
   # Choose: Disqus/Disqusjs/Livere/Gitalk/Valine/Waline/Utterances/Facebook Comments/Twikoo/Giscus/Remark42/Artalk
   use: 
-    - Livere
+    # - Livere
   text: true # Display the comment name next to the button
   # lazyload: The comment system will be load when comment element enters the browser's viewport.
   # If you set it to true, the comment count will be invalid
@@ -280,14 +280,14 @@ disqus:
   apikey: # For newest comments widget
 
 # Alternative Disqus - Render comments with Disqus API
-# DisqusJS 锟絬論系锟統锟斤拷锟斤拷锟皆岋拷锟紽锟节網路锟斤拷锟斤拷貐^锟絛锟斤�?? Disqus 锟絬論锟�??憋拷锟斤拷锟斤拷锟斤拷原锟斤�??
+# DisqusJS 锟絬論系锟統锟斤拷锟斤拷锟皆岋拷锟紽锟节網路锟斤拷锟斤拷貐^锟絛锟斤�?? Disqus 锟絬論锟�??憋拷锟斤拷锟斤拷锟斤拷原锟斤�??
 # https://github.com/SukkaW/DisqusJS
 disqusjs:
   shortname:
   apikey:
   option:
 
-# livere (锟斤拷锟斤拷锟斤�??)
+# livere (锟斤拷锟斤拷锟斤�??)
 # https://www.livere.com/
 livere:
   uid: MTAyMC81NzUzOS8zNDAwMw==
@@ -456,7 +456,7 @@ microsoft_clarity:
 # Advertisement
 # --------------------------------------
 
-# Google Adsense (锟饺革拷V锟斤�??)
+# Google Adsense (锟饺革拷V锟斤�??)
 google_adsense:
   enable: false
   auto_ads: true
@@ -464,7 +464,7 @@ google_adsense:
   client:
   enable_page_level_ads: true
 
-# Insert ads manually (锟�?�動诧拷锟斤拷V锟斤�??)
+# Insert ads manually (锟�?�動诧拷锟斤拷V锟斤�??)
 # ad:
 #   index:
 #   aside:
@@ -505,35 +505,37 @@ theme_color:
 
 # The top_img settings of home page
 # default: top img - full screen, site info - middle (默锟絁top_img全锟斤拷锟斤拷site_info锟斤拷锟斤拷锟絞)
-# The position of site info, eg: 300px/300em/300rem/10% (锟斤拷頁橈拷锟絵锟斤拷锟絰頂诧拷锟斤拷锟�??)
+# The position of site info, eg: 300px/300em/300rem/10% (锟斤拷頁橈拷锟絵锟斤拷锟絰頂诧拷锟斤拷锟�??)
 index_site_info_top:
 # The height of top_img, eg: 300px/300em/300rem (锟斤拷锟絫op_img锟�??讹拷)
 index_top_img_height:
 
-# The user interface setting of category and tag page (category锟斤拷tag頁�?�拷UI锟絆锟斤�??)
-# index - same as Homepage UI (index 值锟斤拷锟斤�?? UI锟斤拷锟絚锟斤拷頁�?�拷UI一锟斤�??)
-# default - same as archives UI 默锟絁锟斤拷archives锟斤拷锟経I一锟斤�??
-category_ui: # 锟斤拷锟秸伙�?? index
-tag_ui: # 锟斤拷锟秸伙�?? index
+# The user interface setting of category and tag page (category锟斤拷tag頁�?�拷UI锟絆锟斤�??)
+# index - same as Homepage UI (index 值锟斤拷锟斤�?? UI锟斤拷锟絚锟斤拷頁�?�拷UI一锟斤�??)
+# default - same as archives UI 默锟絁锟斤拷archives锟斤拷锟経I一锟斤�??
+category_ui: # 锟斤拷锟秸伙�?? index
+tag_ui: # 锟斤拷锟秸伙�?? index
 
 # Website Background (锟絆锟矫網站锟斤拷锟斤拷)
-# can set it to color or image (锟斤拷锟絆锟�??圖片 锟斤拷锟斤拷 锟斤�???)
+# can set it to color or image (锟斤拷锟絆锟�??圖片 锟斤拷锟斤拷 锟斤�???)
 # The formal of image: url(http://xxxxxx.com/xxx.jpg)
-background: url(https://w.wallhaven.cc/full/j3/wallhaven-j3meq5.jpg)
+# background: url(https://api.dujin.org/bing/1920.php)
+# 默认背景改为纯色，等待 JS 加载轮播图
+background: "#333"
 
 # Footer Background
-footer_bg: -#77D78D
+footer_bg: false
 
 # the position of bottom right button/default unit: px (锟斤拷锟铰�?�帮拷锟給锟斤拷锟絰锟阶诧拷锟侥撅拷锟絰/默锟絁锟斤拷位锟斤拷px)
 rightside-bottom:
 
-# Enter transitions (锟絖锟斤拷锟絎锟斤拷M锟斤拷效锟斤�??)
+# Enter transitions (锟絖锟斤拷锟絎锟斤拷M锟斤拷效锟斤�??)
 enter_transitions: true
 
 # Background effects (锟斤拷锟斤拷锟斤拷效)
 # --------------------------------------
 
-# canvas_ribbon (锟給止锟绞庯拷锟斤拷锟斤�??)
+# canvas_ribbon (锟給止锟绞庯拷锟斤拷锟斤�??)
 # See: https://github.com/hustcc/ribbon.js
 canvas_ribbon:
   enable: false
@@ -543,7 +545,7 @@ canvas_ribbon:
   click_to_change: false
   mobile: false
 
-# Fluttering Ribbon (锟接態锟绞庯�??)
+# Fluttering Ribbon (锟接態锟绞庯�??)
 canvas_fluttering_ribbon:
   enable: false
   mobile: false
@@ -566,18 +568,18 @@ activate_power_mode:
   shake: true #  open shake (锟斤拷锟斤拷锟斤拷效)
   mobile: false
 
-# Mouse click effects: fireworks (锟斤拷锟斤拷c锟斤拷效锟斤�??: 锟斤拷锟斤拷锟斤拷效)
+# Mouse click effects: fireworks (锟斤拷锟斤拷c锟斤拷效锟斤�??: 锟斤拷锟斤拷锟斤拷效)
 fireworks:
   enable: false
   zIndex: 9999 # -1 or 9999
   mobile: false
 
-# Mouse click effects: Heart symbol (锟斤拷锟斤拷c锟斤拷效锟斤�??: 锟斤拷锟斤拷)
+# Mouse click effects: Heart symbol (锟斤拷锟斤拷c锟斤拷效锟斤�??: 锟斤拷锟斤拷)
 click_heart:
   enable: false
   mobile: false
 
-# Mouse click effects: words (锟斤拷锟斤拷c锟斤拷效锟斤�??: 锟斤拷锟斤拷)
+# Mouse click effects: words (锟斤拷锟斤拷c锟斤拷效锟斤�??: 锟斤拷锟斤拷)
 ClickShowText:
   enable: false
   text:
@@ -592,7 +594,7 @@ ClickShowText:
 # light (default) / dark
 display_mode: light
 
-# Beautify (锟斤拷锟斤拷锟斤拷锟斤拷@�??)
+# Beautify (锟斤拷锟斤拷锟斤拷锟斤拷@�??)
 beautify:
   enable: true
   field: post # site/post
@@ -600,7 +602,7 @@ beautify:
   title-prefix-icon-color: '#F47466'
 
 # Global font settings
-# Don't modify the following settings unless you know how they work (锟�?�憋拷�?�锟斤拷要锟�??革拷)
+# Don't modify the following settings unless you know how they work (锟�?�憋拷�?�锟斤拷要锟�??革拷)
 font:
   global-font-size:
   code-font-size:
@@ -608,7 +610,7 @@ font:
   code-font-family:
 
 # Font settings for the site title and site subtitle
-# 锟斤拷锟较�?�網站锟斤拷锟斤�?? 锟斤拷頁撅拷锟叫網站锟斤拷锟斤拷
+# 锟斤拷锟较�?�網站锟斤拷锟斤�?? 锟斤拷頁撅拷锟叫網站锟斤拷锟斤拷
 blog_title_font:
   font_link:
   font-family:
@@ -628,16 +630,16 @@ subtitle:
   startDelay: 300 # time before typing starts in milliseconds
   typeSpeed: 150 # type speed in milliseconds
   backSpeed: 50 # backspacing speed in milliseconds
-  # loop (�??锟絟锟斤拷锟斤拷)
+  # loop (�??锟絟锟斤拷锟斤拷)
   loop: true
   # source 锟絳锟矫碉拷锟斤拷锟斤拷锟斤拷锟斤拷
-  # source: false 锟絇锟絔锟絳锟斤�??
-  # source: 1  锟絳锟斤拷一锟皆網锟斤拷一锟斤拷話锟斤拷锟斤拷锟絯锟斤�?? https://hitokoto.cn/
-  # source: 2  锟絳锟斤拷一锟斤拷W锟斤拷锟斤拷锟絯锟斤�?? http://yijuzhan.com/
-  # source: 3  锟絳锟矫斤拷锟斤拷詩锟絶锟斤拷锟斤拷锟絯锟斤�?? https://www.jinrishici.com/
-  # subtitle 锟斤拷锟斤拷锟紷�?? source , 锟斤拷锟紷示 sub 锟侥冿拷锟斤�??
+  # source: false 锟絇锟絔锟絳锟斤�??
+  # source: 1  锟絳锟斤拷一锟皆網锟斤拷一锟斤拷話锟斤拷锟斤拷锟絯锟斤�?? https://hitokoto.cn/
+  # source: 2  锟絳锟斤拷一锟斤拷W锟斤拷锟斤拷锟絯锟斤�?? http://yijuzhan.com/
+  # source: 3  锟絳锟矫斤拷锟斤拷詩锟絶锟斤拷锟斤拷锟絯锟斤�?? https://www.jinrishici.com/
+  # subtitle 锟斤拷锟斤拷锟紷�?? source , 锟斤拷锟紷示 sub 锟侥冿拷锟斤�??
   source: false
-  # 锟斤拷锟斤拷P锟絔锟斤拷锟斤拷效锟斤拷锟斤拷subtitle �??锟斤拷锟紷示 sub 锟侥碉拷一锟斤拷锟斤拷锟斤�??
+  # 锟斤拷锟斤拷P锟絔锟斤拷锟斤拷效锟斤拷锟斤拷subtitle �??锟斤拷锟紷示 sub 锟侥碉拷一锟斤拷锟斤拷锟斤�??
   sub: 
    Life is strange,i am here if you need me:)
 
@@ -651,7 +653,7 @@ preloader:
   # pace theme (see https://codebyzach.github.io/pace/)
   pace_css_url:
 
-# aside (锟斤拷邊锟斤�??)
+# aside (锟斤拷邊锟斤�??)
 # --------------------------------------
 
 aside:
@@ -696,7 +698,7 @@ aside:
   card_archives:
     enable: true
     type: monthly # yearly or monthly
-    format: MMMM YYYY # eg: YYYY锟斤拷MM锟斤�??
+    format: MMMM YYYY # eg: YYYY锟斤拷MM锟斤�??
     order: -1 # Sort of order. 1, asc for ascending; -1, desc for descending
     limit: 8 # if set 0 will show all
     sort_order: # Don't modify the setting unless you know how it works
@@ -707,13 +709,13 @@ aside:
     sort_order: # Don't modify the setting unless you know how it works
 
 # busuanzi count for PV / UV in site
-# 锟絃锟斤拷锟剿旓�??
+# 锟絃锟斤拷锟剿旓�??
 busuanzi:
   site_uv: true
   site_pv: true
   page_pv: true
 
-# Time difference between publish date and now (锟絎锟斤拷\锟叫時锟�??)
+# Time difference between publish date and now (锟絎锟斤拷\锟叫時锟�??)
 # Formal: Month/Day/Year Time or Year/Month/Day Time
 runtimeshow:
   enable: false
@@ -727,24 +729,24 @@ newest_comments:
   storage: 10 # unit: mins, save data to localStorage
   avatar: true
 
-# Bottom right button (锟斤拷锟铰�?�帮拷锟�??)
+# Bottom right button (锟斤拷锟铰�?�帮拷锟�??)
 # --------------------------------------
 
 # Conversion between Traditional and Simplified Chinese (锟斤拷锟斤拷锟紻锟絈)
 translate:
-  enable: flase
+  enable: true
   # The text of a button
-  default: 锟斤�??
-  # the language of website (1 - Traditional Chinese/ 2 - Simplified Chinese锟斤�??
+  default: '简'
+  # the language of website (1 - Traditional Chinese/ 2 - Simplified Chinese锟斤�??
   defaultEncoding: 2
   # Time delay
   translateDelay: 0
   # The text of the button when the language is Simplified Chinese
-  msgToTraditionalChinese: '锟斤�??'
+  msgToTraditionalChinese: '繁'
   # The text of the button when the language is Traditional Chinese
-  msgToSimplifiedChinese: '锟斤�??'
+  msgToSimplifiedChinese: '简'
 
-# Read Mode (锟斤拷x模式)
+# Read Mode (阅读模式)
 readmode: true
 
 # dark mode
@@ -752,13 +754,13 @@ darkmode:
   enable: true
   # Toggle Button to switch dark/light mode
   button: true
-  # Switch dark/light mode automatically (锟皆勶拷锟叫�?? dark mode锟斤�?? light mode)
+  # Switch dark/light mode automatically (自动切换 dark mode 和 light mode)
   # autoChangeMode: 1  Following System Settings, if the system doesn't support dark mode, it will switch dark mode between 6 pm to 6 am
   # autoChangeMode: 2  Switch dark mode between 6 pm to 6 am
   # autoChangeMode: false
   autoChangeMode: false
 
-# Don't modify the following settings unless you know how they work (锟�?�憋拷�?�請锟斤拷�?�锟�??革拷 )
+# Don't modify the following settings unless you know how they work (锟�?�憋拷�?�請锟斤拷�?�锟�??革拷 )
 # Choose: readmode,translate,darkmode,hideAside,toc,chat,comment
 # Don't repeat 锟斤拷�?�锟斤拷锟絵
 rightside_item_order:
@@ -766,9 +768,9 @@ rightside_item_order:
   hide: # readmode,translate,darkmode,hideAside
   show: # toc,chat,comment
 
-# Lightbox (锟紻片锟斤拷D锟介看模�??)
+# Lightbox (锟紻片锟斤拷D锟介看模�??)
 # --------------------------------------
-# You can only choose one, or neither (�??锟斤拷锟絰锟斤拷一锟斤�?? 锟斤拷锟斤拷 锟缴傦拷锟斤拷锟斤拷锟絰)
+# You can only choose one, or neither (�??锟斤拷锟絰锟斤拷一锟斤�?? 锟斤拷锟斤拷 锟缴傦拷锟斤拷锟斤拷锟絰)
 
 # medium-zoom
 # https://github.com/francoischalifour/medium-zoom
@@ -824,7 +826,7 @@ aplayerInject:
 # Snackbar (Toast Notification 锟斤拷锟斤拷)
 # https://github.com/polonel/SnackBar
 # position 锟斤拷锟斤拷位锟斤拷
-# 锟斤拷锟�?? top-left / top-center / top-right / bottom-left / bottom-center / bottom-right
+# 锟斤拷锟�?? top-left / top-center / top-right / bottom-left / bottom-center / bottom-right
 snackbar:
   enable: false
   position: bottom-left
@@ -832,7 +834,7 @@ snackbar:
   bg_dark: '#1f1f1f' # The background color of Toast Notification in dark mode
 
 # https://instant.page/
-# prefetch (锟紸锟斤拷锟�??)
+# prefetch (锟紸锟斤拷锟�??)
 instantpage: false
 
 # https://github.com/vinta/pangu.js
@@ -841,7 +843,7 @@ pangu:
   enable: false
   field: site # site/post
 
-# Lazyload (锟紻片锟�??硷拷锟絛)
+# Lazyload (锟紻片锟�??硷拷锟絛)
 # https://github.com/verlok/vanilla-lazyload
 lazyload:
   enable: false
@@ -889,28 +891,28 @@ electric_clock:
     type: class
     name: sticky_layout
     index: 0
-  loading: https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu@1.1.6/lib/loading.gif #锟斤拷锟�??讹拷锟斤拷锟皆�?�拷锟斤�??
+  loading: https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu@1.1.6/lib/loading.gif #锟斤拷锟�??讹拷锟斤拷锟皆�?�拷锟斤�??
   clock_css: https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu@1.1.6/lib/clock.min.css
   clock_js: https://cdn.cbd.int/hexo-butterfly-clock-anzhiyu@1.1.6/lib/clock.min.js
   ip_api: https://widget.qweather.net/simple/static/js/he-simple-common.js?v=2.0
   qweather_key: be1b66712a57497892f4e70a9fc0e4f9 # 锟酵凤拷锟斤拷锟斤拷key
   gaud_map_key: ec1c17e08135f345b1f956f3fa268b0c# 锟�??得�?�拷图web锟斤拷锟斤拷key
-  default_rectangle: true # 锟斤拷锟斤拷锟斤拷一直锟斤拷示rectangle位锟�??碉拷锟斤拷锟斤拷锟斤拷锟斤拷锟津将伙拷取锟斤拷锟斤拷锟�??的�?�拷锟斤拷位锟斤拷锟斤拷锟斤拷锟斤拷
-  rectangle: 112.6534116,27.96920845 # 锟斤拷取锟斤拷锟斤拷锟斤拷位锟斤拷失锟斤拷时锟斤拷锟斤拷示锟斤拷位锟�??碉拷锟斤拷锟斤拷锟斤拷同时锟斤拷位锟斤拷为锟斤拷锟斤拷default_rectangle锟斤拷锟轿伙拷锟�???
+  default_rectangle: true # 锟斤拷锟斤拷锟斤拷一直锟斤拷示rectangle位锟�??碉拷锟斤拷锟斤拷锟斤拷锟斤拷锟津将伙拷取锟斤拷锟斤拷锟�??的�?�拷锟斤拷位锟斤拷锟斤拷锟斤拷锟斤拷
+  rectangle: 112.6534116,27.96920845 # 锟斤拷取锟斤拷锟斤拷锟斤拷位锟斤拷失锟斤拷时锟斤拷锟斤拷示锟斤拷位锟�??碉拷锟斤拷锟斤拷锟斤拷同时锟斤拷位锟斤拷为锟斤拷锟斤拷default_rectangle锟斤拷锟轿伙拷锟�???
 
 # wowjs
 # see https://www.npmjs.com/package/hexo-butterfly-wowjs
 wowjs:
   enable: true #锟斤拷锟狡�?�拷锟斤拷锟斤拷锟截★拷true锟�?�打开ｏ拷false锟�?�关憋拷
   priority: 10 #锟斤拷锟斤拷锟斤拷锟斤拷锟饺硷拷
-  mobile: true #锟狡讹拷锟斤拷锟角凤拷锟斤拷锟矫ｏ拷默锟斤拷锟狡讹拷锟剿斤拷锟斤�??
+  mobile: true #锟狡讹拷锟斤拷锟角凤拷锟斤拷锟矫ｏ拷默锟斤拷锟狡讹拷锟剿斤拷锟斤�??
   animateitem:
-    - class: recent-post-item #锟斤拷锟斤拷锟筋，锟斤拷要锟斤拷锟接讹拷锟斤拷锟斤拷元锟�??碉拷class
-      style: animate__zoomIn #锟斤拷锟斤拷锟筋，锟斤拷要锟斤拷锟接的�?�拷锟斤�??
-      duration: 1.5s #选锟斤拷锟筋，锟斤拷锟斤拷锟斤拷锟斤拷时锟戒，锟斤拷位锟斤拷锟斤拷锟斤拷ms也锟斤拷锟斤拷锟斤拷s锟斤拷锟斤拷锟斤�??3s锟斤�??700ms锟斤�??
-      delay: 200ms #选锟斤拷锟筋，锟斤拷锟斤拷锟斤拷始锟斤拷锟接筹拷时锟戒，锟斤拷位锟斤拷锟斤拷锟斤拷ms也锟斤拷锟斤拷锟斤拷s锟斤拷锟斤拷锟斤�??3s锟斤�??700ms锟斤�??
-      offset: 30 #选锟斤拷锟筋，锟斤拷始锟斤拷锟斤拷锟侥撅拷锟�??（锟斤拷锟斤拷锟斤拷锟斤拷锟阶�?�拷锟斤�??
-      iteration: 1 #选锟斤拷锟筋，锟斤拷锟斤拷锟�??革拷锟侥达拷锟斤�??
+    - class: recent-post-item #锟斤拷锟斤拷锟筋，锟斤拷要锟斤拷锟接讹拷锟斤拷锟斤拷元锟�??碉拷class
+      style: animate__zoomIn #锟斤拷锟斤拷锟筋，锟斤拷要锟斤拷锟接的�?�拷锟斤�??
+      duration: 1.5s #选锟斤拷锟筋，锟斤拷锟斤拷锟斤拷锟斤拷时锟戒，锟斤拷位锟斤拷锟斤拷锟斤拷ms也锟斤拷锟斤拷锟斤拷s锟斤拷锟斤拷锟斤�??3s锟斤�??700ms锟斤�??
+      delay: 200ms #选锟斤拷锟筋，锟斤拷锟斤拷锟斤拷始锟斤拷锟接筹拷时锟戒，锟斤拷位锟斤拷锟斤拷锟斤拷ms也锟斤拷锟斤拷锟斤拷s锟斤拷锟斤拷锟斤�??3s锟斤�??700ms锟斤�??
+      offset: 30 #选锟斤拷锟筋，锟斤拷始锟斤拷锟斤拷锟侥撅拷锟�??（锟斤拷锟斤拷锟斤拷锟斤拷锟阶�?�拷锟斤�??
+      iteration: 1 #选锟斤拷锟筋，锟斤拷锟斤拷锟�??革拷锟侥达拷锟斤�??
     - class: card-widget
       style: animate__zoomIn
       delay: 200ms
@@ -943,15 +945,15 @@ envelope_comment:
   enable: true #锟斤拷锟狡匡拷锟斤拷
   custom_pic:
     cover: https://cdn.cbd.int//hexo-butterfly-envelope/lib/violet.jpg #锟脚硷拷头锟斤拷图片
-    line: https://cdn.cbd.int/hexo-butterfly-envelope/lib/line.png #锟脚硷拷撞锟酵硷�???
-    beforeimg: https://cdn.cbd.int/hexo-butterfly-envelope/lib/before.png # 锟脚凤拷前锟�??部锟斤拷
+    line: https://cdn.cbd.int/hexo-butterfly-envelope/lib/line.png #锟脚硷拷撞锟酵硷�???
+    beforeimg: https://cdn.cbd.int/hexo-butterfly-envelope/lib/before.png # 锟脚凤拷前锟�??部锟斤拷
     afterimg: https://cdn.cbd.int/hexo-butterfly-envelope/lib/after.png # 锟脚凤拷锟�??部锟斤拷
   message: #锟脚硷拷锟斤拷锟侥ｏ拷锟斤拷锟斤拷锟侥憋拷锟斤拷写锟斤拷锟斤拷锟斤拷
     - Do you want to ask me some questions?
     - I am extremly delighted to encounter with you,hoping we get informed one day!
-  bottom: Hey,would you like to have some hamburgs? #锟斤拷支锟�?��?�拷锟斤拷锟侥憋�??
+  bottom: Hey,would you like to have some hamburgs? #锟斤拷支锟�?��?�拷锟斤拷锟侥憋�??
   height: #1050px锟斤拷锟脚封划锟斤拷锟侥高�?�拷
-  path: #锟斤拷锟斤拷选锟斤拷comments 锟斤拷路锟斤拷锟斤拷锟狡★拷默锟斤拷�?? comments锟斤拷锟斤拷锟缴碉拷页锟斤拷�?? comments/index.html
+  path: #锟斤拷锟斤拷选锟斤拷comments 锟斤拷路锟斤拷锟斤拷锟狡★拷默锟斤拷�?? comments锟斤拷锟斤拷锟缴碉拷页锟斤拷�?? comments/index.html
   front_matter: #锟斤拷锟斤拷选锟斤拷comments页锟斤拷锟�? front_matter 锟斤拷锟斤拷
     title: messenge board
     comments: true
@@ -959,9 +961,9 @@ envelope_comment:
 # hexo-butterfly-swiper-anzhiyu
 # see https://akilar.top/posts/8e1264d1/
 swiper:
-  enable: true # �??�??锟�?
-  randomenable: true # 浜烘疆姹规秾�??�??锟�?
-  priority: 5 #杩囨护鍣ㄤ紭鍏堟�??
+  enable: true # �??�??锟�?
+  randomenable: true # 浜烘疆姹规秾�??�??锟�?
+  priority: 5 #杩囨护鍣ㄤ紭鍏堟�??
   enable_page: / # 搴旂敤椤甸潰
   timemode: date #date/updated
   layout: # 鎸傝浇瀹瑰櫒绫诲�?
@@ -969,10 +971,10 @@ swiper:
     name: recent-posts
     index: 1
   default_descr: 锟�?锟�?涓轰簡濂界湅XD
-  swiper_css: https://cdn.cbd.int/hexo-butterfly-swiper-anzhiyu@1.0.4/lib/swiper.min.css #swiper css渚濊�??
-  swiper_js: https://npm.elemecdn.com/anzhiyu-blog@1.1.6/js/swiper.min.js #swiper js渚濊�?? #swiper js渚濊�??
-  custom_css: https://cdn.cbd.int/hexo-butterfly-swiper-anzhiyu@1.0.4/lib/swiperstyle.css # �??傞厤涓伙�???锟芥牱�??忚ˉ锟�???
-  custom_js: https://cdn.cbd.int/hexo-butterfly-swiper-anzhiyu@1.0.4/lib/swiper_init.js # swiper鍒濓�???锟藉寲鏂规硶
+  swiper_css: https://cdn.cbd.int/hexo-butterfly-swiper-anzhiyu@1.0.4/lib/swiper.min.css #swiper css渚濊�??
+  swiper_js: https://npm.elemecdn.com/anzhiyu-blog@1.1.6/js/swiper.min.js #swiper js渚濊�?? #swiper js渚濊�??
+  custom_css: https://cdn.cbd.int/hexo-butterfly-swiper-anzhiyu@1.0.4/lib/swiperstyle.css # �??傞厤涓伙�???锟芥牱�??忚ˉ锟�???
+  custom_js: https://cdn.cbd.int/hexo-butterfly-swiper-anzhiyu@1.0.4/lib/swiper_init.js # swiper鍒濓�???锟藉寲鏂规硶
   gsap_js: https://lf26-cdn-tos.bytecdntp.com/cdn/expire-1-M/gsap/3.9.1/gsap.min.js
   people_js: https://npm.elemecdn.com/hexo-butterfly-swiper-anzhiyu@1.0.4/lib/people.min.js
 
@@ -983,6 +985,8 @@ swiper:
 inject:
   head:
     - <meta name="referrer" content="no-referrer" />
+    # ???? API (?? Cloudflare Tunnel ?????)
+    - <script>var meting_api='https://api.wenmozhu.de5.net/api?server=:server&type=:type&id=:id&r=:r'</script>
     - |
       <style>
         /* ?????? */
@@ -991,25 +995,69 @@ inject:
         .aplayer .aplayer-info .aplayer-music .aplayer-title { font-size: 18px !important; }
         /* ?????????? */
         .aplayer .aplayer-info .aplayer-music .aplayer-author { font-size: 14px !important; }
-        /* ???? (LRC) */
-        .aplayer .aplayer-lrc { font-size: 18px !important; height: 40px !important; }
-        .aplayer .aplayer-lrc p { font-size: 18px !important; line-height: 20px !important; margin: 0 !important; padding: 0 !important; }
+        /* 歌词容器 (LRC) - 动态美化 */
+        .aplayer .aplayer-lrc { 
+          font-size: 16px !important; 
+          height: 110px !important; /* 大幅增加容器高度，提供缓冲区 */
+          text-align: center !important;
+          overflow: hidden !important;
+          background: transparent !important;
+          margin-bottom: 5px !important;
+          padding: 10px 0 !important; /* 给容器顶部留白，防止硬截断 */
+        }
+        /* 歌词通用样式 */
+        .aplayer .aplayer-lrc p { 
+          font-size: 16px !important; 
+          line-height: 45px !important; /* 拉大行距至 45px，为放大效果腾位 */
+          margin: 0 !important; 
+          padding: 0 !important;
+          text-shadow: 0 2px 4px rgba(0,0,0,1) !important; /* 加深阴影 */
+          transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important; /* 丝滑过渡 */
+          color: rgba(255, 255, 255, 0.5) !important; /* 默认半透明 */
+          transform: scale(0.9) !important; /* 默认缩小 */
+          filter: blur(1px); /* 非当前歌词轻微模糊 (可选) */
+        }
+        /* 当前高亮歌词样式 - 优雅紫色 */
+        .aplayer .aplayer-lrc .aplayer-lrc-current {
+          font-size: 20px !important; 
+          color: #bf00ff !important; /* 更深的纯紫色 */
+          opacity: 1 !important;
+          transform: scale(1.15) !important; 
+          filter: blur(0);
+          font-weight: bold !important;
+          text-shadow: 0 0 15px rgba(191, 0, 255, 0.8), 0 2px 4px rgba(0,0,0,1) !important;
+        }
+        /* 强制停止头像旋转 (防止晕眩) */
+        .avatar-img,
+        #aside-content .card-info .author-info__avatar {
+          -webkit-animation: none !important;
+          -moz-animation: none !important;
+          -ms-animation: none !important;
+          -o-animation: none !important;
+          animation: none !important;
+          transform: none !important;
+        }
       </style>
-    # - <link rel="stylesheet" href="/xxx.css">
   bottom:
-    # aplayer锟斤拷锟斤拷
+    - <script src="/js/bg_slideshow.js?v=v105"></script>
+    # 自定义背景颜色控制器 (v12 - 增加赏析功能)
+    - <script src="/js/custom_bg_color.js?v=v105"></script>
+    # aplayer播放器
+    # [失效] 网易云歌单 (因为 injahow 接口)
+    # 歌单地址：https://music.163.com/#/my/m/music/playlist?id=770116495
     - <div class="aplayer no-destroy" data-id="770116495" data-server="netease" data-type="playlist"   data-order="list" data-fixed="true" data-preload="auto" data-autoplay="false" data-mutex="true" ></div>
+    - <link rel="stylesheet" href="/css/custom_style.css?v=v105">
 
 # CDN
 # Don't modify the following settings unless you know how they work
-# 锟�?�憋拷�?�請锟斤拷�?�锟�??革拷
+# 锟�?�憋拷�?�請锟斤拷�?�锟�??革拷
 CDN:
-  # The CDN provider of internal scripts (锟斤拷锟絵锟饺�?�拷 js 锟斤�?? cdn 锟斤拷锟斤拷)
+  # The CDN provider of internal scripts (锟斤拷锟絵锟饺�?�拷 js 锟斤�?? cdn 锟斤拷锟斤拷)
   # option: local/jsdelivr/unpkg/cdnjs/custom
-  # Dev version can only choose. ( dev锟斤拷锟斤拷锟斤拷}�??锟斤拷锟絆锟�??烇拷 local )
+  # Dev version can only choose. ( dev锟斤拷锟斤拷锟斤拷}�??锟斤拷锟絆锟�??烇拷 local )
   internal_provider: local
 
-  # The CDN provider of third party scripts (锟斤拷锟斤拷锟斤�?? js 锟斤�?? cdn 锟斤拷锟斤拷)
+  # The CDN provider of third party scripts (锟斤拷锟斤拷锟斤�?? js 锟斤�?? cdn 锟斤拷锟斤拷)
   # option: local/jsdelivr/unpkg/cdnjs/custom
   # when set it to local, you need to install hexo-butterfly-extjs
   third_party_provider: jsdelivr

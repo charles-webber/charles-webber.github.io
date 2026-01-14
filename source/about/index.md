@@ -5,16 +5,16 @@ type: "about"
 
 ## 个人简介
 
-这里可以添加您的个人简介信息。
+我叫温墨竹
 
 ## 联系方式
 
-- Email: your@email.com
-- GitHub: [your-github](https://github.com/your-github)
-- 微信: your-wechat
+- Email: [secret]1484145749@qq.com
+- GitHub: [my-github](https://github.com/charles-webber)
+
 
 ## 兴趣爱好
 
-- 技术学习
-- 阅读
-- 运动
+- 跑步
+- acg
+- 🦌

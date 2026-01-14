@@ -1,0 +1,13 @@
+[Unit]
+Description=frp server
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/frp
+ExecStart=/home/frp/frps -c /home/frp/frps.toml
+Restart=on-failure
+RestartSec=5s
+
+[Install]
+WantedBy=multi-user.target

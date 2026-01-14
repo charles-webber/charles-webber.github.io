@@ -1,0 +1,148 @@
+---
+layout: false
+---
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>全屏背景赏析 | 温墨竹</title>
+    <style>
+        /* 1. 强制页面滚动环境 */
+        body,
+        html {
+            margin: 0 !important;
+            padding: 0 !important;
+            width: 100% !important;
+            height: auto !important;
+            min-height: 100vh !important;
+            background-color: #000 !important;
+            overflow-x: hidden !important;
+            overflow-y: auto !important;
+        }
+
+        /* 2. 背景容器（保留给脚本运行，但设为透明） */
+        #web_bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 1;
+            opacity: 0;
+            /* 脚本在这里跑，但我们不看它 */
+        }
+
+        /* 3. 主显示区域：实时同步 <img> 标签 */
+        #main-viewer {
+            display: block;
+            width: 100%;
+            height: auto;
+            min-height: 100vh;
+            opacity: 0;
+            /* 初始不可见，等同步成功后淡入 */
+            transition: opacity 0.8s ease-in-out;
+            position: relative;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        /* 4. 返回按钮 */
+        #back-home {
+            position: fixed;
+            top: 25px;
+            right: 25px;
+            z-index: 9999;
+            width: 50px;
+            height: 50px;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            color: #fff !important;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 24px;
+            transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.6);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        #back-home:hover {
+            background: #4caf50;
+            transform: scale(1.1) rotate(-90deg);
+        }
+
+        /* 5. 极致屏蔽 */
+        #nav,
+        #footer,
+        #rightside,
+        #page-header,
+        .layout,
+        .aplayer,
+        #live2d-widget,
+        #aside-content,
+        #page,
+        #post,
+        #go-up,
+        .reward-link,
+        .search-dialog {
+            display: none !important;
+            opacity: 0 !important;
+            visibility: hidden !important;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- 脚本所需的背景容器 -->
+    <div id="web_bg"></div>
+
+    <!-- 用户看到的真实图片内容 -->
+    <img id="main-viewer" src="" alt="Gallary-Image">
+
+    <a href="/" id="back-home" title="返回主站">
+        <i class="fas fa-arrow-left"></i>
+    </a>
+
+    <script>
+        localStorage.setItem('bgEnabled', '1');
+
+        function initGallery() {
+            const bg = document.getElementById('web_bg');
+            const viewer = document.getElementById('main-viewer');
+
+            function sync() {
+                // 直接从 style 获取，避免 computedStyle 的异步延迟
+                const style = bg.style.backgroundImage || window.getComputedStyle(bg).backgroundImage;
+                const match = style.match(/url\(['"]?(.*?)['"]?\)/);
+                if (match && match[1]) {
+                    const imgUrl = match[1];
+                    // 使用自定义属性存储，避免 src 内部转换导致比较失效
+                    if (viewer.getAttribute('data-sync-url') !== imgUrl) {
+                        viewer.src = imgUrl;
+                        viewer.setAttribute('data-sync-url', imgUrl);
+                        viewer.style.opacity = '1';
+                    }
+                }
+            }
+
+            // 监听背景状态变化
+            const observer = new MutationObserver(sync);
+            observer.observe(bg, { attributes: true, attributeFilter: ['style', 'class'] });
+
+            // 轮询保底 (防止 MutationObserver 漏掉初期状态)
+            setInterval(sync, 1000);
+            sync();
+        }
+
+        document.addEventListener('DOMContentLoaded', initGallery);
+    </script>
+    <script src="/js/bg_slideshow.js?v=v103"></script>
+</body>
+
+</html>
