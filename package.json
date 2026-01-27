@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "hexo": "^6.3.0",
-    "hexo-bilibili-bangumi": "^1.8.3",
+    "hexo-bilibili-bangumi": "^2.0.4",
     "hexo-butterfly-clock-anzhiyu": "^1.1.8",
     "hexo-butterfly-envelope": "^1.0.15",
     "hexo-butterfly-swiper-anzhiyu": "^1.0.4",
