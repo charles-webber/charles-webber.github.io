@@ -3,7 +3,7 @@ title: 解决 Hexo Aplayer 无法播放 VIP 音乐的问题：自建 Local Metin
 date: 2026-01-14 10:00:00
 tags: [Hexo, Aplayer, Meting, Node.js, 教程]
 categories: [技术分享, Hexo]
-cover: https://images.wallpaperscraft.com/image/single/girl_headphones_anime_1012423_1920x1080.jpg
+cover: https://gitee.com/Charles-Webber/blog-image1/raw/master/img/wallhaven-k881zd.jpg
 ---
 
 在使用 Hexo 搭建博客时，我们常常使用 Aplayer + MetingJS 来插入背景音乐。然而，由于版权保护和反爬策略，公共的 Meting API 往往无法解析 VIP 歌曲，导致博客上的歌单经常变灰或无法播放。

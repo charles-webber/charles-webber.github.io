@@ -881,7 +881,7 @@ css_prefix: true
 # see https://anzhiy.cn/posts/fc18.html
 
 electric_clock:
-  enable: true # 锟斤拷锟斤拷
+  enable: false
   priority: 5 #锟斤拷锟斤拷锟斤拷锟斤拷锟斤拷权
   enable_page: all # 应锟斤拷页锟斤拷
   exclude:
@@ -903,7 +903,7 @@ electric_clock:
 # wowjs
 # see https://www.npmjs.com/package/hexo-butterfly-wowjs
 wowjs:
-  enable: true #锟斤拷锟狡�?�拷锟斤拷锟斤拷锟截★拷true锟�?�打开ｏ拷false锟�?�关憋拷
+  enable: false
   priority: 10 #锟斤拷锟斤拷锟斤拷锟斤拷锟饺硷拷
   mobile: true #锟狡讹拷锟斤拷锟角凤拷锟斤拷锟矫ｏ拷默锟斤拷锟狡讹拷锟剿斤拷锟斤�??
   animateitem:
