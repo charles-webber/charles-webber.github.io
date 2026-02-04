@@ -985,8 +985,8 @@ swiper:
 inject:
   head:
     - <meta name="referrer" content="no-referrer" />
-    # ???? API (?? Cloudflare Tunnel ?????)
-    - <script>var meting_api='https://api.wenmozhu.de5.net/api?server=:server&type=:type&id=:id&r=:r'</script>
+    # Meting API (Cloudflare Worker 代理到 Vercel，带 VIP Cookie)
+    - <script>var meting_api='https://meting-api.2022210266.workers.dev/?server=:server&type=:type&id=:id&r=:r'</script>
     - |
       <style>
         /* ?????? */

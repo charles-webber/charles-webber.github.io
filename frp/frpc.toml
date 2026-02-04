@@ -22,3 +22,11 @@ remotePort = 6060
 localIP = "127.0.0.1"
 localPort = 4000
 
+# Meting API 代理
+[[proxies]]
+name = "meting_api"
+type = "tcp"
+remotePort = 3000
+localIP = "127.0.0.1"
+localPort = 3000
+

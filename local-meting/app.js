@@ -50,8 +50,17 @@ app.get('/meting', async (req, res) => {
 const handleRequest = async (req, res) => {
     const { server, type, id } = req.query;
 
+    // 如果没有参数，返回欢迎信息
+    if (!server || !type || !id) {
+        return res.json({ 
+            message: 'Meting API is running!',
+            usage: 'Add parameters: ?server=netease&type=playlist&id=YOUR_ID',
+            example: `${req.protocol}://${req.headers.host}/?server=netease&type=playlist&id=770116495`
+        });
+    }
+
     if (server !== 'netease') {
-        return res.json({ error: 'Only netease is supported locally' });
+        return res.json({ error: 'Only netease is supported' });
     }
 
     try {

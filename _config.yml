@@ -231,6 +231,6 @@ cinema: # ׷������
 # https://github.com/MoePlayer/hexo-tag-aplayer/blob/master/docs/README-zh_cn.md
 aplayer:
   meting: true
-  # 回归私有 API (通过 Cloudflare Tunnel 穿透到本地)
-  meting_api: 'https://api.wenmozhu.de5.net/api?server=:server&type=:type&id=:id&r=:r'
+  # 使用 Cloudflare Worker 代理到 Vercel API (带 VIP Cookie)
+  meting_api: 'https://meting-api.2022210266.workers.dev/?server=:server&type=:type&id=:id&r=:r'
   asset_inject: false
