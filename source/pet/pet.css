@@ -1,0 +1,167 @@
+#web-pet {
+  --web-pet-size: 220px;
+  --web-pet-height: 420px;
+  --web-pet-mobile-scale: 0.65;
+  position: fixed;
+  z-index: 98;
+  width: var(--web-pet-size);
+  height: var(--web-pet-height);
+  right: 96px;
+  bottom: 12px;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-select: none;
+  transition: opacity 180ms ease;
+}
+
+#web-pet.web-pet--failed {
+  display: none;
+}
+
+#web-pet.web-pet--mobile {
+  transform: scale(var(--web-pet-mobile-scale));
+  transform-origin: right bottom;
+}
+
+#web-pet-stage {
+  position: absolute;
+  inset: 0;
+  cursor: grab;
+  pointer-events: auto;
+  touch-action: none;
+}
+
+#web-pet-stage:active {
+  cursor: grabbing;
+}
+
+.web-pet-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  outline: 0;
+}
+
+#web-pet-dialog {
+  position: absolute;
+  right: 16px;
+  bottom: calc(100% - 22px);
+  z-index: 2;
+  max-width: 210px;
+  padding: 9px 12px;
+  border: 1px solid rgba(32, 38, 49, 0.12);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: 0 5px 18px rgba(26, 32, 44, 0.12);
+  color: #2f3542;
+  font-size: 13px;
+  line-height: 1.55;
+  opacity: 0;
+  transform: translateY(5px);
+  transition: opacity 180ms ease, transform 180ms ease;
+  pointer-events: none;
+}
+
+@supports ((-webkit-backdrop-filter: blur(8px)) or (backdrop-filter: blur(8px))) {
+  #web-pet-dialog {
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+  }
+}
+
+#web-pet-dialog::after {
+  position: absolute;
+  right: 30px;
+  bottom: -5px;
+  width: 9px;
+  height: 9px;
+  border-right: 1px solid rgba(32, 38, 49, 0.12);
+  border-bottom: 1px solid rgba(32, 38, 49, 0.12);
+  background: inherit;
+  content: '';
+  transform: rotate(45deg);
+}
+
+#web-pet-dialog.web-pet-dialog--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#web-pet-toolbar {
+  position: absolute;
+  right: 5px;
+  bottom: 8px;
+  z-index: 3;
+  display: flex;
+  gap: 4px;
+  padding: 4px;
+  border: 1px solid rgba(32, 38, 49, 0.1);
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.64);
+  box-shadow: 0 3px 12px rgba(26, 32, 44, 0.1);
+  opacity: 0;
+  transform: translateY(4px);
+  transition: opacity 160ms ease, transform 160ms ease;
+  pointer-events: auto;
+}
+
+#web-pet:hover #web-pet-toolbar,
+#web-pet:focus-within #web-pet-toolbar,
+#web-pet.web-pet--is-hidden #web-pet-toolbar {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#web-pet-toolbar button {
+  display: grid;
+  width: 25px;
+  height: 25px;
+  padding: 0;
+  border: 0;
+  border-radius: 7px;
+  background: transparent;
+  color: inherit;
+  font: 14px/1 system-ui, sans-serif;
+  cursor: pointer;
+  place-items: center;
+}
+
+#web-pet-toolbar button:hover,
+#web-pet-toolbar button:focus-visible {
+  outline: 0;
+  background: rgba(76, 96, 128, 0.12);
+}
+
+#web-pet.web-pet--is-hidden #web-pet-stage,
+#web-pet.web-pet--is-hidden #web-pet-dialog {
+  opacity: 0;
+  pointer-events: none;
+}
+
+[data-theme='dark'] #web-pet-dialog {
+  border-color: rgba(235, 241, 255, 0.12);
+  background: rgba(25, 30, 40, 0.8);
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.22);
+  color: #eef2f8;
+}
+
+[data-theme='dark'] #web-pet-dialog::after {
+  border-color: rgba(235, 241, 255, 0.12);
+}
+
+[data-theme='dark'] #web-pet-toolbar {
+  border-color: rgba(235, 241, 255, 0.12);
+  background: rgba(25, 30, 40, 0.7);
+  color: #eef2f8;
+}
+
+@media screen and (max-width: 768px) {
+  #web-pet-toolbar button[data-action='capture'],
+  #web-pet-toolbar button[data-action='reset'] {
+    display: none;
+  }
+
+  #web-pet-dialog {
+    max-width: 180px;
+  }
+}

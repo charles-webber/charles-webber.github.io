@@ -521,7 +521,7 @@ tag_ui: # 锟斤拷锟秸伙�?? index
 # can set it to color or image (锟斤拷锟絆锟�??圖片 锟斤拷锟斤拷 锟斤�???)
 # The formal of image: url(http://xxxxxx.com/xxx.jpg)
 # background: url(https://api.dujin.org/bing/1920.php)
-# 默认背景改为纯色，等待 JS 加载轮播图
+# Static fallback background; the former JavaScript carousel is retired.
 background: "#333"
 
 # Footer Background
@@ -1039,15 +1039,22 @@ inject:
           transform: none !important;
         }
       </style>
+    - <link rel="stylesheet" href="/pet/pet.css">
   bottom:
-    - <script src="/js/bg_slideshow.js?v=v105"></script>
-    # 自定义背景颜色控制器 (v12 - 增加赏析功能)
-    - <script src="/js/custom_bg_color.js?v=v105"></script>
     # aplayer播放器
     # [失效] 网易云歌单 (因为 injahow 接口)
     # 歌单地址：https://music.163.com/#/my/m/music/playlist?id=770116495
     - <div class="aplayer no-destroy" data-id="770116495" data-server="netease" data-type="playlist"   data-order="list" data-fixed="true" data-preload="auto" data-autoplay="false" data-mutex="true" ></div>
     - <link rel="stylesheet" href="/css/custom_style.css?v=v105">
+    - <script defer src="/pet/config.js"></script>
+    - <script defer src="/pet/model-manifest.js"></script>
+    - <script defer src="/pet/core/storage.js"></script>
+    - <script defer src="/pet/core/dialogue.js"></script>
+    - <script defer src="/pet/core/live2d-adapter.js"></script>
+    - <script defer src="/pet/core/interaction.js"></script>
+    - <script defer src="/pet/core/pjax.js"></script>
+    - <script defer src="/pet/integrations/aplayer.js"></script>
+    - <script defer src="/pet/pet.js"></script>
 
 # CDN
 # Don't modify the following settings unless you know how they work
