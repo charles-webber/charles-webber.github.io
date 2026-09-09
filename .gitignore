@@ -18,3 +18,12 @@ source/_posts/Hedex/
 local-meting/node_modules/
 local-meting/.env
 local-meting/.env.test
+
+# Private Sports widget credentials and local caches
+.env
+.env.*
+!.env.example
+!.env.sports.example
+data/private/
+__pycache__/
+*.py[cod]

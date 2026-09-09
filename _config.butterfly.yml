@@ -10,6 +10,7 @@ menu:
   Tags: /tags/ || fas fa-tags
   Categories: /categories/ || fas fa-folder-open
   Link: /link/ || fas fa-link
+  Sports: /sports/ || fas fa-person-running
   About: /about/ || fas fa-heart
   Code Blocks: /code-blocks/ || fas fa-code
 # --------------------------------------

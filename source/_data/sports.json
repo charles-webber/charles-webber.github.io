@@ -1,0 +1,354 @@
+{
+  "schema_version": 1,
+  "is_demo": true,
+  "updated_at": "2026-09-09",
+  "current_year": "2026",
+  "available_years": [
+    "2026"
+  ],
+  "summary": {
+    "activities": 9,
+    "active_days": 9,
+    "duration_seconds": 28640,
+    "distance_km": 78.5
+  },
+  "sports": {
+    "run": {
+      "activities": 3,
+      "distance_km": 16.6,
+      "duration_seconds": 5860
+    },
+    "cycling": {
+      "activities": 2,
+      "distance_km": 50.1,
+      "duration_seconds": 8320
+    },
+    "swim": {
+      "activities": 1,
+      "distance_km": 1.1,
+      "duration_seconds": 2100
+    },
+    "walk": {
+      "activities": 1,
+      "distance_km": 3.6,
+      "duration_seconds": 2460
+    },
+    "hike": {
+      "activities": 1,
+      "distance_km": 7.1,
+      "duration_seconds": 7200
+    },
+    "workout": {
+      "activities": 1,
+      "distance_km": 0.0,
+      "duration_seconds": 2700
+    },
+    "other": {
+      "activities": 0,
+      "distance_km": 0.0,
+      "duration_seconds": 0
+    }
+  },
+  "all_time_summary": {
+    "activities": 9,
+    "active_days": 9,
+    "duration_seconds": 28640,
+    "distance_km": 78.5
+  },
+  "years": {
+    "2026": {
+      "summary": {
+        "activities": 9,
+        "active_days": 9,
+        "duration_seconds": 28640,
+        "distance_km": 78.5
+      },
+      "sports": {
+        "run": {
+          "activities": 3,
+          "distance_km": 16.6,
+          "duration_seconds": 5860
+        },
+        "cycling": {
+          "activities": 2,
+          "distance_km": 50.1,
+          "duration_seconds": 8320
+        },
+        "swim": {
+          "activities": 1,
+          "distance_km": 1.1,
+          "duration_seconds": 2100
+        },
+        "walk": {
+          "activities": 1,
+          "distance_km": 3.6,
+          "duration_seconds": 2460
+        },
+        "hike": {
+          "activities": 1,
+          "distance_km": 7.1,
+          "duration_seconds": 7200
+        },
+        "workout": {
+          "activities": 1,
+          "distance_km": 0.0,
+          "duration_seconds": 2700
+        },
+        "other": {
+          "activities": 0,
+          "distance_km": 0.0,
+          "duration_seconds": 0
+        }
+      }
+    }
+  },
+  "calendar": [
+    {
+      "date": "2026-06-11",
+      "activities": 1,
+      "active_days": 1,
+      "duration_seconds": 7200,
+      "distance_km": 7.1,
+      "sports": [
+        {
+          "type": "hike",
+          "activities": 1,
+          "distance_km": 7.1,
+          "duration_seconds": 7200
+        }
+      ]
+    },
+    {
+      "date": "2026-06-22",
+      "activities": 1,
+      "active_days": 1,
+      "duration_seconds": 1260,
+      "distance_km": 3.4,
+      "sports": [
+        {
+          "type": "run",
+          "activities": 1,
+          "distance_km": 3.4,
+          "duration_seconds": 1260
+        }
+      ]
+    },
+    {
+      "date": "2026-07-03",
+      "activities": 1,
+      "active_days": 1,
+      "duration_seconds": 2700,
+      "distance_km": 0.0,
+      "sports": [
+        {
+          "type": "workout",
+          "activities": 1,
+          "distance_km": 0.0,
+          "duration_seconds": 2700
+        }
+      ]
+    },
+    {
+      "date": "2026-07-14",
+      "activities": 1,
+      "active_days": 1,
+      "duration_seconds": 5100,
+      "distance_km": 31.7,
+      "sports": [
+        {
+          "type": "cycling",
+          "activities": 1,
+          "distance_km": 31.7,
+          "duration_seconds": 5100
+        }
+      ]
+    },
+    {
+      "date": "2026-07-25",
+      "activities": 1,
+      "active_days": 1,
+      "duration_seconds": 2840,
+      "distance_km": 8.0,
+      "sports": [
+        {
+          "type": "run",
+          "activities": 1,
+          "distance_km": 8.0,
+          "duration_seconds": 2840
+        }
+      ]
+    },
+    {
+      "date": "2026-08-05",
+      "activities": 1,
+      "active_days": 1,
+      "duration_seconds": 2460,
+      "distance_km": 3.6,
+      "sports": [
+        {
+          "type": "walk",
+          "activities": 1,
+          "distance_km": 3.6,
+          "duration_seconds": 2460
+        }
+      ]
+    },
+    {
+      "date": "2026-08-16",
+      "activities": 1,
+      "active_days": 1,
+      "duration_seconds": 2100,
+      "distance_km": 1.1,
+      "sports": [
+        {
+          "type": "swim",
+          "activities": 1,
+          "distance_km": 1.1,
+          "duration_seconds": 2100
+        }
+      ]
+    },
+    {
+      "date": "2026-08-27",
+      "activities": 1,
+      "active_days": 1,
+      "duration_seconds": 3220,
+      "distance_km": 18.4,
+      "sports": [
+        {
+          "type": "cycling",
+          "activities": 1,
+          "distance_km": 18.4,
+          "duration_seconds": 3220
+        }
+      ]
+    },
+    {
+      "date": "2026-09-07",
+      "activities": 1,
+      "active_days": 1,
+      "duration_seconds": 1760,
+      "distance_km": 5.2,
+      "sports": [
+        {
+          "type": "run",
+          "activities": 1,
+          "distance_km": 5.2,
+          "duration_seconds": 1760
+        }
+      ]
+    }
+  ],
+  "monthly": [
+    {
+      "month": "2026-06",
+      "activities": 2,
+      "active_days": 2,
+      "duration_seconds": 8460,
+      "distance_km": 10.5
+    },
+    {
+      "month": "2026-07",
+      "activities": 3,
+      "active_days": 3,
+      "duration_seconds": 10640,
+      "distance_km": 39.7
+    },
+    {
+      "month": "2026-08",
+      "activities": 3,
+      "active_days": 3,
+      "duration_seconds": 7780,
+      "distance_km": 23.1
+    },
+    {
+      "month": "2026-09",
+      "activities": 1,
+      "active_days": 1,
+      "duration_seconds": 1760,
+      "distance_km": 5.2
+    }
+  ],
+  "recent": [
+    {
+      "date": "2026-09-07",
+      "type": "run",
+      "distance_km": 5.2,
+      "duration_seconds": 1760
+    },
+    {
+      "date": "2026-08-27",
+      "type": "cycling",
+      "distance_km": 18.4,
+      "duration_seconds": 3220
+    },
+    {
+      "date": "2026-08-16",
+      "type": "swim",
+      "distance_km": 1.1,
+      "duration_seconds": 2100
+    },
+    {
+      "date": "2026-08-05",
+      "type": "walk",
+      "distance_km": 3.6,
+      "duration_seconds": 2460
+    },
+    {
+      "date": "2026-07-25",
+      "type": "run",
+      "distance_km": 8.0,
+      "duration_seconds": 2840
+    },
+    {
+      "date": "2026-07-14",
+      "type": "cycling",
+      "distance_km": 31.7,
+      "duration_seconds": 5100
+    },
+    {
+      "date": "2026-07-03",
+      "type": "workout",
+      "distance_km": 0.0,
+      "duration_seconds": 2700
+    },
+    {
+      "date": "2026-06-22",
+      "type": "run",
+      "distance_km": 3.4,
+      "duration_seconds": 1260
+    },
+    {
+      "date": "2026-06-11",
+      "type": "hike",
+      "distance_km": 7.1,
+      "duration_seconds": 7200
+    }
+  ],
+  "records": [
+    {
+      "label": "Longest Run",
+      "type": "run",
+      "date": "2026-07-25",
+      "distance_km": 8.0
+    },
+    {
+      "label": "Longest Ride",
+      "type": "cycling",
+      "date": "2026-07-14",
+      "distance_km": 31.7
+    },
+    {
+      "label": "Longest Swim",
+      "type": "swim",
+      "date": "2026-08-16",
+      "distance_km": 1.1
+    },
+    {
+      "label": "Highest Monthly Distance",
+      "type": "monthly",
+      "month": "2026-07",
+      "distance_km": 39.7
+    }
+  ]
+}

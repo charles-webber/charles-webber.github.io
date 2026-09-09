@@ -6,6 +6,10 @@ node_modules/
 public/
 db.json
 *.log
+.env
+.env.*
+data/private/
+__pycache__/
 
 # Development-only services and legacy deployment tooling are not part of the
 # static blog image and may contain machine-specific configuration.
