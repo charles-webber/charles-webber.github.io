@@ -47,8 +47,8 @@ before importing real data if you no longer want it on your machine.
 
 ## Importing exports
 
-The importer accepts files or directories and recursively recognises GPX, TCX,
-FIT, CSV and JSON files:
+The importer accepts files or directories and recursively recognises GPX, KML,
+TCX, FIT, CSV and JSON files:
 
 ```bash
 python tools/import_sports.py ~/Downloads/fitness-exports --replace
@@ -65,6 +65,24 @@ python -m pip install fitdecode
 CSV columns may use `type`/`sport`, `date`/`start_date`, `distance_km` or
 `distance_m`, and `duration_seconds` or `duration_minutes`. JSON accepts either
 an activity array or an object containing `activities`.
+
+### Huawei Health
+
+Huawei Health route exports can be used directly. For each outdoor run, ride,
+or walk, open the workout record in Huawei Health and use the route export
+action. Prefer GPX or TCX; KML is supported too. Put all exported files in one
+local folder and import it in one command:
+
+```bash
+python tools/import_sports.py data/private/huawei-export --replace
+```
+
+The importer also recognises common Huawei Chinese CSV column names, including
+`运动类型`, `开始时间`, `距离`, `运动时长`, `爬升`, and `消耗卡路里`. Coordinates in
+GPX/KML/TCX remain only in process memory long enough to calculate distance;
+they are not retained in either cache or the published site. If a Huawei export
+variant has a different CSV/JSON schema, provide its header row and one
+redacted sample record to add an adapter without exposing personal data.
 
 ## Strava automatic sync
 

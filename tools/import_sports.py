@@ -101,23 +101,54 @@ def import_tcx(path: Path) -> List[Dict[str, Any]]:
     return activities
 
 
+def import_kml(path: Path) -> List[Dict[str, Any]]:
+    """Import Huawei-exported KML routes without retaining their coordinates."""
+    root = ET.parse(path).getroot()
+    coordinates: List[tuple[float, float]] = []
+    for element in root.iter():
+        if local_name(element) != "coordinates" or not element.text:
+            continue
+        for point in element.text.replace("\n", " ").split():
+            values = point.split(",")
+            if len(values) < 2:
+                continue
+            try:
+                coordinates.append((float(values[1]), float(values[0])))
+            except ValueError:
+                continue
+    distance_m = sum(haversine_meters(coordinates[index - 1], coordinates[index]) for index in range(1, len(coordinates)))
+    times = [element.text.strip() for element in root.iter() if local_name(element) in ("when", "begin") and element.text]
+    names = [element.text.strip() for element in root.iter() if local_name(element) == "name" and element.text]
+    activity = normalise_activity(
+        {
+            "type": " ".join(names) or path.stem,
+            "date": times[0] if times else None,
+            "distance_m": distance_m,
+            "duration_seconds": 0,
+        },
+        source="kml",
+        fallback_id=path.stem,
+    )
+    return [activity] if activity else []
+
+
 def import_csv(path: Path) -> List[Dict[str, Any]]:
     activities = []
     with path.open("r", encoding="utf-8-sig", newline="") as handle:
         for index, row in enumerate(csv.DictReader(handle)):
             lower = {str(key).strip().lower(): value for key, value in row.items() if key}
             raw = {
-                "type": lower.get("type") or lower.get("sport") or lower.get("activity_type"),
-                "date": lower.get("date") or lower.get("start_date") or lower.get("start_time"),
-                "distance_km": lower.get("distance_km") or lower.get("distance (km)"),
-                "distance_m": lower.get("distance_m") or lower.get("distance (m)"),
-                "duration_seconds": lower.get("duration_seconds") or lower.get("moving_time"),
-                "duration_minutes": lower.get("duration_minutes") or lower.get("duration (min)"),
-                "elevation_gain_m": lower.get("elevation_gain_m"),
-                "calories": lower.get("calories"),
+                "type": lower.get("type") or lower.get("sport") or lower.get("activity_type") or lower.get("运动类型") or lower.get("运动项目"),
+                "date": lower.get("date") or lower.get("start_date") or lower.get("start_time") or lower.get("开始时间") or lower.get("起始时间") or lower.get("日期"),
+                "distance_km": lower.get("distance_km") or lower.get("distance (km)") or lower.get("distance（km）") or lower.get("距离（公里）") or lower.get("距离(km)") or lower.get("距离（km）") or lower.get("距离"),
+                "distance_m": lower.get("distance_m") or lower.get("distance (m)") or lower.get("distance（m）") or lower.get("距离（米）"),
+                "duration_seconds": lower.get("duration_seconds") or lower.get("moving_time") or lower.get("运动时长（秒）") or lower.get("运动时长") or lower.get("时长"),
+                "duration_minutes": lower.get("duration_minutes") or lower.get("duration (min)") or lower.get("运动时长（分钟）") or lower.get("时长（分钟）"),
+                "elevation_gain_m": lower.get("elevation_gain_m") or lower.get("爬升") or lower.get("累计爬升"),
+                "calories": lower.get("calories") or lower.get("消耗卡路里") or lower.get("卡路里"),
                 "source_id": lower.get("id") or lower.get("activity_id"),
             }
-            activity = normalise_activity(raw, source="csv", fallback_id=f"{path.stem}-{index}")
+            activity = normalise_activity(raw, source="huawei_csv" if any("运动" in key or "距离" in key for key in lower) else "csv", fallback_id=f"{path.stem}-{index}")
             if activity:
                 activities.append(activity)
     return activities
@@ -166,7 +197,7 @@ def import_fit(path: Path) -> List[Dict[str, Any]]:
     return activities
 
 
-IMPORTERS = {".gpx": import_gpx, ".tcx": import_tcx, ".fit": import_fit, ".csv": import_csv, ".json": import_json}
+IMPORTERS = {".gpx": import_gpx, ".kml": import_kml, ".tcx": import_tcx, ".fit": import_fit, ".csv": import_csv, ".json": import_json}
 
 
 def find_input_files(paths: Iterable[Path]) -> Iterable[Path]:

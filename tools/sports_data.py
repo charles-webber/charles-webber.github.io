@@ -6,6 +6,7 @@ from __future__ import annotations
 import hashlib
 import json
 import math
+import re
 from collections import defaultdict
 from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
@@ -36,21 +37,72 @@ TYPE_ALIASES = {
     "weighttraining": "workout",
     "crossfit": "workout",
     "yoga": "workout",
+    "跑步": "run",
+    "户外跑步": "run",
+    "室内跑步": "run",
+    "越野跑": "run",
+    "骑行": "cycling",
+    "户外骑行": "cycling",
+    "室内骑行": "cycling",
+    "单车": "cycling",
+    "游泳": "swim",
+    "步行": "walk",
+    "户外步行": "walk",
+    "徒步": "hike",
+    "登山": "hike",
+    "健身": "workout",
+    "力量训练": "workout",
 }
 
 
 def canonical_type(value: Any) -> str:
     """Map platform-specific names to the small public sports taxonomy."""
     key = "".join(ch for ch in str(value or "").lower() if ch.isalnum())
-    return TYPE_ALIASES.get(key, "other")
+    if key in TYPE_ALIASES:
+        return TYPE_ALIASES[key]
+    # Huawei export labels may contain an outdoor/indoor prefix or a display title.
+    for alias in sorted(TYPE_ALIASES, key=len, reverse=True):
+        if alias in key:
+            return TYPE_ALIASES[alias]
+    return "other"
 
 
 def as_float(value: Any, default: float = 0.0) -> float:
     try:
+        if isinstance(value, str):
+            match = re.search(r"-?[\d,]+(?:\.\d+)?", value)
+            if not match:
+                return default
+            value = match.group(0).replace(",", "")
         number = float(value)
         return number if math.isfinite(number) else default
     except (TypeError, ValueError):
         return default
+
+
+def as_seconds(value: Any) -> float:
+    """Accept seconds, HH:MM:SS, and Huawei-style Chinese durations."""
+    if isinstance(value, str):
+        text = value.strip()
+        if ":" in text:
+            try:
+                parts = [float(part) for part in text.split(":")]
+                if len(parts) == 3:
+                    return parts[0] * 3600 + parts[1] * 60 + parts[2]
+                if len(parts) == 2:
+                    return parts[0] * 60 + parts[1]
+            except ValueError:
+                pass
+        if any(unit in text for unit in ("小时", "分钟", "分", "秒")):
+            hours = re.search(r"([\d.]+)\s*小时", text)
+            minutes = re.search(r"([\d.]+)\s*(?:分钟|分)", text)
+            seconds = re.search(r"([\d.]+)\s*秒", text)
+            return (
+                as_float(hours.group(1)) * 3600 if hours else 0
+            ) + (
+                as_float(minutes.group(1)) * 60 if minutes else 0
+            ) + (as_float(seconds.group(1)) if seconds else 0)
+    return as_float(value)
 
 
 def parse_date(value: Any) -> Optional[str]:
@@ -63,6 +115,7 @@ def parse_date(value: Any) -> Optional[str]:
         except (OverflowError, OSError, ValueError):
             return None
     text = str(value).strip()
+    text = text.replace("/", "-")
     if len(text) >= 10:
         try:
             return date.fromisoformat(text[:10]).isoformat()
@@ -71,6 +124,12 @@ def parse_date(value: Any) -> Optional[str]:
     try:
         return datetime.fromisoformat(text.replace("Z", "+00:00")).date().isoformat()
     except ValueError:
+        match = re.search(r"(\d{4})\D+(\d{1,2})\D+(\d{1,2})", text)
+        if match:
+            try:
+                return date(int(match.group(1)), int(match.group(2)), int(match.group(3))).isoformat()
+            except ValueError:
+                pass
         return None
 
 
@@ -101,11 +160,11 @@ def normalise_activity(raw: Dict[str, Any], source: str = "import", fallback_id:
         distance_km = as_float(raw.get("distance")) / 1000
 
     if raw.get("duration_seconds") is not None:
-        duration_seconds = as_float(raw.get("duration_seconds"))
+        duration_seconds = as_seconds(raw.get("duration_seconds"))
     elif raw.get("duration_minutes") is not None:
-        duration_seconds = as_float(raw.get("duration_minutes")) * 60
+        duration_seconds = as_seconds(raw.get("duration_minutes")) * 60
     else:
-        duration_seconds = as_float(raw.get("moving_time") or raw.get("elapsed_time") or raw.get("duration"))
+        duration_seconds = as_seconds(raw.get("moving_time") or raw.get("elapsed_time") or raw.get("duration"))
 
     elevation_gain_m = as_float(raw.get("elevation_gain_m") or raw.get("total_elevation_gain"))
     calories = raw.get("calories")
