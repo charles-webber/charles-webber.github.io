@@ -677,11 +677,7 @@ aside:
       text: Follow Me
       link: https://github.com/charles-webber
   card_announcement:
-    enable: true
-    content: Dear Miss.?
-             When i think of you'I'm reminded of the beautiful plains of Iowa.The distance between us is breaking my spirit.
-             My time and experiences without you are meaningless to me.
-             Falling in love with you was the easiest thing i have ever done.Nothing matters but you.
+    enable: false
   card_recent_post:
     enable: true
     limit: 5 # if set 0 will show all
