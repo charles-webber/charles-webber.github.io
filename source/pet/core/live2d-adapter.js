@@ -9,6 +9,7 @@
     this.log = log || function () {};
     this.app = null;
     this.model = null;
+    this.modelBounds = null;
     this.resizeObserver = null;
   }
 
@@ -73,6 +74,10 @@
       motionPreload: 'NONE'
     });
     this.app.stage.addChild(this.model);
+    // Keep the unscaled bounds. Reading model.width/model.height after a
+    // resize returns scaled values, which would make a later ResizeObserver
+    // pass reset the model back to 1:1 and push it outside the canvas.
+    this.modelBounds = this.model.getLocalBounds();
 
     // The renderer's automatic Idle group is disabled. WebPet schedules sparse
     // idle decisions itself, preventing a perpetually animated page ornament.
@@ -100,12 +105,13 @@
     var height = Math.max(1, this.stage.clientHeight);
     this.app.renderer.resize(width, height);
 
-    var sourceWidth = Math.max(1, this.model.width || width);
-    var sourceHeight = Math.max(1, this.model.height || height);
+    var bounds = this.modelBounds || this.model.getLocalBounds();
+    var sourceWidth = Math.max(1, bounds.width || width);
+    var sourceHeight = Math.max(1, bounds.height || height);
     var scale = Math.min(width / sourceWidth, height / sourceHeight);
     this.model.scale.set(scale);
-    this.model.x = (width - this.model.width) / 2;
-    this.model.y = height - this.model.height;
+    this.model.x = (width - sourceWidth * scale) / 2 - bounds.x * scale;
+    this.model.y = height - sourceHeight * scale - bounds.y * scale;
   };
 
   Adapter.prototype.motion = function (group, index) {
@@ -181,6 +187,7 @@
       try { this.model.destroy({ children: true, texture: false, baseTexture: false }); } catch (error) { this.log('Model destroy failed', error); }
       this.model = null;
     }
+    this.modelBounds = null;
     if (this.app) {
       try { this.app.destroy(true, { children: true, texture: false, baseTexture: false }); } catch (error) { this.log('Renderer destroy failed', error); }
       this.app = null;
