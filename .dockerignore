@@ -1,0 +1,21 @@
+.git/
+.github/
+.deploy_git/
+.venv/
+node_modules/
+public/
+db.json
+*.log
+
+# Development-only services and legacy deployment tooling are not part of the
+# static blog image and may contain machine-specific configuration.
+frp/
+local-meting/
+cloudflare-worker-*.js
+run.bat
+start_meting_hidden.vbs
+build.sh
+up.sh
+fix_config.py
+update_config.py
+migrate_remaining.py
