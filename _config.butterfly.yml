@@ -428,7 +428,8 @@ footer:
   owner:
     enable: true
     since: 2022
-  custom_text: Nice to meet you!
+  custom_text: >-
+    Nice to meet you!<br><small>This content uses sample data owned and copyrighted by Live2D Inc. The sample data are utilized in accordance with terms and conditions set by Live2D Inc. This content itself is created at the author’s sole discretion.</small>
   copyright: true # Copyright of theme and framework
 
 # Analysis

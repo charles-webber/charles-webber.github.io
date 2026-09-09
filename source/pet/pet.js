@@ -394,6 +394,9 @@
     else window.setTimeout(start, 250);
   }
 
-  if (document.readyState === 'complete') scheduleStart();
-  else window.addEventListener('load', scheduleStart, { once: true });
+  // Third-party widgets can keep window.load pending indefinitely. Starting
+  // after DOMContentLoaded and yielding to idle time keeps WebPet non-blocking
+  // without coupling it to unrelated network resources.
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', scheduleStart, { once: true });
+  else scheduleStart();
 })(window, document);

@@ -5,11 +5,13 @@ site. It does not modify Butterfly layouts or depend on APlayer to render.
 `scripts/webpet-model-manifest.js` finds the actual `.model3.json` filename at
 build time, so a character is a resource directory rather than application code.
 
-## Required official files
+## Runtime assets and license
 
-No Live2D model or Cubism Core is committed here. Hiyori is listed by Live2D as
-Free Material, and Cubism Core is distributed under the Live2D Proprietary
-Software License. Review and accept the applicable terms before using either.
+The Hiyori Runtime and Cubism Core in this directory were extracted from the
+official Cubism SDK for Web package. Hiyori is listed by Live2D as Free Material,
+and Cubism Core is distributed under the Live2D Proprietary Software License.
+Review and accept the applicable terms before using either or redistributing a
+site that contains them.
 
 1. Download the official Cubism SDK for Web package from
    <https://www.live2d.com/en/sdk/download/web/>.
@@ -92,21 +94,18 @@ WebPet.chat() // reserved; does not call an API
 ## Migration and rollback
 
 The old `live2d` block in `_config.yml` and the installed Miku packages are
-intentionally retained. This lets the current Miku widget serve as a rollback
-until Hiyori is verified.
-
-After copying Hiyori and Core, run the build, check `public/pet/`, then make a
-temporary test-only change in `_config.yml`:
+intentionally retained. Hiyori has passed a local browser check, so the old
+widget is now disabled. Restore its value in `_config.yml` if an immediate
+rollback is necessary:
 
 ```yaml
 live2d:
-  enable: false
+  enable: true
 ```
 
-This prevents two characters from appearing at once. If testing fails, restore
-`enable: true`; no dependency uninstall is required. Only after a full PJAX,
-desktop, mobile, and dark-mode check should the legacy helper be considered
-retired. Do not remove it automatically as part of this module setup.
+This prevents two characters from appearing at once. No dependency uninstall is
+required. Only after further production checks should the legacy helper itself
+be removed.
 
 ## Verify
 
