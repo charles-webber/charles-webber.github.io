@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hiyori Live2D renderer</title>
+  <style>
+    html, body { width: 100%; height: 100%; margin: 0; overflow: hidden; background: transparent; }
+    body > canvas:only-child { display: block; width: 100vw !important; height: 100vh !important; }
+  </style>
+  <script type="importmap">
+    { "imports": { "@framework/": "/pet/official/framework/" } }
+  </script>
+  <script src="/pet/vendor/live2dcubismcore.min.js"></script>
+  <script type="module" src="/pet/official/demo/main.js"></script>
+  <script>
+    window.addEventListener('load', function () {
+      window.setTimeout(function () {
+        if (window.parent !== window) {
+          window.parent.postMessage({ channel: 'webpet-official', type: 'ready' }, window.location.origin);
+        }
+      }, 1500);
+    });
+    window.addEventListener('error', function (event) {
+      if (window.parent !== window) {
+        window.parent.postMessage({ channel: 'webpet-official', type: 'error', message: event.message }, window.location.origin);
+      }
+    });
+  </script>
+</head>
+<body></body>
+</html>

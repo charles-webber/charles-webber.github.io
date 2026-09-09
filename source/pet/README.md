@@ -34,6 +34,12 @@ The WebPet loader does not request renderer scripts until a local model is
 present. With Core or the model missing, it emits one warning, hides only the
 new pet, and leaves the rest of the blog running.
 
+The `official/` directory contains the compiled R5 Framework, the matching
+sample renderer modules, and its WebGL shaders. It is deliberately listed in
+`skip_render` in `_config.yml`: Hexo must copy `official/index.html` verbatim,
+not process it as a Butterfly page. The bundled `nginx.conf` also resolves the
+extensionless ES module imports used by the official Framework.
+
 Official references:
 
 - <https://docs.live2d.com/en/cubism-sdk-manual/cubism-sdk-for-web/>
@@ -49,10 +55,9 @@ Edit `source/pet/config.js` for the ordinary adjustments:
 - `mobile.enabled` / `.scale` — mobile behavior.
 - `dialogue`, `idle`, `interaction`, `toolbar`, `drag`, and `music` — feature
   switches and frequencies.
-- `runtime.*Url` — pinned renderer locations. The default uses a fixed CDN
-  version for PixiJS and `pixi-live2d-display`; after obtaining their permitted
-  distributions, you may self-host those files under `source/pet/vendor/` and
-  change only these URLs.
+- `runtime.officialFrameUrl` — the self-hosted
+official Cubism renderer frame. Keep it same-origin with the site so the
+screenshot control can access its canvas.
 
 The Hiyori model ID is `hiyori`. The build script discovers its real entry file,
 then emits `/pet/model-manifest.js`. To add another character, copy its complete
@@ -116,6 +121,8 @@ npx hexo server -p 4000
 ```
 
 Open `/pet/model-manifest.js` to confirm the discovered file path. Verify that
-the model JSON, moc3, textures, motions, physics, and pose all return HTTP 200.
-With PJAX, `document.querySelectorAll('#web-pet').length` and
-`document.querySelectorAll('#web-pet canvas').length` must both remain `1`.
+the model JSON, moc3, textures, motions, physics, pose, and all files under
+`/pet/official/shaders/` return HTTP 200. With PJAX,
+`document.querySelectorAll('#web-pet').length` and
+`document.querySelectorAll('.web-pet-official-frame').length` must both remain
+`1`; `WebPet.getState().modelReady` must be `true`.

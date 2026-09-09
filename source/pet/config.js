@@ -14,13 +14,9 @@
     },
 
     runtime: {
-      // Core is intentionally local. Obtain it from the official Cubism SDK
-      // and place it in source/pet/vendor/ (see source/pet/README.md).
-      coreUrl: '/pet/vendor/live2dcubismcore.min.js',
-      // Pinned renderer dependencies are loaded only after a local model has
-      // been discovered. They may be self-hosted later by changing these URLs.
-      pixiUrl: 'https://cdn.jsdelivr.net/npm/pixi.js@6.5.10/dist/browser/pixi.min.js',
-      adapterUrl: 'https://cdn.jsdelivr.net/npm/pixi-live2d-display@0.4.0/dist/cubism4.min.js',
+      // The iframe uses the official Cubism SDK for Web R5 Framework, the
+      // matching local Core and all of the SDK's WebGL shader files.
+      officialFrameUrl: '/pet/official/index.html',
       timeout: 15000
     },
 
