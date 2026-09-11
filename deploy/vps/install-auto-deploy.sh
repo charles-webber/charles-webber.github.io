@@ -12,12 +12,27 @@ if [[ "${EUID}" -ne 0 ]]; then
   exit 1
 fi
 
-for command in git docker curl; do
-  command -v "$command" >/dev/null 2>&1 || {
-    echo "缺少 $command。请先安装 Git、Docker Engine（含 Compose plugin）和 curl 后重试。" >&2
+command -v curl >/dev/null 2>&1 || {
+  echo '缺少 curl。请先安装 curl 后重试。' >&2
+  exit 1
+}
+
+if ! command -v git >/dev/null 2>&1; then
+  if command -v apt-get >/dev/null 2>&1; then
+    export DEBIAN_FRONTEND=noninteractive
+    apt-get update
+    apt-get install -y git
+  else
+    echo '未检测到 Git，且当前系统不是支持自动安装的 Debian/Ubuntu。请先安装 Git 后重试。' >&2
     exit 1
-  }
-done
+  fi
+fi
+
+if ! command -v docker >/dev/null 2>&1; then
+  echo '未检测到 Docker，开始安装 Docker Engine。'
+  curl -fsSL https://get.docker.com | sh
+  systemctl enable --now docker
+fi
 
 docker compose version >/dev/null 2>&1 || {
   echo '未找到 Docker Compose plugin。请安装后重试。' >&2

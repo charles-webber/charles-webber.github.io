@@ -4,10 +4,10 @@
 
 ## 一键安装自动部署
 
-先在 VPS 安装并启动 Docker Engine（含 Docker Compose plugin）、Git 和 curl，然后以有 sudo 权限的用户运行：
+在 Debian/Ubuntu VPS 上，以有 sudo 权限的用户直接运行下面这一条命令即可。它会自动安装缺少的 Git 和 Docker Engine（含 Compose plugin），然后完成首次部署并启用自动更新：
 
 ```bash
-curl -fsSL https://raw.githubusercontent.com/charles-webber/charles-webber.github.io/master/deploy/vps/install-auto-deploy.sh | sudo bash
+sudo apt-get update && sudo apt-get install -y curl && curl -fsSL https://raw.githubusercontent.com/charles-webber/charles-webber.github.io/master/deploy/vps/install-auto-deploy.sh | sudo bash
 ```
 
 脚本会完成首次克隆到 `/opt/mozhu-blog`、首次构建，并启用 `mozhu-blog-auto-deploy.timer`。之后本机推送到 GitHub 后，VPS 会在约一分钟内自动部署。
