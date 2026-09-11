@@ -39,6 +39,8 @@ Visa 和 Mastercard 都可以尝试，关键不是卡面上的组织标识，而
 
 例如，招商银行 App 内可以查看并申请部分 Mastercard 产品；具体可申请卡种、年费、工本费、最低存款或减免费用的规则会随地区和产品调整，最好在 App 的产品说明和线下网点再次确认。办卡时带好身份证，并直接向柜员说明：**需要用于境外线上支付和 Google Play 订阅**。同时确认是否需要单独开启“境外无卡支付”或交易短信提醒。
 
+![招商银行 Mastercard 申请界面](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/f13292a591972a4db9461a36ddc32c10.jpg)
+
 拿到卡后，建议先做三件事：
 
 1. 在银行 App 激活卡片，设置交易密码；
@@ -57,6 +59,8 @@ Visa 和 Mastercard 都可以尝试，关键不是卡面上的组织标识，而
 4. 填写卡号、有效期、CVV，以及与银行留存信息一致的账单资料；
 5. 根据银行短信或 App 提示完成验证。
 
+![Google Play 添加付款方式界面](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/23fc28bf5fa7529ac6b24714991fd0d0.jpg)
+
 Google Play 的国家/地区与付款资料有强关联。不要随意修改 Play 国家/地区：它通常有资格条件和次数限制，切换后还会影响余额、已购内容和订阅。最稳的原则是使用与你真实所在地、付款方式和 Google 付款资料相匹配的配置；如果 Play 商店没有提供相应地区或付款方式，先查 Google Play 官方帮助和卡行说明，而不是反复尝试不同资料。
 
 绑卡成功不代表一定能订阅。Google 仍可能在第一次购买时再次验证，银行也可能拦截境外订阅型扣款，这都属于正常现象。
@@ -72,6 +76,8 @@ Google Play 的国家/地区与付款资料有强关联。不要随意修改 Pla
 3. 在 App 内找到“升级套餐”或“Get Plus”；
 4. 选择 Plus，核对价格、结算币种和自动续费说明；
 5. 在 Google Play 支付页选择刚绑定的 Visa / Mastercard 卡并确认付款。
+
+![ChatGPT Plus 的 Google Play 订阅页](https://gitee.com/Charles-Webber/blog-image1/raw/master/img/5343422b1d8b6cfdd8541fd214da88a0.jpg)
 
 完成后，回到 ChatGPT 的设置页确认套餐状态。Google Play 的“付款和订阅 → 订阅”中也应能看到对应项目；以后取消订阅、更新付款方式和查看续费日期，都可以从这里管理。
 
