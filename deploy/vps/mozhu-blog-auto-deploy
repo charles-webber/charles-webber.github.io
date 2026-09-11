@@ -1,0 +1,64 @@
+#!/usr/bin/env bash
+# Pull the published branch and rebuild the blog only when a new commit exists.
+set -Eeuo pipefail
+
+readonly ENV_FILE="/etc/mozhu-blog-deploy.env"
+
+if [[ -r "$ENV_FILE" ]]; then
+  # shellcheck disable=SC1090
+  source "$ENV_FILE"
+fi
+
+: "${BLOG_DIR:=/opt/mozhu-blog}"
+: "${BLOG_REPO:=https://github.com/charles-webber/charles-webber.github.io.git}"
+: "${BLOG_BRANCH:=master}"
+
+log() {
+  printf '[%s] %s\n' "$(date --iso-8601=seconds)" "$*"
+}
+
+for command in git docker flock; do
+  command -v "$command" >/dev/null 2>&1 || {
+    log "缺少命令：$command"
+    exit 1
+  }
+done
+
+docker compose version >/dev/null 2>&1 || {
+  log '未找到 Docker Compose plugin。'
+  exit 1
+}
+
+mkdir -p "$(dirname "$BLOG_DIR")"
+exec 9>/var/lock/mozhu-blog-auto-deploy.lock
+flock -n 9 || {
+  log '已有部署任务在运行，跳过本次检查。'
+  exit 0
+}
+
+changed=false
+if [[ ! -d "$BLOG_DIR/.git" ]]; then
+  log "首次部署：克隆 $BLOG_REPO"
+  git clone --branch "$BLOG_BRANCH" --single-branch "$BLOG_REPO" "$BLOG_DIR"
+  changed=true
+else
+  git -C "$BLOG_DIR" fetch --prune origin "$BLOG_BRANCH"
+  local_commit="$(git -C "$BLOG_DIR" rev-parse HEAD)"
+  remote_commit="$(git -C "$BLOG_DIR" rev-parse "origin/$BLOG_BRANCH")"
+
+  if [[ "$local_commit" != "$remote_commit" ]]; then
+    log "发现新提交：${local_commit:0:12} -> ${remote_commit:0:12}"
+    # VPS 上的工作副本是部署产物；不要直接修改受 Git 管理的文件。
+    git -C "$BLOG_DIR" reset --hard "$remote_commit"
+    changed=true
+  fi
+fi
+
+if [[ "$changed" == true ]]; then
+  log '开始构建并重启博客容器。'
+  docker compose -f "$BLOG_DIR/docker-compose.yml" --project-directory "$BLOG_DIR" up -d --build --remove-orphans
+  docker image prune -f
+  log '部署完成。'
+else
+  log 'Git 没有更新，无需部署。'
+fi

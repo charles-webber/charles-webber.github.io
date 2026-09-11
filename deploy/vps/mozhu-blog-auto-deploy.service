@@ -1,0 +1,8 @@
+[Unit]
+Description=Pull and deploy Mozhu blog when Git updates
+Wants=network-online.target
+After=network-online.target docker.service
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/sbin/mozhu-blog-auto-deploy
