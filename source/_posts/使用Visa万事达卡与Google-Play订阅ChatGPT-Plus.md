@@ -8,7 +8,7 @@ tags:
 categories:
   - 折腾记录
 description: 记录通过支持境外线上支付的 Visa 或 Mastercard 卡，在 Google Play 中订阅 ChatGPT Plus 时需要准备什么，以及常见的地区与风控问题。
-cover: https://gitee.com/Charles-Webber/blog-image1/raw/master/img/INTERSTELLAR_sci_fi_adventure_mystery_soace_stars_1920x1080.jpg
+cover: https://gitee.com/Charles-Webber/blog-image1/raw/master/img/wallhaven-k81776.jpg
 ---
 
 > 本文只适用于 OpenAI、Google Play 和发卡行规则允许的地区与支付方式。请使用本人真实身份、自己的 Google 账号和合法取得的支付卡；不要伪造账单信息、借用他人支付资料或绕过平台的地区限制。
