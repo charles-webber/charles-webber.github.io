@@ -25,10 +25,10 @@ GitHub 账号建好后，到 **Settings → Emails** 添加并验证学校教育
 
 过审后，能领什么以自己的 Education 面板为准。域名、云服务这类权益会变，期限和领取条件也可能调整。
 
-想找中文操作截图，可以看下面两个知乎搜索页；资格、费用和条款还是以官方页面为准。
+下面这两份是可以直接打开的操作说明；资格、费用和条款还是以官方页面为准。
 
-- [知乎检索：GitHub Education 学生认证](https://www.zhihu.com/search?type=content&q=GitHub%20Education%20%E5%AD%A6%E7%94%9F%E8%AE%A4%E8%AF%81)
-- [知乎检索：Azure for Students 学生账号](https://www.zhihu.com/search?type=content&q=Azure%20for%20Students%20%E5%AD%A6%E7%94%9F%E8%B4%A6%E6%88%B7)
+- [GitHub Education：申请学生权益](https://docs.github.com/zh/education/about-github-education/github-education-for-students/apply-to-github-education-as-a-student)
+- [Microsoft AI-edu：如何申请 Azure 学生账号](https://github.com/microsoft/ai-edu/blob/master/docs/FAQ.md#11-如何申请azure学生账号)
 
 ## Azure for Students 还要再验一次
 
@@ -83,7 +83,7 @@ az vm list-skus \
 | 管理账户 | 建普通用户，例如 `azureuser`；别留空，也别用 root 加随意密码 |
 | Disk | 从 Standard SSD 一类低成本磁盘开始，并在创建页确认价格 |
 
-官方 LTS 云镜像已经带好了 cloud-init 和 Azure 初始化流程，拿来就能用。为了“纯净”去重装 DD 反而容易影响网络和 SSH；root 密码登录也没必要。普通用户、SSH 密钥和 sudo 这套更省心。
+官方 LTS 云镜像已经带好了 cloud-init 和 Azure 初始化流程，创建完直接用也没有问题。普通用户、SSH 密钥和 sudo 这套更省心；想重装成自己习惯的系统，也可以走下面的 DD 路线。
 
 ### 公网 IP 选 Static，账单也要盯着
 
@@ -114,9 +114,28 @@ sudo sshd -t
 sudo systemctl reload ssh
 ```
 
-Azure NSG 和 VM 防火墙也要同时放 `TCP 4022`，来源尽量写自己的 `YOUR_IP/32`。确认 `ssh -p 4022 ...` 能正常连接，才删除旧的 22/TCP 规则。
+在 Azure NSG 放行 `TCP 4022`，来源尽量写自己的 `YOUR_IP/32`。确认 `ssh -p 4022 ...` 能正常连接，才删除旧的 22/TCP 规则。
 
-有人喜欢用 [bin456789/reinstall](https://github.com/bin456789/reinstall) 重装系统。它是第三方脚本，不是 Azure 官方流程，会动到云初始化、SSH 和网络配置。没搞清恢复办法之前别把它当默认操作；至少要留好密钥备份、快照和 Serial Console/救援方案。
+### 想 DD 重装，就按这个脚本走
+
+这里的 DD 没有删掉，只是不建议还没连过一次机器就直接操作。先用 Azure 创建时的 SSH 密钥确认能进系统、确认 22/TCP 的 NSG 规则在，再执行 [bin456789/reinstall](https://github.com/bin456789/reinstall)。这个项目会清空整块系统盘；重装开始前把私钥、需要的资料和 Serial Console 的恢复方式留好。
+
+下面是重装 Ubuntu 24.04 的一套最直接写法。想用默认 `root` 账号就把 `--username root` 保留，密码替换成自己要设的强密码：
+
+```bash
+curl -O https://raw.githubusercontent.com/bin456789/reinstall/main/reinstall.sh
+bash reinstall.sh ubuntu 24.04 --username root --password '替换成自己的强密码'
+```
+
+脚本跑完会重启，等十分钟左右再用 `root@公网 IP` 登录。项目 README 也说明了：用户名和密码都不填时会落到 `root` 和随机密码；要自己定密码，就把参数明确写出来。重装后若改 SSH 端口或改回密钥登录，重新检查 `/etc/ssh/sshd_config.d/` 下的配置，并在 Azure NSG 同步端口。
+
+如果你手上本来就有可信的 Linux raw 镜像，才用它的 DD 功能：
+
+```bash
+bash reinstall.sh dd --img "https://你的可信镜像地址/系统镜像.xz" --username root --password '替换成自己的强密码'
+```
+
+`dd` 模式不会替你修改 Linux 镜像里的内容，镜像来源和里面预置的网络/SSH 配置要自己确认。没有现成 raw 镜像时，上面的 Ubuntu 重装命令更省事。
 
 ## sing-box：配置选定以后再放端口
 
@@ -132,7 +151,7 @@ bash <(wget -qO- https://raw.githubusercontent.com/fscarmen/sing-box/main/sing-b
 
 ### 端口按最终协议开
 
-| 场景/协议 | Azure NSG 与 VM 防火墙要放行 |
+| 场景/协议 | Azure NSG 要放行 |
 | --- | --- |
 | SSH 管理 | TCP 22 或 TCP 4022；来源尽量限制为 `YOUR_IP/32` |
 | VLESS Reality、Trojan、AnyTLS、Naive | 配置中选定的 **TCP** 端口，常见示例是 443 |
@@ -141,7 +160,7 @@ bash <(wget -qO- https://raw.githubusercontent.com/fscarmen/sing-box/main/sing-b
 | Hysteria2、TUIC | 配置中选定的 **UDP** 端口，常见示例是 443 |
 | Hysteria2 端口跳跃 | 配置的整段 **UDP** 范围；没启用就别开范围 |
 
-NSG 和 VM 内防火墙是两道规则，要同时放行才会通。下面只演示已经确定需要 TCP/UDP 443 时的 NSG 写法，资源组和 NSG 名称换成自己的。SSH 端口别照这个对全网开放。
+下面只演示已经确定需要 TCP/UDP 443 时的 NSG 写法，资源组和 NSG 名称换成自己的。SSH 端口别照这个对全网开放。
 
 ```bash
 RG="YOUR_RESOURCE_GROUP"
@@ -158,15 +177,6 @@ az network nsg rule create \
   --name Allow-UDP-443 --priority 210 \
   --direction Inbound --access Allow --protocol Udp \
   --source-address-prefixes '*' --destination-port-ranges 443
-```
-
-如果启用了 UFW，同样只开自己实际在用的端口：
-
-```bash
-sudo ufw allow 4022/tcp       # 已迁移 SSH 才需要
-sudo ufw allow 443/tcp        # 配置需要 TCP 443 才需要
-sudo ufw allow 443/udp        # 配置需要 UDP 443 才需要
-sudo ufw status numbered
 ```
 
 ## 验证出口，顺手说清 Codex 的代理范围
