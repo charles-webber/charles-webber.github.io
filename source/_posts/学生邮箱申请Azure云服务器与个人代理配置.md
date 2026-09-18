@@ -1,5 +1,5 @@
 ---
-title: 学生邮箱申请 Azure for Students：创建 Linux 云服务器与个人网络实验节点
+title: 学生邮箱开 Azure Linux VPS：从学生认证到个人网络实验节点
 date: 2026-09-18 22:00:00
 cover: https://gitee.com/Charles-Webber/blog-image1/raw/master/img/wallhaven-og6q8l.png
 tags:
@@ -10,68 +10,54 @@ tags:
   - 云服务器
 categories:
   - 折腾记录
-description: 从 GitHub Education 与 Azure for Students 的独立认证开始，记录如何选择 Linux VM、配置静态公网 IP 与安全组，并合规地搭建个人网络实验节点。
+description: 记录 GitHub Education、Azure for Students、Linux VM、静态公网 IP 和个人网络实验节点的实际配置。
 ---
 
-> 本文面向在校学生的学习、开发与个人网络实验。请使用本人真实学生身份与学校邮箱，遵守学校、Azure、所在地区及目标服务的规则；不要伪造材料、共享账号，或用网络工具绕过地区、身份验证和服务安全限制。Azure for Students 仅限教育、非商业研究及软件开发/测试/演示等用途。
+> 这篇只写给在校学生做学习、开发和个人网络实验。学生身份、学校邮箱和账号都用自己的真实信息；学校、Azure、所在地区及目标服务的规则也得一起遵守。别伪造材料、共用账号，或拿网络工具绕过地区、身份验证和服务限制。Azure for Students 适用于教育、非商业研究、软件开发、测试和演示等场景。
 
-很多人把“学生邮箱 + GitHub Education + Azure”说成一条龙福利，但实际上它们是**两套独立的资格验证**：GitHub Education 认证并不会自动让 Azure for Students 通过。把这点先弄清楚，后面会少走很多弯路。
+学生邮箱、GitHub Education 和 Azure 经常被说成一套“学生福利”，实际要分开看。GitHub Education 过了，不会把 Azure for Students 一起过掉；Azure 仍然要用微软账号和学校邮箱再验一次。这个坑先记住，申请时少走弯路。
 
-## 0. 先看结论与成本边界
+## GitHub Education 先单独申请
 
-- GitHub Education 需要 GitHub 个人账号、真实在读身份和学校要求的材料；学校邮箱通常需要先添加到 GitHub 并完成验证。
-- Azure for Students 需要微软账号和机构邮箱验证学籍，当前为无需信用卡的 100 美元额度，有效期一年；符合资格的在读学生可按年度续订。每人只能有一个符合条件的学生订阅。
-- 没有“免费地区”这种固定概念：地区决定的是 SKU 容量、可用机型和价格；学生订阅用的是额度。创建前必须在 Portal 的价格页确认 VM、磁盘与公网 IP 的费用。
-- 本文不承诺“100 美元一定够用一年”。轻量 VM 可能够，但磁盘、静态公网 IP、流量、备份和误开资源都会消耗额度；先设置预算并定期查看 Education Hub。
+GitHub 账号建好后，到 **Settings → Emails** 添加并验证学校教育邮箱，再打开 [Education benefits](https://github.com/settings/education/benefits)，点 **Start an application**。
 
-官方入口：[GitHub Education 学生申请](https://docs.github.com/zh/education/about-github-education/github-education-for-students/apply-to-github-education-as-a-student)｜[Azure for Students](https://azure.microsoft.com/zh-cn/free/students)｜[Azure 学生资格与额度说明](https://learn.microsoft.com/zh-cn/azure/education-hub/about-azure-for-students)
+审核时可能要求教育邮箱，也可能要在读材料。学生证、课表、成绩单、学籍或在读证明都可以，但材料里要能看见有效在读日期。学校邮箱域名没被识别，就按 [GitHub 官方说明](https://docs.github.com/zh/education/about-github-education/github-education-for-students/apply-to-github-education-as-a-student)联系 GitHub Education Support，附上学校名称、官网和邮箱域名。不要短时间反复提交，更不要拿不真实的材料赌审核。
 
-## 1. 申请 GitHub Education：用真实材料，不要靠反复提交碰运气
+过审后，能领什么以自己的 Education 面板为准。域名、云服务这类权益会变，期限和领取条件也可能调整。
 
-先创建 GitHub 个人账号，在 **Settings → Emails** 添加并验证学校教育邮箱；然后进入 [Education benefits](https://github.com/settings/education/benefits)，在 GitHub Education 下点击 **Start an application**。
-
-GitHub 会根据学校与申请情况要求教育邮箱或在读证明。可用的证明包括带有效在读日期的学生证、课表、成绩单或学籍/在读证明。若学校域名未被识别，按官方要求向 GitHub Education Support 提供学校名称、官网和邮箱域名；不要短时间重复提交，也不要使用不真实的材料。
-
-通过后，在 GitHub Education 门户领取当期可用权益。权益会调整，域名、云服务等项目是否存在、期限和领取条件，都以你的权益面板为准。
-
-如果想先看中文界面经验，可以把这两个链接当作**非官方补充检索**，涉及资格、费用和条款仍以官方页面为准：
+想找中文操作截图，可以看下面两个知乎搜索页；资格、费用和条款还是以官方页面为准。
 
 - [知乎检索：GitHub Education 学生认证](https://www.zhihu.com/search?type=content&q=GitHub%20Education%20%E5%AD%A6%E7%94%9F%E8%AE%A4%E8%AF%81)
 - [知乎检索：Azure for Students 学生账号](https://www.zhihu.com/search?type=content&q=Azure%20for%20Students%20%E5%AD%A6%E7%94%9F%E8%B4%A6%E6%88%B7)
 
-## 2. 再申请 Azure for Students：它不会读取 GitHub 的认证结果
+## Azure for Students 还要再验一次
 
-打开 [Azure for Students](https://azure.microsoft.com/zh-cn/free/students)，使用自己的微软账号完成注册，并按页面要求用机构邮箱验证学籍。GitHub Education 认证可以证明你已准备好学生开发者工具，但它不是 Azure 的身份凭证；Azure 仍会独立审核。
+从 [Azure for Students](https://azure.microsoft.com/zh-cn/free/students) 入口，用自己的微软账号注册，再按页面要求验证机构邮箱和学生资格。当前学生订阅给的是无信用卡的 100 美元 Azure 额度，有效期一年；符合资格的在读学生可续订，每个人只有一个符合条件的学生订阅。额度不能拿去付 Azure Marketplace 的购买项，所以选镜像时除了能不能创建，还要看 **Pricing + terms**，别误选带额外软件许可的 Marketplace 镜像。
 
-目前官方说明是：学生订阅提供 100 美元 Azure 额度、有效期一年，且无需信用卡；额度不能用于 Azure Marketplace 购买项。也就是说，创建 VM 时不要只看“镜像能不能选”，还要看 **Pricing + terms**：有单独 Marketplace 计划或额外软件许可的镜像不应当作学生额度可覆盖的选择。
+注册好我会马上去看两处：**Azure Education Hub → Overview** 的余额和到期日，以及 **Cost Management** 里的预算告警。100 美元能不能撑一年没有统一答案；小 VM 本身可能花得不多，磁盘、静态公网 IP、流量、备份和忘记删的资源都会慢慢吃额度。
 
-注册后立刻做两件事：
+## 选地区和机型，别把 `B1ts` 当成 SKU
 
-1. 打开 **Azure Education Hub → Overview**，确认订阅、余额和到期日；
-2. 在 **Cost Management** 建一个预算/告警，用来发现意外开出的 VM、磁盘、公网 IP 或备份费用。
-
-## 3. 选择地区与机型：`B1ts` 不是 Azure SKU
-
-在 Azure Portal 顶部打开 **Cloud Shell**，或在本机安装 Azure CLI 后登录：
+Portal 顶部的 Cloud Shell 能直接跑 Azure CLI，本机装了 Azure CLI 也一样。先登录，再看地区名：
 
 ```bash
 az login
 az account list-locations --query "[].{名称:name,显示名:displayName}" -o table
 ```
 
-把 `LOCATION` 换成候选地区，例如 `eastus`。下面第一条查看当前订阅可用的 B 系列 SKU；第二条用 `--all` 排查某个型号是否被区域、配额或订阅限制。它们查询的是**可用性**，不是“免费地区”。
+下面拿 `eastus` 举例。第一个命令查当前订阅在这个地区可用的 B 系列，第二个专门看 `Standard_B1s` 有没有被地区、配额或订阅限制。它们只能告诉你能不能开，不能告诉你“这个地区免费”。价格、容量和可用机型都要回 Portal 再确认。
 
 ```bash
 LOCATION="eastus"
 
-# 当前订阅可创建的 B 系列机型
+# 这个地区当前订阅可创建的 B 系列机型
 az vm list-skus \
   --location "$LOCATION" \
   --resource-type virtualMachines \
   --size Standard_B \
   -o table
 
-# 诊断 Standard_B1s 是否被限制；有 Restrictions 时换地区或型号
+# 检查 B1s 的 Restrictions；受限就换地区或型号
 az vm list-skus \
   --location "$LOCATION" \
   --resource-type virtualMachines \
@@ -80,82 +66,82 @@ az vm list-skus \
   -o table
 ```
 
-`Standard_B1s` 才是常见的正确名称，不是 `B1ts`。Bv1 系列的 `Standard_B1s` 为 1 vCPU / 1 GiB 内存，是 x86-64；`B1ls` 只有 0.5 GiB 且仅支持 Linux，`B1ms` 则有 2 GiB。B 系列是突发型 CPU，适合轻量学习和低负载服务，不适合持续高 CPU 工作。若地区没有 B1s、容量不足或配额不够，就选 Portal 实际显示的最低可用、与镜像架构匹配的型号，而不是强行照抄别人的地区。
+常见型号叫 `Standard_B1s`，不是 `B1ts`。它是 1 vCPU、1 GiB 内存的 x86-64 突发型机子；`B1ls` 只有 0.5 GiB 且只支持 Linux，`B1ms` 是 2 GiB。B 系列适合轻量服务、学习环境和低负载任务，长时间跑满 CPU 就不合适。B1s 没容量时，按 Portal 实际能开到的低价型号和镜像架构来选，别硬抄别人的地区。
 
-## 4. 在 Portal 创建 Linux VM：从官方 LTS 镜像和 SSH 密钥开始
+## Portal 里创建第一台 Linux VM
 
-在 **Virtual machines → Create → Azure virtual machine** 中，建议按下面的最小化配置建立第一台实验机：
+进入 **Virtual machines → Create → Azure virtual machine**。第一台实验机我会按这张表选，配置简单，也方便后面清理账单。
 
 | 配置项 | 建议 |
 | --- | --- |
-| 订阅/资源组 | 选择 Azure for Students；单独新建一个资源组，便于删除与查账 |
-| Region | 以 `az vm list-skus` 和 Portal 实际可创建结果为准 |
-| Image | Canonical 的 **Ubuntu Server 24.04 LTS - x64 Gen2** 或同类官方 LTS 镜像 |
+| 订阅/资源组 | 选 Azure for Students；新建单独资源组，查费和删除都方便 |
+| Region | 以 `az vm list-skus` 和 Portal 的实际创建结果为准 |
+| Image | Canonical 的 **Ubuntu Server 24.04 LTS - x64 Gen2**，或其他官方 LTS 镜像 |
 | Security type | `Standard` |
-| Size | 优先 `Standard_B1s`；不提供就按实际可用型号与价格选择 |
-| Authentication | **SSH public key**；下载并妥善保存私钥 |
-| 管理账户 | 自己创建普通用户，例如 `azureuser`；不要留空，也不要以 root + 随意密码为默认方案 |
-| Disk | 从 Standard SSD 等低成本选项开始，创建前检查磁盘价格 |
+| Size | 优先 `Standard_B1s`；没有就选实际可用、价格能接受的型号 |
+| Authentication | **SSH public key**，私钥自己保存好 |
+| 管理账户 | 建普通用户，例如 `azureuser`；别留空，也别用 root 加随意密码 |
+| Disk | 从 Standard SSD 一类低成本磁盘开始，并在创建页确认价格 |
 
-官方 Ubuntu LTS 云镜像已经是可用的干净系统，保留 cloud-init 和 Azure 的网络初始化流程。不要因为“纯净系统”就默认重装 DD，也不要开启 root 密码 SSH 登录；SSH 密钥 + 普通用户 + sudo 更安全，也更不容易把自己锁在门外。
+官方 LTS 云镜像已经带好了 cloud-init 和 Azure 初始化流程，拿来就能用。为了“纯净”去重装 DD 反而容易影响网络和 SSH；root 密码登录也没必要。普通用户、SSH 密钥和 sudo 这套更省心。
 
-### 公网 IP：要稳定就选 Static，但它不等于“风控白名单”
+### 公网 IP 选 Static，账单也要盯着
 
-在 **Networking** 中创建 Public IP。若你确实需要在 VM 停止（deallocated）后仍保持同一地址，请确认是 **Standard SKU + Static**。动态地址可能在 deallocate 后再次启动时变化；静态地址会一直保留到你删除 Public IP 资源为止。
+在 **Networking** 里创建 Public IP。想让 VM 在停止（deallocated）后重启仍保持同一个地址，就确认是 **Standard SKU + Static**。动态 IP 可能在 deallocate 后变掉；静态 IP 会留到你把 Public IP 资源删掉为止。
 
-公网 IP 只是稳定的网络终点，并不让任何网站“信任”你，也不保证不会触发风控。它本身还有计费可能，所以仍要把它纳入预算。
+稳定 IP 只是方便自己连机器和绑服务，不代表网站会因此信任这个地址，也谈不上“风控白名单”。它还可能产生费用，照样放进预算里。
 
-Standard Public IP 默认需要 NSG 显式放行流量。创建时不要把所有入站端口都打开：先只放行 SSH，且将来源限制为你自己的公网出口 IP（`YOUR_IP/32`）；之后再按实际服务协议增量放行。
+Standard Public IP 默认需要 NSG 明确放行。初始阶段只开 SSH，并把来源收窄到自己的公网出口 `YOUR_IP/32`。其他端口等服务确定后再加，别一上来全开。
 
-## 5. 连接、换端口与面板：先保证不会断连
+## 登录、改 SSH 端口和面板
 
-创建完成后，从 VM Overview 复制公网 IP，用私钥登录：
+VM 创建完，从 Overview 复制公网 IP，用私钥登录：
 
 ```bash
 ssh -i ~/.ssh/azure_vm_ed25519 azureuser@YOUR_PUBLIC_IP
 ```
 
-[Tabby](https://tabby.sh/) 是可选的 SSH 客户端；不用面板也完全可以。若要安装 [1Panel](https://1panel.cn/docs/)，先阅读官方文档并确认它会开放哪些端口、消耗多少内存。学生福利中的域名权益也可能随时间改变，先在自己的 GitHub Education 面板核对后再绑定域名和配置 Nginx。
+[Tabby](https://tabby.sh/) 用来连 SSH 很顺手，不过普通终端也够用。想装 [1Panel](https://1panel.cn/docs/) 可以，先看文档确认它要开哪些端口、吃多少内存。GitHub Education 送不送域名、现在还能不能领，也直接看自己的权益面板，再决定要不要配 Nginx 和域名。
 
-### 可选：把 SSH 改到 4022/TCP
+### SSH 改到 4022/TCP（可选）
 
-改端口不是安全的替代品，SSH 密钥、禁用密码登录、及时更新系统和 NSG 来源限制更重要。若仍要修改，**先添加新端口规则并在第二个终端测试成功，再关闭 22**：
+换端口不等于安全：密钥登录、关密码登录、系统更新和 NSG 来源限制更重要。真要改，顺序不能错：新端口规则先加好，用第二个终端测试能连，再关 22。
 
 ```bash
-# VM 内：先增加端口，再检查配置并热加载
+# VM 内先写入端口，检查无误后热加载
 echo 'Port 4022' | sudo tee /etc/ssh/sshd_config.d/99-port.conf
 sudo sshd -t
 sudo systemctl reload ssh
 ```
 
-同时在 Azure NSG 放行 `TCP 4022`，并在主机防火墙放行同一端口；建议来源填写你的固定出口 `YOUR_IP/32`。确认 `ssh -p 4022 ...` 能连接后，才删除旧的 22/TCP 规则。
+Azure NSG 和 VM 防火墙也要同时放 `TCP 4022`，来源尽量写自己的 `YOUR_IP/32`。确认 `ssh -p 4022 ...` 能正常连接，才删除旧的 22/TCP 规则。
 
-`[bin456789/reinstall](https://github.com/bin456789/reinstall)` 是第三方重装脚本链接，不是 Azure 官方操作，也会影响云初始化、SSH 和网络配置。除非你了解恢复路径并已做好快照、Serial Console/救援方案和密钥备份，否则不建议把它作为首选步骤。
+有人喜欢用 [bin456789/reinstall](https://github.com/bin456789/reinstall) 重装系统。它是第三方脚本，不是 Azure 官方流程，会动到云初始化、SSH 和网络配置。没搞清恢复办法之前别把它当默认操作；至少要留好密钥备份、快照和 Serial Console/救援方案。
 
-## 6. 用 sing-box 做个人网络实验：选择协议后再开端口
+## sing-box：配置选定以后再放端口
 
-[sing-box 官方安装文档](https://sing-box.sagernet.org/installation/package-manager/)提供受维护的软件包与服务管理方式。若确实要使用一键多协议工具，可参考第三方项目 [fscarmen/sing-box](https://github.com/fscarmen/sing-box)。它会以高权限下载并执行脚本，使用前应阅读项目 README 和脚本内容，并从 GitHub 项目页取得当前命令；不要在不理解配置或不信任来源时直接 `curl | bash`。
+[sing-box 官方安装文档](https://sing-box.sagernet.org/installation/package-manager/)有软件包和服务管理方式。想走一键多协议配置，可以参考第三方项目 [fscarmen/sing-box](https://github.com/fscarmen/sing-box)。这类脚本会以高权限下载和执行内容，README 和脚本自己先看一遍，从项目页拿当前命令；看不懂或不信任来源就别直接跑。
 
-该项目的交互式入口为：
+项目给出的交互式入口是：
 
 ```bash
 bash <(wget -qO- https://raw.githubusercontent.com/fscarmen/sing-box/main/sing-box.sh)
 ```
 
-小规格 VM 建议先只启用自己客户端确认支持的一种协议，再记录脚本最终输出的端口与订阅地址。导入 Clash Verge / Mihomo 兼容客户端前先备份本地配置；如果出现协议解析错误，优先升级客户端、导出兼容的单协议配置或查看脚本文档，**不要删除自己不理解的字段**。
+小规格 VM 先开一个客户端明确支持的协议就够了。脚本跑完记下实际监听端口和订阅地址，再导入 Clash Verge、Mihomo 等兼容客户端。碰到协议解析错误，优先升级客户端、导出兼容的单协议配置，或者按脚本文档查；不要为了消除报错随手删掉自己看不懂的字段。
 
-### 端口清单：以你的最终配置为准
+### 端口按最终协议开
 
-| 场景/协议 | Azure NSG 与主机防火墙要放行 |
+| 场景/协议 | Azure NSG 与 VM 防火墙要放行 |
 | --- | --- |
 | SSH 管理 | TCP 22 或 TCP 4022；来源尽量限制为 `YOUR_IP/32` |
-| VLESS Reality、Trojan、AnyTLS、Naive | 选定的 **TCP** 端口，常见示例为 443 |
-| VLESS/VMess 的 WebSocket、HTTP/2 等 TCP 传输 | 对外反向代理或入站实际监听的 **TCP** 端口 |
-| Shadowsocks | 配置声明的端口与传输；常见为 **TCP + UDP** 都需要 |
-| Hysteria2、TUIC | 选定的 **UDP** 端口，常见示例为 443 |
-| Hysteria2 端口跳跃 | 配置的整个 **UDP** 端口范围；不启用就不要放行范围 |
+| VLESS Reality、Trojan、AnyTLS、Naive | 配置中选定的 **TCP** 端口，常见示例是 443 |
+| VLESS/VMess 的 WebSocket、HTTP/2 等 TCP 传输 | 反向代理或入站实际监听的 **TCP** 端口 |
+| Shadowsocks | 配置声明的端口和传输；常见情况要放 **TCP + UDP** |
+| Hysteria2、TUIC | 配置中选定的 **UDP** 端口，常见示例是 443 |
+| Hysteria2 端口跳跃 | 配置的整段 **UDP** 范围；没启用就别开范围 |
 
-Azure NSG 与 VM 内防火墙是两层规则，二者必须同时匹配。下例仅演示“已确定需要 TCP/UDP 443”时的 NSG 规则；将变量替换为自己的资源组和 NSG 名称。SSH 端口不要照此对全网开放。
+NSG 和 VM 内防火墙是两道规则，要同时放行才会通。下面只演示已经确定需要 TCP/UDP 443 时的 NSG 写法，资源组和 NSG 名称换成自己的。SSH 端口别照这个对全网开放。
 
 ```bash
 RG="YOUR_RESOURCE_GROUP"
@@ -174,30 +160,28 @@ az network nsg rule create \
   --source-address-prefixes '*' --destination-port-ranges 443
 ```
 
-如果启用了 UFW，也只放行最终实际使用的端口：
+如果启用了 UFW，同样只开自己实际在用的端口：
 
 ```bash
-sudo ufw allow 4022/tcp       # 仅在你已迁移 SSH 时需要
-sudo ufw allow 443/tcp        # 仅在你的配置需要 TCP 443 时需要
-sudo ufw allow 443/udp        # 仅在你的配置需要 UDP 443 时需要
+sudo ufw allow 4022/tcp       # 已迁移 SSH 才需要
+sudo ufw allow 443/tcp        # 配置需要 TCP 443 才需要
+sudo ufw allow 443/udp        # 配置需要 UDP 443 才需要
 sudo ufw status numbered
 ```
 
-## 7. 验证出口与 Codex 的正确理解
+## 验证出口，顺手说清 Codex 的代理范围
 
-连接到 VM 后可先查看 VM 出口地址：
+登录 VM 后，先看机器的公网出口：
 
 ```bash
 curl https://ifconfig.me
 ```
 
-在客户端启用所选配置后，再访问同类 IP 查询服务确认流量路径。浏览器可以用代理切换扩展（例如 SwitchyOmega 系列）建立“直连”和“本地代理”两个明确的情景；不要导入来源不明的 PAC 或订阅。
+客户端启用配置后，再用同类 IP 查询服务确认流量路径。浏览器里可以用 SwitchyOmega 一类的代理切换扩展，单独建“直连”和“本地代理”两个情景；来源不明的 PAC 和订阅别往里导。
 
-### Codex 不是改一个 `config.toml` 就能“强制所有流量走代理”
+Codex 的 `features.network_proxy` 也别理解错。它约束的是**本地命令沙箱里运行的脚本、程序和子进程**，不接管 Web 搜索、浏览器、连接器、Codex 云任务，或者客户端的模型与认证请求。改一个 `config.toml`，不能让桌面 App 或 ChatGPT 的所有流量都强制改道。
 
-这点需要特别纠正。Codex 官方文档中的 `features.network_proxy` 约束的是**本地命令沙箱中运行的脚本、程序和子进程**，不会接管 Web 搜索、浏览器、连接器、Codex 云任务，或客户端的模型与认证请求。因此它不是让桌面 App/ChatGPT 所有流量强制改道的万能开关。
-
-如果你使用 Codex CLI，且只是希望它启动的命令在已获网络权限的前提下遵循本机上游代理，可以在 `~/.codex/config.toml` 做最小化的命令沙箱策略；按实际需要收紧域名，不要盲目放开所有目的地：
+如果用的是 Codex CLI，只想让它启动的命令在已有网络权限的前提下遵循本机上游代理，可以在 `~/.codex/config.toml` 写一个收紧过的命令沙箱策略：
 
 ```toml
 [features.network_proxy]
@@ -206,7 +190,7 @@ allow_upstream_proxy = true
 domains = { "api.openai.com" = "allow" }
 ```
 
-然后再按本地客户端实际监听端口，在启动 CLI 的终端设置标准代理环境变量。以下端口只是占位符，不能照抄：
+再按本地客户端的实际监听端口，在启动 CLI 的终端设置代理环境变量。下面的端口只是占位符，不能直接照抄：
 
 ```powershell
 $env:HTTP_PROXY = 'http://127.0.0.1:LOCAL_HTTP_PORT'
@@ -215,16 +199,13 @@ $env:ALL_PROXY = 'socks5://127.0.0.1:LOCAL_SOCKS_PORT'
 codex
 ```
 
-这只适用于本地命令与其子进程的网络路径；桌面客户端或受工作区/管理员管理的环境应以其产品设置和网络策略为准。
-
-## 收尾：把资源管理当作部署的一部分
-
-最后检查一次 Azure Portal：确认 VM、磁盘、Public IP、NSG 和可能的备份资源都在预期资源组内；不再使用时停止/删除不需要的资源。学生额度是学习资源，不是无限免费服务器。保持最小端口暴露、密钥登录、定期更新和预算告警，才能让这台实验机长期稳定地服务于你的课程与个人项目。
+这只影响本地命令和它的子进程。桌面客户端以及受工作区或管理员管理的环境，仍然要按产品设置和网络策略来。
 
 ## 参考资料
 
 - [GitHub Education 学生申请（官方）](https://docs.github.com/zh/education/about-github-education/github-education-for-students/apply-to-github-education-as-a-student)
 - [Azure for Students 官方说明与使用范围](https://azure.microsoft.com/zh-cn/free/students)
+- [Azure 学生资格与额度说明](https://learn.microsoft.com/zh-cn/azure/education-hub/about-azure-for-students)
 - [Azure 学生订阅额度与预算](https://learn.microsoft.com/en-us/azure/education-hub/navigate-costs)
 - [Azure CLI：查询可用 VM SKU](https://learn.microsoft.com/en-gb/cli/azure/vm?view=azure-cli-latest#az-vm-list-skus)
 - [Azure Bv1 系列规格](https://learn.microsoft.com/en-us/azure/virtual-machines/sizes/general-purpose/bv1-series)
